@@ -11,14 +11,14 @@ class ContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> titles = [
-      firstIntroductionTitle,
-      secondIntroductionTitle,
-      thirdIntroductionTitle,
+      AppStrings.firstIntroductionTitle,
+      AppStrings.secondIntroductionTitle,
+      AppStrings.thirdIntroductionTitle,
     ];
     List<String> subtitles = [
-      firstIntroductionContent,
-      secondIntroductionContent,
-      thirdIntroductionContent,
+      AppStrings.firstIntroductionContent,
+      AppStrings.secondIntroductionContent,
+      AppStrings.thirdIntroductionContent,
     ];
 
     return ContentSplash(
