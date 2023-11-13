@@ -1,3 +1,4 @@
+import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class TextUsername extends StatelessWidget {
@@ -7,9 +8,9 @@ class TextUsername extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
+    return const Align(
       alignment: Alignment.centerLeft,
-      child: Text("Your Email"),
+      child: Text(yourEmail),
     );
   }
 }

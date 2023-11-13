@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class LoginTitle extends StatefulWidget {
@@ -37,7 +40,7 @@ class _LoginTitleState extends State<LoginTitle> {
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Enter your details below & free ' + widget.title.toLowerCase(),
+              signup_details + widget.title.toLowerCase(),
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.grey,

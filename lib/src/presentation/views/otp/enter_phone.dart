@@ -1,3 +1,5 @@
+import 'package:elearning/src/presentation/widgets/btn_primary.dart';
+import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class EnterOtpView extends StatelessWidget {
@@ -7,7 +9,7 @@ class EnterOtpView extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 209, 214, 218),
-        toolbarHeight: 250,
+        toolbarHeight: 220,
         title: Column(
           children: <Widget>[
             Row(
@@ -21,32 +23,44 @@ class EnterOtpView extends StatelessWidget {
                 Expanded(
                   child: Align(
                     alignment: Alignment.center,
-                    child: Text("Continue With Phone",style: 
-                      TextStyle(fontSize: 18),
+                    child: Text(
+                      continuePhone,
+                      style: TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
               ],
             ),
-            Image.asset('assets/img/phone.png'),
+            Image.asset(phone),
           ],
         ),
       ),
       body: Container(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            Text("Enter Your Phone Number"),
-            TextField(
-            // controller: _controller,
-            keyboardType: TextInputType.number, // Đặt kiểu bàn phím số
-            decoration: InputDecoration(
-              labelText: 'Enter a number',
-            ),
-          ),
-          ],
+          padding: EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              SizedBox(height: 15,),
+              Text(enterYourPhone),
+               SizedBox(height: 30,),
+              Row(
+                children: <Widget>[
+                  Flexible(
+                    child: TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                        labelText: enterYourPhone,
+                      ),
+                    ),
+                  ),
+                  PrimaryBtn(text: btnCtn, width: 160),
+                ],
+              ),
+            ],
+          )
         ),
-      ),
     );
   }
 }

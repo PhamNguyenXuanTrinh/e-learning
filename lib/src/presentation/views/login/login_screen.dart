@@ -1,9 +1,14 @@
-import 'package:elearning/src/presentation/widgets/loginWidgets/btn_login.dart';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:elearning/src/presentation/views/login/signup_screen.dart';
+import 'package:elearning/src/presentation/widgets/btn_primary.dart';
 import 'package:elearning/src/presentation/widgets/loginWidgets/field_password.dart';
 import 'package:elearning/src/presentation/widgets/loginWidgets/field_username.dart';
 import 'package:elearning/src/presentation/widgets/loginWidgets/login_title.dart';
 import 'package:elearning/src/presentation/widgets/loginWidgets/text_password.dart';
 import 'package:elearning/src/presentation/widgets/loginWidgets/text_username.dart';
+import 'package:elearning/src/utils/constants/color.dart';
+import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -14,7 +19,7 @@ class LoginView extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 209, 214, 218),
         toolbarHeight: 150,
-        title: LoginTitle(title: 'Log In', showDetails: false),
+        title: LoginTitle(title: login, showDetails: false),
       ),
       body: LoginForm(),
     );
@@ -34,6 +39,7 @@ class _LoginFormState extends State<LoginForm> {
     return Container(
       padding: EdgeInsets.all(30),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(
             height: 20,
@@ -48,17 +54,22 @@ class _LoginFormState extends State<LoginForm> {
           SizedBox(
             height: 30,
           ),
-          LoginBtn(text: 'Log in',isLogin: true,),
+          PrimaryBtn(text: login),
           SizedBox(height: 20,),
          Center(
           child: Align(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("Already have an account？"),
-                TextButton(onPressed: (){}, child: Text("Sign up",
+                Text(textAccount),
+                TextButton(onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => SignUpView(),
+            ));
+                }, child: Text(signup,
                   style: TextStyle( decoration: TextDecoration.underline,
                     fontWeight: FontWeight.bold,
+                    color: defaultBlue,
                   ),
                 ))
               ],
@@ -68,23 +79,23 @@ class _LoginFormState extends State<LoginForm> {
          SizedBox(height: 20,),
          Align(
           alignment: Alignment.center,
-          child: Text("Or login with"),
+          child: Text(orLogin,
+            style: TextStyle(color: defaultBlue),
+          ),
          ),
           SizedBox(height: 20,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset('assets/img/google.png'),
+              Image.asset(imgGoogle),
               SizedBox(width: 30,),
-              Image.asset('assets/img/fb.png'),
+              Image.asset(imgFb),
             ],
           )
         ],
       ),
     );
   }
-
- 
 }
 
