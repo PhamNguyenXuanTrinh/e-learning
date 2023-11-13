@@ -1,6 +1,7 @@
 
 import 'package:elearning/src/presentation/views/login/signup_screen.dart';
 
+import 'package:elearning/src/presentation/views/splash_screen/splash_screen_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
