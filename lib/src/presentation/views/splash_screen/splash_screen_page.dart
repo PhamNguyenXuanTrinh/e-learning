@@ -54,7 +54,7 @@ class _TabBarExampleState extends State<SplashScreen> {
         ContentWidget(index: index),
         buildBottomNavigationBar(_selectedIndex, _pageController),
         const SizedBox(height: 40),
-        loginSignup(index),
+        loginSignup(index, context),
       ],
     );
   }

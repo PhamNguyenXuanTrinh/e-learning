@@ -1,14 +1,18 @@
 // login_signup.dart
+import 'package:elearning/src/presentation/views/login/login_screen.dart';
+import 'package:elearning/src/presentation/views/login/signup_screen.dart';
 import 'package:flutter/material.dart';
 
-Widget loginSignup(int index) {
+Widget loginSignup(int index, context) {
   if (index == 2) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
           onPressed: () {
-            // Handle Signup button press
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => SignUpView(),
+            ));
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
@@ -27,7 +31,9 @@ Widget loginSignup(int index) {
         const SizedBox(width: 20),
         ElevatedButton(
           onPressed: () {
-            // Handle Login button press
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => LoginView(),
+            ));
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white,
