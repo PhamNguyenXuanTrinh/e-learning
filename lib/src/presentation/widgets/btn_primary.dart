@@ -11,7 +11,7 @@ class PrimaryBtn extends StatelessWidget {
   final String text;
   final double? width;
 
-  PrimaryBtn({required this.text, this.width});
+  PrimaryBtn({ required this.text, this.width});
 
   @override
   Widget build(BuildContext context) {

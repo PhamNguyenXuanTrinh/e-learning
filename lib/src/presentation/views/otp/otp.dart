@@ -23,7 +23,7 @@ class OtpView extends StatelessWidget {
                     Navigator.of(context).pop();
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Expanded(

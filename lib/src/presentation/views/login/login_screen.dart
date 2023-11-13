@@ -56,42 +56,54 @@ class _LoginFormState extends State<LoginForm> {
             height: 30,
           ),
           PrimaryBtn(text: AppStrings.login),
-          SizedBox(height: 20,),
-         Center(
-          child: Align(
-            child: Row(
+          SizedBox(
+            height: 20,
+          ),
+          Center(
+            child: Align(
+                child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(AppStrings.textAccount),
-                TextButton(onPressed: (){
-                  Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => SignUpView(),
-            ));
-                }, child: Text(AppStrings.signup,
-                  style: TextStyle( decoration: TextDecoration.underline,
-                    fontWeight: FontWeight.bold,
-                    color: defaultBlue,
-                  ),
-                ))
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => SignUpView(),
+                      ));
+                    },
+                    child: Text(
+                      AppStrings.signup,
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontWeight: FontWeight.bold,
+                        color: defaultBlue,
+                      ),
+                    ))
               ],
-            )
+            )),
           ),
-         ),
-         SizedBox(height: 20,),
-         Align(
-          alignment: Alignment.center,
-          child: Text(AppStrings.orLogin,
-            style: TextStyle(color: defaultBlue),
+          SizedBox(
+            height: 20,
           ),
-         ),
-          SizedBox(height: 20,),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              AppStrings.orLogin,
+              style: TextStyle(color: defaultBlue),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset(AppLinkImg.imgGoogle),
-              SizedBox(width: 30,),
-              Image.asset(AppLinkImg.imgFb),
+              Image.asset(AppImages.imgGoogle),
+              SizedBox(
+                width: 30,
+              ),
+              Image.asset(AppImages.imgFb),
             ],
           )
         ],
@@ -99,4 +111,3 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 }
-

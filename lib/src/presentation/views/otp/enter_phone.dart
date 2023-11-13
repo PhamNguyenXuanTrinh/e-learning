@@ -4,6 +4,8 @@ import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class EnterOtpView extends StatelessWidget {
+  const EnterOtpView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,7 @@ class EnterOtpView extends StatelessWidget {
                 ),
               ],
             ),
-            Image.asset(AppLinkImg.phone),
+            Image.asset(AppImages.imgPhone),
           ],
         ),
       ),
@@ -41,9 +43,13 @@ class EnterOtpView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Text(AppStrings.enterYourPhone),
-               SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Row(
                 children: <Widget>[
                   Flexible(
@@ -51,7 +57,7 @@ class EnterOtpView extends StatelessWidget {
                       obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(10)),
                         labelText: AppStrings.enterYourPhone,
                       ),
                     ),
@@ -60,8 +66,7 @@ class EnterOtpView extends StatelessWidget {
                 ],
               ),
             ],
-          )
-        ),
+          )),
     );
   }
 }
