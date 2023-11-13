@@ -3,7 +3,9 @@ import 'package:elearning/src/presentation/widgets/account_widget/listtile_widge
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatelessWidget {
-  const AccountScreen({super.key, Key? Key});
+  const AccountScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

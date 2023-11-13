@@ -11,14 +11,14 @@ class EnterOtpView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Color.fromARGB(255, 209, 214, 218),
+        backgroundColor:const Color.fromARGB(255, 209, 214, 218),
         toolbarHeight: 220,
         title: Column(
           children: <Widget>[
             Row(
               children: <Widget>[
                 IconButton(
-                  icon: Icon(Icons.keyboard_arrow_left),
+                  icon: const Icon(Icons.keyboard_arrow_left),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -28,7 +28,7 @@ class EnterOtpView extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Text(
                       AppStrings.continuePhone,
-                      style: TextStyle(fontSize: 18),
+                      style: const TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
@@ -39,15 +39,15 @@ class EnterOtpView extends StatelessWidget {
         ),
       ),
       body: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Text(AppStrings.enterYourPhone),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(

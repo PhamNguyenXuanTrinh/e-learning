@@ -18,7 +18,7 @@ class OtpView extends StatelessWidget {
             Row(
               children: <Widget>[
                 IconButton(
-                  icon: Icon(Icons.close),
+                  icon: const Icon(Icons.close),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -31,7 +31,7 @@ class OtpView extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Text(
                       AppStrings.verifyPhone,
-                      style: TextStyle(fontSize: 18),
+                      style:const TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
@@ -42,19 +42,19 @@ class OtpView extends StatelessWidget {
             ),
             Text(
               AppStrings.codePhone,
-              style: TextStyle(fontSize: 14),
+              style: const TextStyle(fontSize: 14),
             )
           ],
         ),
       ),
       body: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               OtpTextField(
                 numberOfFields: 5,
-                borderColor: Color(0xFF512DA8),
+                borderColor:const  Color(0xFF512DA8),
                 //set to true to show as box or false to show as dash
                 showFieldAsBox: true,
                 //runs when a code is typed in

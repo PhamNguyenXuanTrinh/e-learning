@@ -15,7 +15,7 @@ class AvatarWidget extends StatelessWidget {
       child: Stack(
         children: [
           Image.asset(
-            'assets/images/Avatar.png',
+            'assets/img/Avatar.png',
             width: 100,
             height: 100,
             fit: BoxFit.contain,

@@ -2,7 +2,7 @@ import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class FieldPassword extends StatefulWidget {
-  const FieldPassword({Key? key}) : super(key: key);
+  const FieldPassword({super.key});
 
   @override
   _FieldPasswordState createState() => _FieldPasswordState();
