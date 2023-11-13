@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AccountButtonsWidget extends StatelessWidget {
-
   final VoidCallback onFavoriteTap;
   final VoidCallback onEditAccountTap;
   final VoidCallback onSettingsTap;
@@ -9,7 +8,6 @@ class AccountButtonsWidget extends StatelessWidget {
 
   const AccountButtonsWidget({
     super.key,
-
     required this.onFavoriteTap,
     required this.onEditAccountTap,
     required this.onSettingsTap,
@@ -20,7 +18,7 @@ class AccountButtonsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 20),
+        const SizedBox(),
         ListTileButton(
           label: 'Favourite',
           onTap: onFavoriteTap,
