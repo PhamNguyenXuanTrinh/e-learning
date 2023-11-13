@@ -40,7 +40,7 @@ class _LoginTitleState extends State<LoginTitle> {
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              signup_details + widget.title.toLowerCase(),
+              AppStrings.signupDetails + widget.title.toLowerCase(),
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.grey,

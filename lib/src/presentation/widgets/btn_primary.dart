@@ -23,20 +23,20 @@ class PrimaryBtn extends StatelessWidget {
       height: 50,
       child: ElevatedButton(
         onPressed: () {
-          if (text == login) {
+          if (text == AppStrings.login) {
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => HomeView(),
             ));
-          } else if (text == signup) {
+          } else if (text == AppStrings.signup) {
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => EnterOtpView(),
             ));
-          } else if(text == btnCtn){
+          } else if(text == AppStrings.btnCtn){
              Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => OtpView(),
             ));
           }
-          else if(text == btnVerify){
+          else if(text == AppStrings.btnVerify){
              Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => HomeView(),
             ));

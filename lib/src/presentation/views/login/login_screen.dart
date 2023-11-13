@@ -8,6 +8,7 @@ import 'package:elearning/src/presentation/widgets/loginWidgets/login_title.dart
 import 'package:elearning/src/presentation/widgets/loginWidgets/text_password.dart';
 import 'package:elearning/src/presentation/widgets/loginWidgets/text_username.dart';
 import 'package:elearning/src/utils/constants/color.dart';
+import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class LoginView extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 209, 214, 218),
         toolbarHeight: 150,
-        title: LoginTitle(title: login, showDetails: false),
+        title: LoginTitle(title: AppStrings.login, showDetails: false),
       ),
       body: LoginForm(),
     );
@@ -54,19 +55,19 @@ class _LoginFormState extends State<LoginForm> {
           SizedBox(
             height: 30,
           ),
-          PrimaryBtn(text: login),
+          PrimaryBtn(text: AppStrings.login),
           SizedBox(height: 20,),
          Center(
           child: Align(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(textAccount),
+                Text(AppStrings.textAccount),
                 TextButton(onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => SignUpView(),
             ));
-                }, child: Text(signup,
+                }, child: Text(AppStrings.signup,
                   style: TextStyle( decoration: TextDecoration.underline,
                     fontWeight: FontWeight.bold,
                     color: defaultBlue,
@@ -79,7 +80,7 @@ class _LoginFormState extends State<LoginForm> {
          SizedBox(height: 20,),
          Align(
           alignment: Alignment.center,
-          child: Text(orLogin,
+          child: Text(AppStrings.orLogin,
             style: TextStyle(color: defaultBlue),
           ),
          ),
@@ -88,9 +89,9 @@ class _LoginFormState extends State<LoginForm> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset(imgGoogle),
+              Image.asset(AppLinkImg.imgGoogle),
               SizedBox(width: 30,),
-              Image.asset(imgFb),
+              Image.asset(AppLinkImg.imgFb),
             ],
           )
         ],

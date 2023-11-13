@@ -14,7 +14,7 @@ class FieldUsername extends StatelessWidget {
         border: OutlineInputBorder(
            borderRadius: BorderRadius.circular(10)
         ),
-        labelText: yourEmail,
+        labelText: AppStrings.yourEmail,
       ),
     );
   }

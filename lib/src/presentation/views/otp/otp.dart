@@ -30,7 +30,7 @@ class OtpView extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.center,
                     child: Text(
-                      verifyPhone,
+                      AppStrings.verifyPhone,
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
@@ -41,7 +41,7 @@ class OtpView extends StatelessWidget {
               height: 40,
             ),
             Text(
-              codePhone,
+              AppStrings.codePhone,
               style: TextStyle(fontSize: 14),
             )
           ],
@@ -67,8 +67,8 @@ class OtpView extends StatelessWidget {
                       context: context,
                       builder: (context) {
                         return AlertDialog(
-                          title: Text("Verification Code"),
-                          content: Text('Code entered is $verificationCode'),
+                          title: Text(verificationCode),
+                          content: Text(AppStrings.codeEntered+ verificationCode),
                         );
                       });
                 }, // end onSubmit
@@ -77,7 +77,7 @@ class OtpView extends StatelessWidget {
                 height: 40,
               ),
               PrimaryBtn(
-                text: btnVerify,
+                text: AppStrings.btnVerify,
                 width: 200,
               )
             ],

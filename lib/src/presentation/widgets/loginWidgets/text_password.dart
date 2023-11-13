@@ -12,7 +12,7 @@ class TextPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerLeft,
-      child: Text(yourPassword),
+      child: Text(AppStrings.yourPassword),
     );
   }
 }

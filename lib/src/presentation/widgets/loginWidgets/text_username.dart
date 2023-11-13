@@ -8,9 +8,9 @@ class TextUsername extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Align(
+    return Align(
       alignment: Alignment.centerLeft,
-      child: Text(yourEmail),
+      child: Text(AppStrings.yourEmail),
     );
   }
 }

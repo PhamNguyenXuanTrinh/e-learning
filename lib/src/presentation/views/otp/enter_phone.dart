@@ -1,4 +1,5 @@
 import 'package:elearning/src/presentation/widgets/btn_primary.dart';
+import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -24,14 +25,14 @@ class EnterOtpView extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.center,
                     child: Text(
-                      continuePhone,
+                      AppStrings.continuePhone,
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
               ],
             ),
-            Image.asset(phone),
+            Image.asset(AppLinkImg.phone),
           ],
         ),
       ),
@@ -41,7 +42,7 @@ class EnterOtpView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               SizedBox(height: 15,),
-              Text(enterYourPhone),
+              Text(AppStrings.enterYourPhone),
                SizedBox(height: 30,),
               Row(
                 children: <Widget>[
@@ -51,11 +52,11 @@ class EnterOtpView extends StatelessWidget {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
-                        labelText: enterYourPhone,
+                        labelText: AppStrings.enterYourPhone,
                       ),
                     ),
                   ),
-                  PrimaryBtn(text: btnCtn, width: 160),
+                  PrimaryBtn(text: AppStrings.btnCtn, width: 160),
                 ],
               ),
             ],

@@ -1,7 +1,6 @@
-import 'package:elearning/src/presentation/views/login/login_screen.dart';
+
 import 'package:elearning/src/presentation/views/login/signup_screen.dart';
-import 'package:elearning/src/presentation/views/otp/enter_phone.dart';
-import 'package:elearning/src/presentation/views/otp/otp.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {

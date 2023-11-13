@@ -20,7 +20,7 @@ class SignUpView extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 209, 214, 218),
         toolbarHeight: 150,
         title: LoginTitle(
-          title: signup,
+          title: AppStrings.signup,
         ),
       ),
       body: SignUpForm(),
@@ -58,7 +58,7 @@ class _SignUpFormState extends State<SignUpForm> {
             height: 30,
           ),
           PrimaryBtn(
-            text: signup,
+            text: AppStrings.signup,
           ),
           SizedBox(
             height: 20,
@@ -79,7 +79,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   alignment: WrapAlignment.end,
                   children: [
                     Text(
-                      textCheckBox,
+                      AppStrings.textCheckBox,
                       textAlign: TextAlign.left,
                     ),
                   ],
@@ -95,7 +95,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(textAccount),
+                Text(AppStrings.textAccount),
                 TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
@@ -103,7 +103,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       ));
                     },
                     child: Text(
-                      login,
+                      AppStrings.login,
                       style: TextStyle(
                           decoration: TextDecoration.underline,
                           fontWeight: FontWeight.bold,
