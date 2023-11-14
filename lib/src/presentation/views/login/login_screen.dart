@@ -2,17 +2,19 @@
 
 import 'package:elearning/src/presentation/views/login/signup_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary.dart';
-import 'package:elearning/src/presentation/widgets/loginWidgets/field_password.dart';
-import 'package:elearning/src/presentation/widgets/loginWidgets/field_username.dart';
-import 'package:elearning/src/presentation/widgets/loginWidgets/login_title.dart';
-import 'package:elearning/src/presentation/widgets/loginWidgets/text_password.dart';
-import 'package:elearning/src/presentation/widgets/loginWidgets/text_username.dart';
+import 'package:elearning/src/presentation/widgets/login_widgets/field_password.dart';
+import 'package:elearning/src/presentation/widgets/login_widgets/field_username.dart';
+import 'package:elearning/src/presentation/widgets/login_widgets/login_title.dart';
+import 'package:elearning/src/presentation/widgets/login_widgets/text_password.dart';
+import 'package:elearning/src/presentation/widgets/login_widgets/text_username.dart';
 import 'package:elearning/src/utils/constants/color.dart';
 import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
+  const LoginView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

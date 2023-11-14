@@ -1,5 +1,3 @@
-
-
 class AppStrings {
   /// add string
   static const String signup = "Sign Up";
@@ -22,4 +20,12 @@ class AppStrings {
   static String codePhone = "Code is sent to 283 835 2999";
   static String btnVerify = "Verify and Create Account";
   static String verification = "Verification Code";
+
+  /// adđ string
+  static const String firstIntroductionTitle='Numerous free trial courses';
+  static const String secondIntroductionTitle='Quick and learning';
+  static const String thirdIntroductionTitle='Create your own study plan';
+  static const String firstIntroductionContent='Free courses for you to find your way to learning';
+  static const String secondIntroductionContent='Easy and fast learning at any time to help you improve various skills';
+  static const String thirdIntroductionContent='Study according to the study plan, make study more motivates';
 }
