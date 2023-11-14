@@ -1,8 +1,7 @@
-import 'package:elearning/src/presentation/widgets/btn_primary.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-
+import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 class OtpView extends StatelessWidget {
   const OtpView({super.key});
 
@@ -11,7 +10,6 @@ class OtpView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        //backgroundColor: Color.fromARGB(255, 209, 214, 218),
         toolbarHeight: 170,
         title: Column(
           children: <Widget>[

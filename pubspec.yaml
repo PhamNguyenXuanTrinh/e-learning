@@ -28,7 +28,6 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  dio: ^4.0.0
   flutter:
     sdk: flutter
 
@@ -46,6 +45,8 @@ dependencies:
   auto_route: ^7.8.4
   awesome_dio_interceptor: ^0.0.2+4
   oktoast: ^3.3.2+1
+  flutter_svg: ^2.0.9
+  font_awesome_flutter: ^10.6.0
 
 dev_dependencies:
   flutter_test:

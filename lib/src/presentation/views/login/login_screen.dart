@@ -1,13 +1,10 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:elearning/src/presentation/views/login/signup_screen.dart';
-import 'package:elearning/src/presentation/widgets/btn_primary.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/field_password.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/field_username.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/login_title.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/text_password.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/text_username.dart';
-import 'package:elearning/src/utils/constants/color.dart';
+import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/field_password_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/field_username_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/login_title_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/text_password_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/text_username_widget.dart';
 import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
@@ -18,13 +15,15 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Color.fromARGB(255, 209, 214, 218),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         toolbarHeight: 150,
-        title: LoginTitle(title: AppStrings.login, showDetails: false),
+        title: const LoginTitle(title: AppStrings.login, showDetails: false),
       ),
-      body: LoginForm(),
+      body: const LoginForm(),
     );
   }
 }
@@ -40,25 +39,25 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(30),
+      padding: const EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          TextUsername(),
-          FieldUsername(),
-          SizedBox(
+          const TextUsername(),
+          const FieldUsername(),
+          const SizedBox(
             height: 30,
           ),
-          TextPassword(),
-          FieldPassword(),
-          SizedBox(
+          const TextPassword(),
+          const FieldPassword(),
+          const SizedBox(
             height: 30,
           ),
-          PrimaryBtn(text: AppStrings.login),
-          SizedBox(
+          const PrimaryBtn(text: AppStrings.login),
+          const SizedBox(
             height: 20,
           ),
           Center(
@@ -66,11 +65,11 @@ class _LoginFormState extends State<LoginForm> {
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(AppStrings.textAccount),
+                const Text(AppStrings.textAccount),
                 TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => SignUpView(),
+                        builder: (context) => const SignUpView(),
                       ));
                     },
                     child: Text(
@@ -78,23 +77,23 @@ class _LoginFormState extends State<LoginForm> {
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                         fontWeight: FontWeight.bold,
-                        color: defaultBlue,
+                        color: Theme.of(context).primaryColor,
                       ),
                     ))
               ],
             )),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Align(
             alignment: Alignment.center,
             child: Text(
               AppStrings.orLogin,
-              style: TextStyle(color: defaultBlue),
+              style: TextStyle(color: Theme.of(context).primaryColor),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -102,7 +101,7 @@ class _LoginFormState extends State<LoginForm> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Image.asset(AppImages.imgGoogle),
-              SizedBox(
+              const SizedBox(
                 width: 30,
               ),
               Image.asset(AppImages.imgFb),

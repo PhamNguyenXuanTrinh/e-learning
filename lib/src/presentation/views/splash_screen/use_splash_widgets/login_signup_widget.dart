@@ -11,7 +11,7 @@ Widget loginSignup(int index, context) {
         ElevatedButton(
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => SignUpView(),
+              builder: (context) => const SignUpView(),
             ));
           },
           style: ElevatedButton.styleFrom(

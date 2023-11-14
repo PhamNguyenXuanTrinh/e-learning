@@ -5,10 +5,10 @@ class ContentSplash extends StatefulWidget {
   final String subtitle;
 
   const ContentSplash({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
-  }) : super(key: key);
+  });
 
   @override
   State<ContentSplash> createState() => _MyTextsState();

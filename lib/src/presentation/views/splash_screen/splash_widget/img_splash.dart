@@ -4,9 +4,9 @@ class MyImage extends StatefulWidget {
   final String imageAsset; 
 
   const MyImage({
-    Key? key,
+    super.key,
     required this.imageAsset, 
-  }) : super(key: key);
+  });
 
   @override
   State<MyImage> createState() => _ImageSplashState();

@@ -6,7 +6,7 @@ import 'package:elearning/src/presentation/views/splash_screen/use_splash_widget
 import 'package:elearning/src/presentation/views/splash_screen/use_splash_widgets/skip_widget.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   _TabBarExampleState createState() => _TabBarExampleState();
