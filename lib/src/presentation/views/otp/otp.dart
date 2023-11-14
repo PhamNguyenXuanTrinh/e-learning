@@ -37,7 +37,7 @@ class OtpView extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -73,7 +73,7 @@ class OtpView extends StatelessWidget {
                       });
                 }, // end onSubmit
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               PrimaryBtn(

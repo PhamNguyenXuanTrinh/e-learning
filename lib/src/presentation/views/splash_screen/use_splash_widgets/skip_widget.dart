@@ -1,5 +1,5 @@
 // skip.dart
-import 'package:elearning/src/presentation/widgets/splash_widget/skip_splash.dart';
+import 'package:elearning/src/presentation/views/splash_screen/splash_widget/skip_splash.dart';
 import 'package:flutter/material.dart';
 
 Widget skip(int index, PageController pageController) {

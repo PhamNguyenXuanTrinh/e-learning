@@ -5,6 +5,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("home");
+    return const Text("home");
   }
 }

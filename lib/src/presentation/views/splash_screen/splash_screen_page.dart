@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:elearning/src/presentation/widgets/splash_widgets/buildBottomNavigationBar.dart';
-import 'package:elearning/src/presentation/widgets/splash_widgets/content_splash.dart';
-import 'package:elearning/src/presentation/widgets/splash_widgets/introduction.dart';
-import 'package:elearning/src/presentation/widgets/splash_widgets/login_signup.dart';
-import 'package:elearning/src/presentation/widgets/splash_widgets/skip_splash.dart';
+import 'package:elearning/src/presentation/views/splash_screen/use_splash_widgets/build_bottom_navigation_bar_widget.dart';
+import 'package:elearning/src/presentation/views/splash_screen/use_splash_widgets/content_widget.dart';
+import 'package:elearning/src/presentation/views/splash_screen/use_splash_widgets/introduction_widget.dart';
+import 'package:elearning/src/presentation/views/splash_screen/use_splash_widgets/login_signup_widget.dart';
+import 'package:elearning/src/presentation/views/splash_screen/use_splash_widgets/skip_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -27,6 +27,8 @@ class _TabBarExampleState extends State<SplashScreen> {
     return Scaffold(
       body: Column(
         children: [
+          // const SizedBox(height: 60),
+          // skip(_selectedIndex, _pageController),
           Expanded(
             child: PageView(
               controller: _pageController,
@@ -39,6 +41,8 @@ class _TabBarExampleState extends State<SplashScreen> {
             ),
           ),
           // Add buildBottomNavigationBar outside the Expanded
+          // buildBottomNavigationBar(_selectedIndex, _pageController),
+          // const SizedBox(height: 40),
         ],
       ),
     );
@@ -48,7 +52,6 @@ class _TabBarExampleState extends State<SplashScreen> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const SizedBox(height: 20),
         skip(index, _pageController),
         introduction(index),
         ContentWidget(index: index),

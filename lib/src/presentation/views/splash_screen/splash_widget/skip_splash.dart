@@ -13,14 +13,13 @@ class SkipButtonSplash extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: const Text(
           'Skip',
           style: TextStyle(
             color: Color(0xFF858597),
             fontSize: 18,
           ),
-          // Thêm canh về bên trái cho văn bản.
           textAlign: TextAlign.left,
         ),
       ),
