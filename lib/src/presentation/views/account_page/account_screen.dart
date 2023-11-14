@@ -1,5 +1,6 @@
-import 'package:elearning/src/presentation/widgets/account_widget/avatar_widget.dart';
-import 'package:elearning/src/presentation/widgets/account_widget/listtile_widget.dart';
+import 'package:elearning/src/presentation/views/account_page/widgets/avatar_widget.dart';
+import 'package:elearning/src/presentation/views/account_page/widgets/listtile_widget.dart';
+import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -17,7 +18,7 @@ class AccountScreen extends StatelessWidget {
             child: AppBar(
               elevation: 0,
               title: const Text(
-                'Account',
+                AppStrings.account,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),

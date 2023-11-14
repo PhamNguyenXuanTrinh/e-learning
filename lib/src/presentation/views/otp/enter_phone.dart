@@ -23,12 +23,12 @@ class EnterOtpView extends StatelessWidget {
                     Navigator.of(context).pop();
                   },
                 ),
-                Expanded(
+                const Expanded(
                   child: Align(
                     alignment: Alignment.center,
                     child: Text(
                       AppStrings.continuePhone,
-                      style: const TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
@@ -46,7 +46,7 @@ class EnterOtpView extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Text(AppStrings.enterYourPhone),
+              const Text(AppStrings.enterYourPhone),
               const SizedBox(
                 height: 30,
               ),
@@ -62,7 +62,7 @@ class EnterOtpView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  PrimaryBtn(text: AppStrings.btnCtn, width: 160),
+                  const PrimaryBtn(text: AppStrings.btnCtn, width: 160),
                 ],
               ),
             ],

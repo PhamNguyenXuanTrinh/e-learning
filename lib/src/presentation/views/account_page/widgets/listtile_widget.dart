@@ -1,3 +1,4 @@
+import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class AccountButtonsWidget extends StatelessWidget {
@@ -20,22 +21,22 @@ class AccountButtonsWidget extends StatelessWidget {
       children: [
         const SizedBox(),
         ListTileButton(
-          label: 'Favourite',
+          label: AppStrings.favourite,
           onTap: onFavoriteTap,
           height: 20,
         ),
         ListTileButton(
-          label: 'Edit Account',
+          label: AppStrings.editAcc,
           onTap: onEditAccountTap,
           height: 20,
         ),
         ListTileButton(
-          label: 'Settings and Privacy',
+          label: AppStrings.setting,
           onTap: onSettingsTap,
           height: 20,
         ),
         ListTileButton(
-          label: 'Help',
+          label: AppStrings.help,
           onTap: onHelpTap,
           height: 20,
         ),

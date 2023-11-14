@@ -26,12 +26,12 @@ class OtpView extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                Expanded(
+                const Expanded(
                   child: Align(
                     alignment: Alignment.center,
                     child: Text(
                       AppStrings.verifyPhone,
-                      style:const TextStyle(fontSize: 18),
+                      style:TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
@@ -40,9 +40,9 @@ class OtpView extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            Text(
+            const Text(
               AppStrings.codePhone,
-              style: const TextStyle(fontSize: 14),
+              style: TextStyle(fontSize: 14),
             )
           ],
         ),
@@ -76,7 +76,7 @@ class OtpView extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              PrimaryBtn(
+              const PrimaryBtn(
                 text: AppStrings.btnVerify,
                 width: 200,
               )

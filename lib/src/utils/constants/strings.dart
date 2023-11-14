@@ -1,12 +1,17 @@
 class AppStrings {
   /// add string
+  static const String account = "Account";
+  static const String favourite = "Favourite";
+  static const String editAcc = "Edit Account";
+  static const String setting = "Settings and Privacy";
+  static const String help = "Help";
   static const String signup = "Sign Up";
-  static String login = "Log In";
-  static String signupDetails = "Enter your details below & free sign up";
-  static String yourPassword = "Password";
-  static String yourEmail = "Your Email";
-  static String btnCreateAccount = "Create account";
-  static String textCheckBox =
+  static const String login = "Log In";
+  static const String signupDetails = "Enter your details below & free sign up";
+  static const String yourPassword = "Password";
+  static const String yourEmail = "Your Email";
+  static const String btnCreateAccount = "Create account";
+  static const String textCheckBox =
       "By creating an account you have to agree with our them & condication.";
   static String textAccount = "Already have an account？";
   static String textNoAccount = "Don’t have an account?";

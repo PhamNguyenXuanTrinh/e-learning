@@ -1,3 +1,4 @@
+import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:flutter/material.dart';
 
 class AvatarWidget extends StatelessWidget {
@@ -15,7 +16,7 @@ class AvatarWidget extends StatelessWidget {
       child: Stack(
         children: [
           Image.asset(
-            'assets/img/Avatar.png',
+            AppImages.imgAvt,
             width: 100,
             height: 100,
             fit: BoxFit.contain,
