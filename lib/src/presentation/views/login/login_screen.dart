@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:elearning/src/presentation/views/login/signup_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/field_password_widget.dart';
@@ -23,9 +21,9 @@ class LoginView extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         toolbarHeight: 150,
-        title: LoginTitle(title: AppStrings.login, showDetails: false),
+        title: const LoginTitle(title: AppStrings.login, showDetails: false),
       ),
-      body: LoginForm(),
+      body: const LoginForm(),
     );
   }
 }
@@ -41,25 +39,25 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(30),
+      padding: const EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          TextUsername(),
-          FieldUsername(),
-          SizedBox(
+          const TextUsername(),
+          const FieldUsername(),
+          const SizedBox(
             height: 30,
           ),
-          TextPassword(),
-          FieldPassword(),
-          SizedBox(
+          const TextPassword(),
+          const FieldPassword(),
+          const SizedBox(
             height: 30,
           ),
-          PrimaryBtn(text: AppStrings.login),
-          SizedBox(
+          const PrimaryBtn(text: AppStrings.login),
+          const SizedBox(
             height: 20,
           ),
           Center(
@@ -67,11 +65,11 @@ class _LoginFormState extends State<LoginForm> {
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(AppStrings.textAccount),
+                const Text(AppStrings.textAccount),
                 TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => SignUpView(),
+                        builder: (context) => const SignUpView(),
                       ));
                     },
                     child: Text(
@@ -85,7 +83,7 @@ class _LoginFormState extends State<LoginForm> {
               ],
             )),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Align(
@@ -95,7 +93,7 @@ class _LoginFormState extends State<LoginForm> {
               style: TextStyle(color: Theme.of(context).primaryColor),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -103,7 +101,7 @@ class _LoginFormState extends State<LoginForm> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Image.asset(AppImages.imgGoogle),
-              SizedBox(
+              const SizedBox(
                 width: 30,
               ),
               Image.asset(AppImages.imgFb),

@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 import 'package:elearning/src/presentation/views/done/done.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
@@ -11,37 +10,46 @@ class PrimaryBtn extends StatelessWidget {
 
   const PrimaryBtn({super.key, required this.text, this.width});
 
+  void _navigateToView(BuildContext context, Widget view) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => view,
+    ));
+  }
+
+  void _handleButtonClick(BuildContext context) {
+    switch (text) {
+      case AppStrings.login:
+        _navigateToView(context, const NavView());
+        break;
+      case AppStrings.signup:
+        _navigateToView(context, const EnterOtpView());
+        break;
+      case AppStrings.btnCtn:
+        _navigateToView(context, const OtpView());
+        break;
+      case AppStrings.btnVerify:
+        _navigateToView(context, const DoneView());
+        break;
+      case AppStrings.doneBtn:
+        _navigateToView(context, const NavView());
+        break;
+      default:
+        // Handle default case or do nothing
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isFullWidth = width == null;
     final buttonWidth = isFullWidth ? MediaQuery.of(context).size.width : width;
 
-    return Container(
+    return SizedBox(
       width: buttonWidth,
       height: 55,
       child: ElevatedButton(
         onPressed: () {
-          if (text == AppStrings.login) {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => NavView(),
-            ));
-          } else if (text == AppStrings.signup) {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => EnterOtpView(),
-            ));
-          } else if (text == AppStrings.btnCtn) {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => OtpView(),
-            ));
-          } else if (text == AppStrings.btnVerify) {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => DoneView(),
-            ));
-          }else if (text == AppStrings.doneBtn) {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => NavView(),
-            ));
-          }
+          _handleButtonClick(context);
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Theme.of(context).primaryColor,
@@ -51,7 +59,7 @@ class PrimaryBtn extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
       ),
     );

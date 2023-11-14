@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:elearning/src/presentation/views/home/home_screen.dart';
 import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
@@ -15,11 +13,11 @@ class NavView extends StatefulWidget {
 class _NavState extends State<NavView> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
-    HomeView(),
-    Text("Course Page"),
-    Text("Search Page"),
-    Text("Message Page"),
-    Text("Account Page"),
+    const HomeView(),
+    const Text("Course Page"),
+    const Text("Search Page"),
+    const Text("Message Page"),
+    const Text("Account Page"),
   ];
 
   @override

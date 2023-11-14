@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:elearning/src/presentation/views/login/login_screen.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/field_username_widget.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
@@ -22,11 +20,11 @@ class SignUpView extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         toolbarHeight: 150,
-        title: LoginTitle(
+        title: const LoginTitle(
           title: AppStrings.signup,
         ),
       ),
-      body: SignUpForm(),
+      body: const SignUpForm(),
     );
   }
 }
@@ -43,27 +41,27 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(30),
+      padding: const EdgeInsets.all(30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          TextUsername(),
-          FieldUsername(),
-          SizedBox(
+          const TextUsername(),
+          const FieldUsername(),
+          const SizedBox(
             height: 30,
           ),
-          TextPassword(),
-          FieldPassword(),
-          SizedBox(
+          const TextPassword(),
+          const FieldPassword(),
+          const SizedBox(
             height: 30,
           ),
-          PrimaryBtn(
+          const PrimaryBtn(
             text: AppStrings.signup,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -77,7 +75,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   });
                 },
               ),
-              Expanded(
+              const Expanded(
                 child: Wrap(
                   alignment: WrapAlignment.end,
                   children: [
@@ -90,7 +88,7 @@ class _SignUpFormState extends State<SignUpForm> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Center(
@@ -98,11 +96,11 @@ class _SignUpFormState extends State<SignUpForm> {
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(AppStrings.textAccount),
+                const Text(AppStrings.textAccount),
                 TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => LoginView(),
+                        builder: (context) => const LoginView(),
                       ));
                     },
                     child: Text(

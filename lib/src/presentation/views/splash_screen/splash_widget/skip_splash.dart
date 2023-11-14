@@ -4,9 +4,9 @@ class SkipButtonSplash extends StatelessWidget {
   final VoidCallback onPressed;
 
   const SkipButtonSplash({
-    Key? key,
+    super.key,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
