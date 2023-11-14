@@ -1,11 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
-class DoneView extends StatelessWidget {
-  const DoneView({super.key});
+class DialogSuccessView extends StatelessWidget {
+  const DialogSuccessView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class DoneView extends StatelessWidget {
           top: (MediaQuery.of(context).size.height - x) / 2,
           left: (MediaQuery.of(context).size.width - x) / 2,
           child: Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             width: x,
             height: x,
             decoration: BoxDecoration(
@@ -30,7 +28,7 @@ class DoneView extends StatelessWidget {
             ),
             child: Column(
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
@@ -40,7 +38,7 @@ class DoneView extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                       shape: BoxShape.circle,
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Icon(
                         Icons.check,
                         color: Colors.white,
@@ -48,29 +46,29 @@ class DoneView extends StatelessWidget {
                         weight: 400,
                       ),
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   AppStrings.success,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   textAlign: TextAlign.center,
                   AppStrings.doneDetails,
                   style: TextStyle(
                     fontSize: 12,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
-                PrimaryBtn(text: AppStrings.doneBtn),
+                const PrimaryBtn(text: AppStrings.doneBtn),
               ],
             ),
           ),

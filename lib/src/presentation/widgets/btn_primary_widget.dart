@@ -1,4 +1,4 @@
-import 'package:elearning/src/presentation/views/done/done.dart';
+import 'package:elearning/src/presentation/views/dialog/dialog_success_screen.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:elearning/src/presentation/views/otp/enter_phone.dart';
@@ -28,7 +28,7 @@ class PrimaryBtn extends StatelessWidget {
         _navigateToView(context, const OtpView());
         break;
       case AppStrings.btnVerify:
-        _navigateToView(context, const DoneView());
+        _navigateToView(context, const DialogSuccessView());
         break;
       case AppStrings.doneBtn:
         _navigateToView(context, const NavView());

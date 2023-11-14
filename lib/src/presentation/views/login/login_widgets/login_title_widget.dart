@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors
 
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
@@ -22,18 +21,18 @@ class _LoginTitleState extends State<LoginTitle> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Align(
           alignment: Alignment.centerLeft,
           child: Text(
             widget.title, // Sử dụng tiêu đề từ tham số
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
           ),
         ),
         if (widget.showDetails) // Kiểm tra có hiển thị dòng tiêu đề hay không
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
         if (widget.showDetails)
@@ -41,7 +40,7 @@ class _LoginTitleState extends State<LoginTitle> {
             alignment: Alignment.centerLeft,
             child: Text(
               AppStrings.signupDetails + widget.title.toLowerCase(),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 color: Colors.grey,
               ),
