@@ -18,7 +18,7 @@ class OtpView extends StatelessWidget {
             Row(
               children: <Widget>[
                 IconButton(
-                  icon: Icon(Icons.close),
+                  icon: const Icon(Icons.close),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -26,12 +26,12 @@ class OtpView extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                Expanded(
+                const Expanded(
                   child: Align(
                     alignment: Alignment.center,
                     child: Text(
                       AppStrings.verifyPhone,
-                      style: TextStyle(fontSize: 18),
+                      style:TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
@@ -40,7 +40,7 @@ class OtpView extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            Text(
+            const Text(
               AppStrings.codePhone,
               style: TextStyle(fontSize: 14),
             )
@@ -48,13 +48,13 @@ class OtpView extends StatelessWidget {
         ),
       ),
       body: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               OtpTextField(
                 numberOfFields: 5,
-                borderColor: Color(0xFF512DA8),
+                borderColor:const  Color(0xFF512DA8),
                 //set to true to show as box or false to show as dash
                 showFieldAsBox: true,
                 //runs when a code is typed in
@@ -76,7 +76,7 @@ class OtpView extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              PrimaryBtn(
+              const PrimaryBtn(
                 text: AppStrings.btnVerify,
                 width: 200,
               )

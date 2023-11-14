@@ -8,10 +8,10 @@ class LoginTitle extends StatefulWidget {
   final bool showDetails; // Biến để kiểm tra xem có hiển thị dòng tiêu đề hay không
 
   const LoginTitle({
-    Key? key,
+    super.key,
     required this.title,
     this.showDetails = true, // Mặc định hiển thị dòng tiêu đề
-  }) : super(key: key);
+  });
 
   @override
   State<LoginTitle> createState() => _LoginTitleState();
