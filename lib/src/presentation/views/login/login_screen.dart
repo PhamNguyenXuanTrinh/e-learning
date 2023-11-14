@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:elearning/src/presentation/views/login/signup_screen.dart';
-import 'package:elearning/src/presentation/widgets/btn_primary.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/field_password.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/field_username.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/login_title.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/text_password.dart';
-import 'package:elearning/src/presentation/widgets/login_widgets/text_username.dart';
-import 'package:elearning/src/utils/constants/color.dart';
+import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/field_password_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/field_username_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/login_title_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/text_password_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/text_username_widget.dart';
 import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +17,11 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Color.fromARGB(255, 209, 214, 218),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         toolbarHeight: 150,
         title: LoginTitle(title: AppStrings.login, showDetails: false),
       ),
@@ -78,7 +79,7 @@ class _LoginFormState extends State<LoginForm> {
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                         fontWeight: FontWeight.bold,
-                        color: defaultBlue,
+                        color: Theme.of(context).primaryColor,
                       ),
                     ))
               ],
@@ -91,7 +92,7 @@ class _LoginFormState extends State<LoginForm> {
             alignment: Alignment.center,
             child: Text(
               AppStrings.orLogin,
-              style: TextStyle(color: defaultBlue),
+              style: TextStyle(color: Theme.of(context).primaryColor),
             ),
           ),
           SizedBox(

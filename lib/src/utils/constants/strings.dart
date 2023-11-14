@@ -36,4 +36,14 @@ class AppStrings {
       'Easy and fast learning at any time to help you improve various skills';
   static const String thirdIntroductionContent =
       'Study according to the study plan, make study more motivates';
+  static const String success = "Success";
+  static const String doneDetails =
+      "Congratulations, you have completed your registration!";
+  static const String doneBtn = "Done";
+  //// label icon
+  static const String iconHome = "Home";
+  static const String iconCourse = "Course";
+  static const String iconSearch = "Search";
+  static const String iconMessage = "Message";
+  static const String iconAccount = "Account";
 }
