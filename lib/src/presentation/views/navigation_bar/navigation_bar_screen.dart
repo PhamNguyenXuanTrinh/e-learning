@@ -1,4 +1,5 @@
 import 'package:elearning/src/presentation/views/account_page/account_screen.dart';
+import 'package:elearning/src/presentation/views/course_detail_screen/course_detail_screen.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class _NavState extends State<NavView> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
     const Text("Home Page"),
-    const Text("Course Page"),
+    const CourseDetailScreen(),
     const Text("Message Page"),
     const AccountScreen(),
   ];

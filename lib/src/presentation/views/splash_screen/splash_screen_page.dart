@@ -55,7 +55,7 @@ class _TabBarExampleState extends State<SplashScreen> {
         skip(index, _pageController),
         introduction(index),
         ContentWidget(index: index),
-        buildBottomNavigationBar(_selectedIndex, _pageController),
+        buildBottomNavigationBar(_selectedIndex, _pageController,context),
         const SizedBox(height: 40),
         loginSignup(index, context),
       ],

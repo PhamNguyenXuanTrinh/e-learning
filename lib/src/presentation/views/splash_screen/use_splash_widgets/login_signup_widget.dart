@@ -15,16 +15,16 @@ Widget loginSignup(int index, context) {
             ));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
+            backgroundColor: Theme.of(context).primaryColor,
             fixedSize: const Size(160, 50),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          child: const Text(
+          child: Text(
             'Signup',
             style: TextStyle(
-              color: Colors.white,
+              color: Theme.of(context).scaffoldBackgroundColor,
             ),
           ),
         ),
@@ -36,17 +36,17 @@ Widget loginSignup(int index, context) {
             ));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white,
-            side: const BorderSide(color: Colors.blue),
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            side: BorderSide(color: Theme.of(context).primaryColor),
             fixedSize: const Size(160, 50),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          child: const Text(
+          child: Text(
             'Login',
             style: TextStyle(
-              color: Colors.blue,
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ),

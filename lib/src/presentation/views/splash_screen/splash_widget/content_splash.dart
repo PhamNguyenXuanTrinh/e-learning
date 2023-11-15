@@ -36,9 +36,9 @@ class _MyTextsState extends State<ContentSplash> {
         Text(
           widget.subtitle,
           textAlign: TextAlign.center,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 18,
-            color: Colors.grey,
+            color: Theme.of(context).cardColor,
           ),
         ),
       ],
