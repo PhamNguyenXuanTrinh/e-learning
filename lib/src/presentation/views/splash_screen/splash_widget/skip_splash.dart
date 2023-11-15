@@ -14,10 +14,10 @@ class SkipButtonSplash extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         padding: const EdgeInsets.all(10),
-        child: const Text(
+        child: Text(
           'Skip',
           style: TextStyle(
-            color: Color(0xFF858597),
+            color: Theme.of(context).cardColor,
             fontSize: 18,
           ),
           textAlign: TextAlign.left,

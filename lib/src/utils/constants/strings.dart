@@ -48,4 +48,25 @@ class AppStrings {
   static const String iconSearch = "Search";
   static const String iconMessage = "Message";
   static const String iconAccount = "Account";
+  /// Choice_your_screen
+  ///   static const String firstIntroductionContent='Free courses for you to find your way to learning';
+  static const String choiceYourAccountCourse='Course';
+  static const String choiceYourAccountFindCourse='Course';
+  static const String choiceYourAccountText='Choice Your Account';
+  static const String choiceYourAccountAll='All';
+  static const String choiceYourAccountPopular='Popular';
+  static const String choiceYourAccountNew='New';
+  //course_content
+  static const String courseProductDesign='ProductDesign';
+  static const String courseJavaDevelopment='JavaDevelopment';
+  static const String courseVisualDesign='VisualDesign';
+
+  static const String courseTeacherOne='Robertson Connie';
+  static const String courseTeacherTwo='Nguyen Shane';
+  static const String courseTeacherThree='Bert Pullman';
+  
+    static const String courseMoneyTwo='190';
+  static const String courseTimeSixteen='16 hours';
+    static const String courseTimeFourteen='14 hours';
+
 }

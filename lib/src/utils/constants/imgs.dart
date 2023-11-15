@@ -15,4 +15,5 @@ class AppImages{
   static const String imgSearch = "assets/img/search.svg";
   static const String imgMessage = "assets/img/message.svg";
   static const String imgAccount = "assets/img/account.svg";
+  static const String imgCourseOne='assets/img/course_image_one.png';
 }

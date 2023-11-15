@@ -11,6 +11,12 @@ class AppTheme {
       fontFamily: 'Roboto', // Font default
       scaffoldBackgroundColor: Colors.white, // background scaffold
       hintColor: const Color(0xFFF4F3FD),
+      shadowColor: const Color.fromARGB(255, 229, 229, 229),
+      dividerColor: Colors.red, 
+      cardColor: Colors.grey,
+      primaryColorDark: Colors.black,
+
+
     );
   }
 
