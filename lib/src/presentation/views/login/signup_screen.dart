@@ -1,5 +1,5 @@
 import 'package:elearning/src/presentation/views/login/login_screen.dart';
-import 'package:elearning/src/presentation/views/login/login_widgets/field_username_widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/field_username._widget.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/field_password_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/login_title_widget.dart';
@@ -10,12 +10,10 @@ import 'package:flutter/material.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor, 
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,

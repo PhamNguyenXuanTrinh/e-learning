@@ -1,7 +1,7 @@
+import 'package:elearning/src/presentation/views/login/login_widgets/field_username._widget.dart';
 import 'package:elearning/src/presentation/views/login/signup_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/field_password_widget.dart';
-import 'package:elearning/src/presentation/views/login/login_widgets/field_username_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/login_title_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/text_password_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/text_username_widget.dart';
@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

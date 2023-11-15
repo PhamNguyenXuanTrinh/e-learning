@@ -1,23 +1,21 @@
-import 'package:elearning/src/presentation/views/home/home_screen.dart';
-import 'package:elearning/src/utils/constants/imgs.dart';
+import 'package:elearning/src/presentation/views/account_page/account_screen.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 class NavView extends StatefulWidget {
-  const NavView({super.key, });
+  const NavView({super.key});
 
   @override
-  State<NavView> createState() => _NavState();
+  _NavState createState() => _NavState();
 }
 
 class _NavState extends State<NavView> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
-    const HomeView(),
+    const Text("Home Page"),
     const Text("Course Page"),
-    const Text("Search Page"),
     const Text("Message Page"),
-    const Text("Account Page"),
+    const AccountScreen(),
   ];
 
   @override
@@ -27,41 +25,78 @@ class _NavState extends State<NavView> {
         index: _currentIndex,
         children: _pages,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Theme.of(context).hintColor,
-        selectedItemColor: Theme.of(context).primaryColor,
-        unselectedItemColor: Theme.of(context).hintColor,
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          //handler
         },
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppImages.imgHome),
-            label: AppStrings.iconHome,
+        shape: const CircleBorder(),
+        backgroundColor: Theme.of(context).hintColor,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.search,
+              color: Theme.of(context).primaryColor,
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        surfaceTintColor: Colors.white,
+        shape: const CircularNotchedRectangle(),
+        color: Colors.white,
+        notchMargin: 8.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            buildNavbarItem(Icons.home, AppStrings.iconHome, 0),
+            buildNavbarItem(Icons.collections, AppStrings.iconCourse, 1),
+            Container(
+              padding: const EdgeInsets.fromLTRB(15, 20, 0, 0),
+              child: Text(
+                AppStrings.iconSearch,
+                style: TextStyle(color: Theme.of(context).highlightColor),
+              ),
+            ),
+            buildNavbarItem(Icons.message, AppStrings.iconMessage, 2),
+            buildNavbarItem(Icons.account_circle, AppStrings.iconAccount, 3),
+          ],
+        ),
+      ),
+    );
+  }
 
+  Widget buildNavbarItem(IconData icon, String label, int index) {
+    Color iconColor = _currentIndex == index
+        ? Theme.of(context).primaryColor
+        : Theme.of(context).highlightColor;
+    return GestureDetector(
+      onTap: () {
+        _onItemTapped(index);
+      },
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Icon(
+            icon,
+            color: iconColor,
           ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppImages.imgCourse),
-            label: AppStrings.iconCourse,
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppImages.imgSearch),
-            label: AppStrings.iconSearch,
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppImages.imgMessage),
-            label: AppStrings.iconMessage,
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppImages.imgAccount),
-            label: AppStrings.iconAccount,
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 12.0,
+              color: iconColor,
+            ),
           ),
         ],
       ),
     );
   }
-}
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+}

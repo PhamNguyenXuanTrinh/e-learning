@@ -1,9 +1,10 @@
 import 'package:elearning/src/presentation/views/dialog/dialog_success_screen.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
-import 'package:elearning/src/presentation/views/otp/enter_phone.dart';
-import 'package:elearning/src/presentation/views/otp/otp.dart';
+import 'package:elearning/src/presentation/views/otp/otp_screen.dart';
+import 'package:elearning/src/presentation/views/otp/enter_phone_screen.dart';
 import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
+
 class PrimaryBtn extends StatelessWidget {
   final String text;
   final double? width;
