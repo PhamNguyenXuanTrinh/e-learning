@@ -1,17 +1,17 @@
+import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
-import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
+
 class EnterOtpView extends StatelessWidget {
   const EnterOtpView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        backgroundColor: const Color.fromARGB(255, 209, 214, 218),
         toolbarHeight: 220,
         title: Column(
           children: <Widget>[
@@ -57,7 +57,7 @@ class EnterOtpView extends StatelessWidget {
                       obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(10)),
                         labelText: AppStrings.enterYourPhone,
                       ),
                     ),

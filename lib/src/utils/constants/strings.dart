@@ -1,3 +1,5 @@
+
+
 class AppStrings {
   /// add string
   static const String account = "Account";
