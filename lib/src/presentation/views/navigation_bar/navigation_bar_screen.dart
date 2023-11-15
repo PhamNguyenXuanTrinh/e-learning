@@ -1,3 +1,4 @@
+import 'package:elearning/src/presentation/views/account_page/account_screen.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class _NavState extends State<NavView> {
     const Text("Home Page"),
     const Text("Course Page"),
     const Text("Message Page"),
-    const Text("Account Page"),
+    const AccountScreen(),
   ];
 
   @override
