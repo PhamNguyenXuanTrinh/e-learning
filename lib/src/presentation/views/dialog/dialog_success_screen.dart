@@ -11,7 +11,7 @@ class DialogSuccessView extends StatelessWidget {
     return Scaffold(
       body: Stack(children: <Widget>[
         Container(
-          color: Colors.grey, // Lớp màu nền
+          color: Theme.of(context).canvasColor, // Lớp màu nền
           width: double.infinity,
           height: double.infinity,
         ),
@@ -23,7 +23,7 @@ class DialogSuccessView extends StatelessWidget {
             width: x,
             height: x,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
@@ -38,10 +38,10 @@ class DialogSuccessView extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                       shape: BoxShape.circle,
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Icon(
                         Icons.check,
-                        color: Colors.white,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                         size: 35,
                         weight: 400,
                       ),

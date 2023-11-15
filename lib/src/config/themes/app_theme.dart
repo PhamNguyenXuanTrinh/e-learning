@@ -10,7 +10,8 @@ class AppTheme {
       primaryColor: const Color(0xFF3D5CFF), // primary color
       fontFamily: 'Roboto', // Font default
       scaffoldBackgroundColor: Colors.white, // background scaffold
-      hintColor: const Color(0xFFF4F3FD),
+      hintColor: const Color(0xFFF4F3FD), 
+      canvasColor: const Color(0xFF1F1F39),
     );
   }
 

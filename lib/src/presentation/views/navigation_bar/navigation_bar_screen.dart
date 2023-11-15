@@ -43,9 +43,9 @@ class _NavState extends State<NavView> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        surfaceTintColor: Colors.white,
+        surfaceTintColor: Theme.of(context).scaffoldBackgroundColor,
         shape: const CircularNotchedRectangle(),
-        color: Colors.white,
+        color: Theme.of(context).scaffoldBackgroundColor,
         notchMargin: 8.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

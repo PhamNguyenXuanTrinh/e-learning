@@ -21,10 +21,10 @@ Widget loginSignup(int index, context) {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          child: const Text(
+          child: Text(
             'Signup',
             style: TextStyle(
-              color: Colors.white,
+              color: Theme.of(context).scaffoldBackgroundColor,
             ),
           ),
         ),
@@ -36,7 +36,7 @@ Widget loginSignup(int index, context) {
             ));
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             side: const BorderSide(color: Colors.blue),
             fixedSize: const Size(160, 50),
             shape: RoundedRectangleBorder(
