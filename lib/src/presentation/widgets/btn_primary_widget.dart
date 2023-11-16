@@ -1,4 +1,5 @@
 import 'package:elearning/src/presentation/views/dialog/dialog_success_screen.dart';
+import 'package:elearning/src/presentation/views/search_filter/detail_search.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:elearning/src/presentation/views/otp/otp_screen.dart';
@@ -34,6 +35,8 @@ class PrimaryBtn extends StatelessWidget {
       case AppStrings.doneBtn:
         _navigateToView(context, const NavView());
         break;
+      case AppStrings.apply:
+        _navigateToView(context, const DetailFilterView());
       default:
         // Handle default case or do nothing
         break;
@@ -60,7 +63,7 @@ class PrimaryBtn extends StatelessWidget {
         ),
         child: Text(
           text,
-          style:TextStyle(color: Theme.of(context).scaffoldBackgroundColor),
+          style: TextStyle(color: Theme.of(context).scaffoldBackgroundColor),
         ),
       ),
     );

@@ -1,7 +1,5 @@
 import 'package:elearning/src/config/themes/app_theme.dart';
-import 'package:elearning/src/presentation/views/search_filter/search_filter.dart';
 import 'package:elearning/src/presentation/views/splash_screen/splash_screen_page.dart';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.lightTheme(),
-      home: const SearchFilter(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
