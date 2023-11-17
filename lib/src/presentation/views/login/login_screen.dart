@@ -1,4 +1,4 @@
-import 'package:elearning/src/presentation/views/login/login_widgets/field_username._widget.dart';
+import 'package:elearning/src/presentation/views/login/login_widgets/field_username_widget.dart';
 import 'package:elearning/src/presentation/views/login/signup_screen.dart';
 import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
@@ -36,83 +36,102 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          const SizedBox(
-            height: 20,
-          ),
-          const TextUsername(),
-          const FieldUsername(),
-          const SizedBox(
-            height: 30,
-          ),
-          const TextPassword(),
-          const FieldPassword(),
-          const SizedBox(
-            height: 30,
-          ),
-          PrimaryBtn(text: AppStrings.login, onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const NavView()),
-                    );
-                  },),
-          const SizedBox(
-            height: 20,
-          ),
-          Center(
-            child: Align(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text(AppStrings.textAccount),
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const SignUpView(),
-                      ));
-                    },
-                    child: Text(
-                      AppStrings.signup,
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ))
-              ],
-            )),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              AppStrings.orLogin,
-              style: TextStyle(color: Theme.of(context).primaryColor),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            const SizedBox(
+              height: 20,
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Image.asset(AppImages.imgGoogle),
-              const SizedBox(
-                width: 30,
+            const TextUsername(),
+            const SizedBox(
+              height: 10,
+            ),
+            FieldUsername(controller: _usernameController),
+            const SizedBox(
+              height: 30,
+            ),
+            const TextPassword(),
+            const SizedBox(
+              height: 10,
+            ),
+            FieldPassword(controller: _passwordController),
+            const SizedBox(
+              height: 30,
+            ),
+            PrimaryBtn(
+              text: AppStrings.login,
+              onTap: () {
+                // Validate the form
+                if (_formKey.currentState!.validate()) {
+                  // String username = _usernameController.text;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NavView()),
+                  );
+                }
+              },
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: Align(
+                  child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text(AppStrings.textAccount),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const SignUpView(),
+                        ));
+                      },
+                      child: Text(
+                        AppStrings.signup,
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ))
+                ],
+              )),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                AppStrings.orLogin,
+                style: TextStyle(color: Theme.of(context).primaryColor),
               ),
-              Image.asset(AppImages.imgFb),
-            ],
-          )
-        ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Image.asset(AppImages.imgGoogle),
+                const SizedBox(
+                  width: 30,
+                ),
+                Image.asset(AppImages.imgFb),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

@@ -4,7 +4,9 @@ class PrimaryBtn extends StatelessWidget {
   final String text;
   final double? width;
   final VoidCallback? onTap;
-  const PrimaryBtn({super.key, required this.text, this.width,  required this.onTap});
+  final TextEditingController? controller; 
+  const PrimaryBtn({Key? key, required this.text, this.width, required this.onTap, this.controller})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

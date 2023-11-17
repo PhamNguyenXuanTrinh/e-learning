@@ -1,3 +1,4 @@
+import 'package:elearning/src/presentation/validate/validate.dart';
 import 'package:elearning/src/presentation/views/otp/otp_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/utils/constants/imgs.dart';
@@ -5,14 +6,16 @@ import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class EnterOtpView extends StatelessWidget {
-  const EnterOtpView({super.key});
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  EnterOtpView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: const Color.fromARGB(255, 209, 214, 218),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         toolbarHeight: 220,
         title: Column(
           children: <Widget>[
@@ -39,7 +42,9 @@ class EnterOtpView extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
+      body: Form(
+        key: _formKey,
+        child: Container(
           padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -54,27 +59,36 @@ class EnterOtpView extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Flexible(
-                    child: TextField(
-                      obscureText: true,
+                    child: TextFormField(
+                      keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                         labelText: AppStrings.enterYourPhone,
                       ),
+                      validator: Validator.validatePhone,
                     ),
                   ),
-                  PrimaryBtn(text: AppStrings.btnCtn, width: 160,
-                     onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const OtpView()),
-                    );
-                  },
+                  PrimaryBtn(
+                    text: AppStrings.btnCtn,
+                    width: 160,
+                    onTap: () {
+                      if (_formKey.currentState!.validate()) {
+                        // Perform your navigation logic here
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => OtpView()),
+                        );
+                      }
+                    },
                   ),
                 ],
               ),
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
