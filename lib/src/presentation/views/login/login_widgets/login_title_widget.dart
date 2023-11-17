@@ -1,10 +1,10 @@
-
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class LoginTitle extends StatefulWidget {
   final String title;
-  final bool showDetails; // Biến để kiểm tra xem có hiển thị dòng tiêu đề hay không
+  final bool
+      showDetails; // Biến để kiểm tra xem có hiển thị dòng tiêu đề hay không
 
   const LoginTitle({
     super.key,
@@ -40,9 +40,9 @@ class _LoginTitleState extends State<LoginTitle> {
             alignment: Alignment.centerLeft,
             child: Text(
               AppStrings.signupDetails + widget.title.toLowerCase(),
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 12,
-                color: Colors.grey,
+                color: Theme.of(context).cardColor,
               ),
             ),
           ),

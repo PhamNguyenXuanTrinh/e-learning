@@ -1,5 +1,6 @@
 import 'package:elearning/src/presentation/views/login/login_screen.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/field_username._widget.dart';
+import 'package:elearning/src/presentation/views/otp/otp_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/field_password_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/login_title_widget.dart';
@@ -56,8 +57,14 @@ class _SignUpFormState extends State<SignUpForm> {
           const SizedBox(
             height: 30,
           ),
-          const PrimaryBtn(
+          PrimaryBtn(
             text: AppStrings.signup,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const OtpView()),
+              );
+            },
           ),
           const SizedBox(
             height: 20,

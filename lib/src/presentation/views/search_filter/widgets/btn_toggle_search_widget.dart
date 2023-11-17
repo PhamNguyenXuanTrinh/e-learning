@@ -9,14 +9,14 @@ class ToggleButtonWidget extends StatefulWidget {
 }
 
 class _ToggleButtonWidgetState extends State<ToggleButtonWidget> {
-  bool isToggled = false;
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
         // handler
         setState(() {
-          isToggled = !isToggled;
+          isSelected = !isSelected;
         });
       },
       style: ElevatedButton.styleFrom(
@@ -24,14 +24,14 @@ class _ToggleButtonWidgetState extends State<ToggleButtonWidget> {
           borderRadius: BorderRadius.circular(8.0),
         ),
         padding: const EdgeInsets.all(10.0),
-        backgroundColor: isToggled
+        backgroundColor: isSelected
             ? Theme.of(context).primaryColor
             : Theme.of(context).hintColor,
-        foregroundColor: isToggled
+        foregroundColor: isSelected
             ? Theme.of(context).scaffoldBackgroundColor
             : Theme.of(context).canvasColor,
       ),
-      child: Text(isToggled ? widget.text : widget.text),
+      child: Text(isSelected ? widget.text : widget.text),
     );
   }
 }

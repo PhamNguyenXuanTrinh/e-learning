@@ -7,7 +7,6 @@ class DetailView extends StatelessWidget {
   const DetailView({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return const SingleChildScrollView(

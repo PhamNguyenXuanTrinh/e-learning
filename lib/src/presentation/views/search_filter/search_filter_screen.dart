@@ -1,4 +1,5 @@
 import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
+import 'package:elearning/src/presentation/views/search_filter/detail_search.dart';
 import 'package:elearning/src/presentation/views/search_filter/widgets/btn_toggle_search_widget.dart';
 import 'package:elearning/src/presentation/views/search_filter/widgets/range_slider.widget.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
@@ -171,6 +172,12 @@ class SearchFilter extends StatelessWidget {
                   PrimaryBtn(
                     text: AppStrings.apply,
                     width: (MediaQuery.of(context).size.width) * 0.6,
+                     onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const DetailFilterView()),
+                    );
+                  },
                   ),
                 ],
               )

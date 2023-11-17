@@ -1,3 +1,4 @@
+import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,15 @@ class DialogSuccessView extends StatelessWidget {
                 const SizedBox(
                   height: 25,
                 ),
-                const PrimaryBtn(text: AppStrings.doneBtn),
+                PrimaryBtn(
+                  text: AppStrings.doneBtn,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NavView()),
+                    );
+                  },
+                ),
               ],
             ),
           ),
