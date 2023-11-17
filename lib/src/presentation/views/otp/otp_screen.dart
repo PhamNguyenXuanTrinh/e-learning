@@ -6,8 +6,11 @@ import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/presentation/validate/validate.dart';
 
 class OtpView extends StatelessWidget {
-  OtpView({super.key});
+  final String phoneNumber;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  OtpView({Key? key, required this.phoneNumber}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,9 +44,9 @@ class OtpView extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            const Text(
-              AppStrings.codePhone,
-              style: TextStyle(fontSize: 14),
+            Text(
+              AppStrings.codePhone + phoneNumber,
+              style: const TextStyle(fontSize: 14),
             )
           ],
         ),

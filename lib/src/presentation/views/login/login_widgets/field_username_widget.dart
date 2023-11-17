@@ -13,7 +13,8 @@ class FieldUsername extends StatelessWidget {
         validator: Validator.validateUsername,
         decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-          labelText: AppStrings.yourEmail,
+          hintText: AppStrings.yourEmail,
+          hintStyle: TextStyle(color: Theme.of(context).canvasColor),
         ),
         controller: controller);
   }

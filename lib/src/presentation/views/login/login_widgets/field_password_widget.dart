@@ -24,7 +24,8 @@ class _FieldPasswordState extends State<FieldPassword> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        labelText: AppStrings.yourPassword,
+        hintText: AppStrings.yourPassword,
+        hintStyle: TextStyle(color: Theme.of(context).canvasColor),
         suffixIcon: IconButton(
           icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
           onPressed: () {

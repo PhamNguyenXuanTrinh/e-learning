@@ -5,10 +5,18 @@ import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
-class EnterOtpView extends StatelessWidget {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+class EnterOtpView extends StatefulWidget {
+  const EnterOtpView({super.key});
 
-  EnterOtpView({super.key});
+  
+
+  @override
+  _EnterOtpViewState createState() => _EnterOtpViewState();
+}
+
+class _EnterOtpViewState extends State<EnterOtpView> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -57,15 +65,19 @@ class EnterOtpView extends StatelessWidget {
                 height: 30,
               ),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Flexible(
                     child: TextFormField(
+                      controller: _phoneController, 
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        labelText: AppStrings.enterYourPhone,
+                        hintText: AppStrings.enterYourPhone,
+                        hintStyle:
+                            TextStyle(color: Theme.of(context).canvasColor),
                       ),
                       validator: Validator.validatePhone,
                     ),
@@ -75,10 +87,14 @@ class EnterOtpView extends StatelessWidget {
                     width: 160,
                     onTap: () {
                       if (_formKey.currentState!.validate()) {
+                        String phoneNumber = _phoneController.text;
+
                         // Perform your navigation logic here
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => OtpView()),
+                          MaterialPageRoute(
+                            builder: (context) => OtpView(phoneNumber: phoneNumber),
+                          ),
                         );
                       }
                     },

@@ -22,7 +22,7 @@ class AppStrings {
   static const String enterNumber = "Enter a number";
   static const String verifyPhone = "Verify Phone";
   static const String codeEntered = "Code entered is";
-  static const String codePhone = "Code is sent to 283 835 2999";
+  static const String codePhone = "Code is sent to ";
   static const String btnVerify = "Verify and Create Account";
   static const String verification = "Verification Code";
 
