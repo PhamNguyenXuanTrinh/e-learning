@@ -1,4 +1,4 @@
 // add nums
 class number {
-      static const int courseMoneyTwo=190;
+  static const int courseMoneyTwo=190;
 }

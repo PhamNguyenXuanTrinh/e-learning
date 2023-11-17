@@ -15,7 +15,7 @@ class AppTheme {
       dividerColor: Colors.red, 
       cardColor: Colors.grey,
       primaryColorDark: Colors.black,
-
+      canvasColor: const Color(0xFF1F1F39)
 
     );
   }

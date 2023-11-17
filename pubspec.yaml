@@ -47,7 +47,7 @@ dependencies:
   oktoast: ^3.3.2+1
   flutter_svg: ^2.0.9
   font_awesome_flutter: ^10.6.0
-  meta: ^1.10.0
+  meta: ^1.9.1
 
 dev_dependencies:
   flutter_test:

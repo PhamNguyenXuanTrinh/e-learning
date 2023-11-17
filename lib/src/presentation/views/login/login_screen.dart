@@ -1,5 +1,6 @@
 import 'package:elearning/src/presentation/views/login/login_widgets/field_username._widget.dart';
 import 'package:elearning/src/presentation/views/login/signup_screen.dart';
+import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/field_password_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/login_title_widget.dart';
@@ -55,7 +56,12 @@ class _LoginFormState extends State<LoginForm> {
           const SizedBox(
             height: 30,
           ),
-          const PrimaryBtn(text: AppStrings.login),
+          PrimaryBtn(text: AppStrings.login, onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NavView()),
+                    );
+                  },),
           const SizedBox(
             height: 20,
           ),

@@ -1,7 +1,9 @@
+import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
+
 class OtpView extends StatelessWidget {
   const OtpView({super.key});
 
@@ -29,7 +31,7 @@ class OtpView extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Text(
                       AppStrings.verifyPhone,
-                      style:TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
@@ -52,7 +54,7 @@ class OtpView extends StatelessWidget {
             children: <Widget>[
               OtpTextField(
                 numberOfFields: 5,
-                borderColor:const  Color(0xFF512DA8),
+                borderColor: Theme.of(context).primaryColor,
                 //set to true to show as box or false to show as dash
                 showFieldAsBox: true,
                 //runs when a code is typed in
@@ -66,7 +68,8 @@ class OtpView extends StatelessWidget {
                       builder: (context) {
                         return AlertDialog(
                           title: Text(verificationCode),
-                          content: Text(AppStrings.codeEntered+ verificationCode),
+                          content:
+                              Text(AppStrings.codeEntered + verificationCode),
                         );
                       });
                 }, // end onSubmit
@@ -74,12 +77,19 @@ class OtpView extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              const PrimaryBtn(
+              PrimaryBtn(
                 text: AppStrings.btnVerify,
-                width: 200,
+                width :200,
+                 onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NavView()),
+                    );
+                  },
               )
             ],
-          )),
+          )
+        ),
     );
   }
 }

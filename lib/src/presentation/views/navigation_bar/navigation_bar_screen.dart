@@ -1,5 +1,6 @@
 import 'package:elearning/src/presentation/views/account_page/account_screen.dart';
 import 'package:elearning/src/presentation/views/course_detail_screen/course_detail_screen.dart';
+import 'package:elearning/src/presentation/views/search_filter/search_filter_screen.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,11 @@ class _NavState extends State<NavView> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //handler
+          // Chuyển đến màn hình thứ hai khi nút được nhấn
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const SearchFilterView()),
+          );
         },
         shape: const CircleBorder(),
         backgroundColor: Theme.of(context).hintColor,
@@ -44,9 +49,9 @@ class _NavState extends State<NavView> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        surfaceTintColor: Colors.white,
+        surfaceTintColor: Theme.of(context).scaffoldBackgroundColor,
         shape: const CircularNotchedRectangle(),
-        color: Colors.white,
+        color: Theme.of(context).scaffoldBackgroundColor,
         notchMargin: 8.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

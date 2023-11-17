@@ -1,44 +1,10 @@
-import 'package:elearning/src/presentation/views/dialog/dialog_success_screen.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
-import 'package:elearning/src/presentation/views/otp/otp_screen.dart';
-import 'package:elearning/src/presentation/views/otp/enter_phone_screen.dart';
-import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 
 class PrimaryBtn extends StatelessWidget {
   final String text;
   final double? width;
-
-  const PrimaryBtn({super.key, required this.text, this.width});
-
-  void _navigateToView(BuildContext context, Widget view) {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => view,
-    ));
-  }
-
-  void _handleButtonClick(BuildContext context) {
-    switch (text) {
-      case AppStrings.login:
-        _navigateToView(context, const NavView());
-        break;
-      case AppStrings.signup:
-        _navigateToView(context, const EnterOtpView());
-        break;
-      case AppStrings.btnCtn:
-        _navigateToView(context, const OtpView());
-        break;
-      case AppStrings.btnVerify:
-        _navigateToView(context, const DialogSuccessView());
-        break;
-      case AppStrings.doneBtn:
-        _navigateToView(context, const NavView());
-        break;
-      default:
-        // Handle default case or do nothing
-        break;
-    }
-  }
+  final VoidCallback? onTap;
+  const PrimaryBtn({super.key, required this.text, this.width,  required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +15,7 @@ class PrimaryBtn extends StatelessWidget {
       width: buttonWidth,
       height: 55,
       child: ElevatedButton(
-        onPressed: () {
-          _handleButtonClick(context);
-        },
+        onPressed: onTap,
         style: ElevatedButton.styleFrom(
           backgroundColor: Theme.of(context).primaryColor,
           shape: RoundedRectangleBorder(
@@ -60,7 +24,7 @@ class PrimaryBtn extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(color: Theme.of(context).scaffoldBackgroundColor),
         ),
       ),
     );

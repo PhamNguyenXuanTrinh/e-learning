@@ -1,3 +1,4 @@
+import 'package:elearning/src/presentation/views/otp/otp_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
@@ -62,7 +63,14 @@ class EnterOtpView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const PrimaryBtn(text: AppStrings.btnCtn, width: 160),
+                  PrimaryBtn(text: AppStrings.btnCtn, width: 160,
+                     onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const OtpView()),
+                    );
+                  },
+                  ),
                 ],
               ),
             ],
