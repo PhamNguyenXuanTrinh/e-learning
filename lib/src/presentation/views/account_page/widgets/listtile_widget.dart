@@ -1,13 +1,13 @@
 import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
-class AccountButtonsWidget extends StatelessWidget {
+class ListtileWidget extends StatelessWidget {
   final VoidCallback onFavoriteTap;
   final VoidCallback onEditAccountTap;
   final VoidCallback onSettingsTap;
   final VoidCallback onHelpTap;
 
-  const AccountButtonsWidget({
+  const ListtileWidget({
     super.key,
     required this.onFavoriteTap,
     required this.onEditAccountTap,
