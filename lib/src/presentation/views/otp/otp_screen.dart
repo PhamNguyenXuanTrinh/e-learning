@@ -1,16 +1,15 @@
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
-import 'package:elearning/src/presentation/validate/validate.dart';
 
 class OtpView extends StatelessWidget {
   final String phoneNumber;
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  //      final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  OtpView({Key? key, required this.phoneNumber}) : super(key: key);
+  const OtpView({Key? key, required this.phoneNumber}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

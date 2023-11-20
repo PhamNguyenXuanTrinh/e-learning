@@ -76,7 +76,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   // String username = _usernameController.text;
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => EnterOtpView()),
+                    MaterialPageRoute(builder: (context) => const EnterOtpView()),
                   );
                 }
               },
