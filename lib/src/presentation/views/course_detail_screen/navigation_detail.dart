@@ -37,11 +37,13 @@ class _NavigationDetailState extends State<NavigationDetail> {
               ),
             ),
           ),
-          const Expanded(
+          Expanded(
             flex: 7,
             child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: PrimaryBtn(text: "Pay now"),
+              padding: const EdgeInsets.all(8.0),
+              child: PrimaryBtn(text: "Pay now", onTap: (){
+                
+              },),
             ),
           ),
         ],

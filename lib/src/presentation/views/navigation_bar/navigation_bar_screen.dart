@@ -23,14 +23,15 @@ class _NavState extends State<NavView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _currentIndex,
-        children: _pages,
+      body: SafeArea(
+        child: IndexedStack(
+          index: _currentIndex,
+          children: _pages,
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Chuyển đến màn hình thứ hai khi nút được nhấn
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const SearchFilterView()),

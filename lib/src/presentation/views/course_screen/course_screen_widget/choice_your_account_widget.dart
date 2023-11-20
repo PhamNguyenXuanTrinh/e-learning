@@ -28,12 +28,14 @@ class ChoiceYourAccountScreen extends StatelessWidget {
               ),
               padding: EdgeInsets.zero,
               tabAlignment: TabAlignment.start,
+
               tabs: [
                 _buildTabBarItem(AppStrings.choiceYourAccountAll),
                 _buildTabBarItem(AppStrings.choiceYourAccountPopular),
                 _buildTabBarItem(AppStrings.choiceYourAccountNew),
               ],
             ),
+            
           ),
           Expanded(
             child: TabBarView(
@@ -57,9 +59,9 @@ class ChoiceYourAccountScreen extends StatelessWidget {
   Tab _buildTabBarItem(String title) {
     return Tab(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         height: 40,
-        constraints: BoxConstraints(minWidth: 73),
+        constraints: const BoxConstraints(minWidth: 73),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
         ),

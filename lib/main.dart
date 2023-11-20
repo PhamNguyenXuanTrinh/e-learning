@@ -1,6 +1,4 @@
 import 'package:elearning/src/config/themes/app_theme.dart';
-import 'package:elearning/src/presentation/views/course_detail_screen/navigation_detail.dart';
-import 'package:elearning/src/presentation/views/course_screen/course_screen.dart';
 import 'package:elearning/src/presentation/views/splash_screen/splash_screen_page.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.lightTheme(),
-      home: SafeArea(
-        child: const SplashScreen(),
+      home: const SafeArea(
+        child: SplashScreen(),
       ),
       debugShowCheckedModeBanner: false,
     );
