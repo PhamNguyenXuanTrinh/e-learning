@@ -1,11 +1,39 @@
 class AppStrings {
   /// add string
   static const String dot = '.';
+  /// acount_screen
   static const String account = "Account";
   static const String favourite = "Favourite";
   static const String editAcc = "Edit Account";
   static const String setting = "Settings and Privacy";
   static const String help = "Help";
+
+  // pop_up
+  static const String notification = "No Notification yet!";
+  static const String network = "No Network";
+  static const String video = "No videos";
+  static const String product = "No products";
+
+  //Home
+  static const String hi = "Hi, Kristin";
+  static const String start = "Let's start learning";
+  static const String learn = "Learned today";
+  static const String learning = "Learning Plan";
+  static const String mycourse = "My courses";
+  static const String textlist = "What do you want to learn today?";
+  static const String textbutton = "Get Started";
+  static const String meetup = "Meetup";
+  static const String textMeetup = "Off-line exchange of learning experience";
+  static const String time46 = "46min";
+  static const String time60 = "/60min";
+  static const String packDesign = "Packaging Design";
+  static const String proDesign = "Product Design";
+  static const String learn40 = "40";
+  static const String learn48 = "/48";
+  static const String learn6 = "6";
+  static const String learn24 = "/24";
+
+  /// add string
   static const String signup = "Sign Up";
   static const String login = "Log In";
   static const String signupDetails = "Enter your details below & free sign up";
