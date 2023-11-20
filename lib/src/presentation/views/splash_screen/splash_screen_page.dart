@@ -9,10 +9,10 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  _TabBarExampleState createState() => _TabBarExampleState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _TabBarExampleState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen> {
   late PageController _pageController;
   int _selectedIndex = 0;
 
@@ -55,7 +55,7 @@ class _TabBarExampleState extends State<SplashScreen> {
         skip(index, _pageController),
         introduction(index),
         ContentWidget(index: index),
-        buildBottomNavigationBar(_selectedIndex, _pageController,context),
+        buildBottomNavigationBar(_selectedIndex, _pageController, context),
         const SizedBox(height: 40),
         loginSignup(index, context),
       ],

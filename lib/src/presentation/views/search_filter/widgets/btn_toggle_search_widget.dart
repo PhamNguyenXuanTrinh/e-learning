@@ -5,7 +5,7 @@ class ToggleButtonWidget extends StatefulWidget {
 
   const ToggleButtonWidget({super.key, required this.text});
   @override
-  _ToggleButtonWidgetState createState() => _ToggleButtonWidgetState();
+  State<ToggleButtonWidget> createState() => _ToggleButtonWidgetState();
 }
 
 class _ToggleButtonWidgetState extends State<ToggleButtonWidget> {
