@@ -6,7 +6,7 @@ class NavigationDetail extends StatefulWidget {
   const NavigationDetail({Key? key}) : super(key: key);
 
   @override
-  _NavigationDetailState createState() => _NavigationDetailState();
+  State<NavigationDetail> createState() => _NavigationDetailState();
 }
 
 class _NavigationDetailState extends State<NavigationDetail> {
@@ -41,9 +41,10 @@ class _NavigationDetailState extends State<NavigationDetail> {
             flex: 7,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: PrimaryBtn(text: "Pay now", onTap: (){
-                
-              },),
+              child: PrimaryBtn(
+                text: "Pay now",
+                onTap: () {},
+              ),
             ),
           ),
         ],

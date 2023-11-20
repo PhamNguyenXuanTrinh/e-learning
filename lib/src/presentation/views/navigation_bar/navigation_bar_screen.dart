@@ -8,7 +8,7 @@ class NavView extends StatefulWidget {
   const NavView({super.key});
 
   @override
-  _NavState createState() => _NavState();
+  State<NavView> createState() => _NavState();
 }
 
 class _NavState extends State<NavView> {
