@@ -161,6 +161,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
+<<<<<<< HEAD
   code_builder:
     dependency: transitive
     description:
@@ -169,6 +170,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.8.0"
+=======
+>>>>>>> 41e3329 (feat: create home screen)
   collection:
     dependency: transitive
     description:
@@ -273,14 +276,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.0"
-  fixnum:
-    dependency: transitive
-    description:
-      name: fixnum
-      sha256: "25517a4deb0c03aa0f32fd12db525856438902d9c16536311e76cdc57b31d7d1"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -344,14 +339,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "10.6.0"
-  frontend_server_client:
-    dependency: transitive
-    description:
-      name: frontend_server_client
-      sha256: "408e3ca148b31c20282ad6f37ebfa6f4bdc8fede5b74bc2f08d9d92b55db3612"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.2.0"
   get_it:
     dependency: "direct main"
     description:
@@ -368,14 +355,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
-  graphs:
-    dependency: transitive
-    description:
-      name: graphs
-      sha256: aedc5a15e78fc65a6e23bcd927f24c64dd995062bcd1ca6eda65a3cff92a4d19
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.1"
   html:
     dependency: transitive
     description:
@@ -392,14 +371,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
-  http_multi_server:
-    dependency: transitive
-    description:
-      name: http_multi_server
-      sha256: "97486f20f9c2f7be8f514851703d0119c3596d14ea63227af6f7a481ef2b2f8b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.2.1"
   http_parser:
     dependency: transitive
     description:
@@ -416,22 +387,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
-  injectable_generator:
-    dependency: "direct dev"
-    description:
-      name: injectable_generator
-      sha256: f9d3c05f0938403f79ad6c6d23ec8e37a7a05ad980b1bf9399493f3e41845788
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.4.1"
-  io:
-    dependency: transitive
-    description:
-      name: io
-      sha256: "2ec25704aba361659e10e3e5f5d672068d332fc8ac516421d483a11e5cbd061e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.4"
   js:
     dependency: transitive
     description:
@@ -495,6 +450,7 @@ packages:
       sha256: a6e590c838b18133bb482a2745ad77c5bb7715fb0451209e1a7567d416678b8e
       url: "https://pub.dev"
     source: hosted
+<<<<<<< HEAD
     version: "1.9.1"
   mime:
     dependency: transitive
@@ -504,6 +460,9 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+=======
+    version: "1.10.0"
+>>>>>>> 41e3329 (feat: create home screen)
   nested:
     dependency: transitive
     description:
@@ -584,6 +543,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.7"
+<<<<<<< HEAD
   pool:
     dependency: transitive
     description:
@@ -600,6 +560,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0"
+=======
+>>>>>>> 41e3329 (feat: create home screen)
   provider:
     dependency: transitive
     description:
@@ -624,14 +586,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.3"
-  recase:
-    dependency: transitive
-    description:
-      name: recase
-      sha256: e4eb4ec2dcdee52dcf99cb4ceabaffc631d7424ee55e56f280bc039737f89213
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.1.0"
   retrofit:
     dependency: "direct main"
     description:
@@ -640,6 +594,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.3"
+<<<<<<< HEAD
   retrofit_generator:
     dependency: "direct dev"
     description:
@@ -664,6 +619,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+=======
+>>>>>>> 41e3329 (feat: create home screen)
   sky_engine:
     dependency: transitive
     description: flutter
@@ -709,14 +666,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
-  stream_transform:
-    dependency: transitive
-    description:
-      name: stream_transform
-      sha256: "14a00e794c7c11aa145a170587321aedce29769c08d7f58b1d141da75e3b1c6f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.0"
   string_scanner:
     dependency: transitive
     description:
@@ -741,22 +690,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
-  timing:
-    dependency: transitive
-    description:
-      name: timing
-      sha256: "70a3b636575d4163c477e6de42f247a23b315ae20e86442bebe32d3cabf61c32"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
-  tuple:
-    dependency: transitive
-    description:
-      name: tuple
-      sha256: a97ce2013f240b2f3807bcbaf218765b6f301c3eff91092bcfa23a039e7dd151
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.2"
   typed_data:
     dependency: transitive
     description:
@@ -868,6 +801,7 @@ packages:
       sha256: afe077240a270dcfd2aafe77602b4113645af95d0ad31128cc02bce5ac5d5152
       url: "https://pub.dev"
     source: hosted
+<<<<<<< HEAD
     version: "0.1.4-beta"
   web_socket_channel:
     dependency: transitive
@@ -877,6 +811,9 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
+=======
+    version: "0.3.0"
+>>>>>>> 41e3329 (feat: create home screen)
   win32:
     dependency: transitive
     description:
