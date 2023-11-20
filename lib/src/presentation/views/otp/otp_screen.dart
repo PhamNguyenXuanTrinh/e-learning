@@ -1,5 +1,5 @@
 import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
@@ -79,17 +79,16 @@ class OtpView extends StatelessWidget {
               ),
               PrimaryBtn(
                 text: AppStrings.btnVerify,
-                width :200,
-                 onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const NavView()),
-                    );
-                  },
+                width: 200,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NavView()),
+                  );
+                },
               )
             ],
-          )
-        ),
+          )),
     );
   }
 }

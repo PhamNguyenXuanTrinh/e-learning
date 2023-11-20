@@ -6,8 +6,8 @@ import 'package:elearning/src/presentation/views/login/login_widgets/field_passw
 import 'package:elearning/src/presentation/views/login/login_widgets/login_title_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/text_password_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/text_username_widget.dart';
-import 'package:elearning/src/utils/constants/imgs.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/imgs.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -56,12 +56,15 @@ class _LoginFormState extends State<LoginForm> {
           const SizedBox(
             height: 30,
           ),
-          PrimaryBtn(text: AppStrings.login, onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const NavView()),
-                    );
-                  },),
+          PrimaryBtn(
+            text: AppStrings.login,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NavView()),
+              );
+            },
+          ),
           const SizedBox(
             height: 20,
           ),

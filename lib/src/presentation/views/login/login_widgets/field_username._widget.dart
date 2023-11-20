@@ -1,4 +1,4 @@
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class FieldUsername extends StatelessWidget {
@@ -11,9 +11,7 @@ class FieldUsername extends StatelessWidget {
     return TextField(
       obscureText: true,
       decoration: InputDecoration(
-        border: OutlineInputBorder(
-           borderRadius: BorderRadius.circular(10)
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
         labelText: AppStrings.yourEmail,
       ),
     );

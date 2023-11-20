@@ -1,5 +1,6 @@
 class AppStrings {
   /// add string
+  static const String dot = '.';
   static const String account = "Account";
   static const String favourite = "Favourite";
   static const String editAcc = "Edit Account";

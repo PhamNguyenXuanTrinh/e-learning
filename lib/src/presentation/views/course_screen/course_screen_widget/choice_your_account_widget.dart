@@ -1,6 +1,6 @@
 // main_screen.dart
 import 'package:elearning/src/presentation/widgets/content_from.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class ChoiceYourAccountScreen extends StatelessWidget {
@@ -28,14 +28,12 @@ class ChoiceYourAccountScreen extends StatelessWidget {
               ),
               padding: EdgeInsets.zero,
               tabAlignment: TabAlignment.start,
-
               tabs: [
                 _buildTabBarItem(AppStrings.choiceYourAccountAll),
                 _buildTabBarItem(AppStrings.choiceYourAccountPopular),
                 _buildTabBarItem(AppStrings.choiceYourAccountNew),
               ],
             ),
-            
           ),
           Expanded(
             child: TabBarView(

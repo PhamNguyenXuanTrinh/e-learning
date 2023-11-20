@@ -3,7 +3,7 @@ import 'package:elearning/src/presentation/views/search_filter/detail_search.dar
 import 'package:elearning/src/presentation/views/search_filter/widgets/btn_toggle_search_widget.dart';
 import 'package:elearning/src/presentation/views/search_filter/widgets/range_slider.widget.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class SearchFilterView extends StatelessWidget {
@@ -172,12 +172,13 @@ class SearchFilter extends StatelessWidget {
                   PrimaryBtn(
                     text: AppStrings.apply,
                     width: (MediaQuery.of(context).size.width) * 0.6,
-                     onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const DetailFilterView()),
-                    );
-                  },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DetailFilterView()),
+                      );
+                    },
                   ),
                 ],
               )

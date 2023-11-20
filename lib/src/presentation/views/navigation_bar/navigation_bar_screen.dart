@@ -1,7 +1,7 @@
 import 'package:elearning/src/presentation/views/account_page/account_screen.dart';
 import 'package:elearning/src/presentation/views/course_screen/course_screen.dart';
 import 'package:elearning/src/presentation/views/search_filter/search_filter_screen.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class NavView extends StatefulWidget {

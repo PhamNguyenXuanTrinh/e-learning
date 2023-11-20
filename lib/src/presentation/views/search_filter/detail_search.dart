@@ -1,7 +1,6 @@
-
 import 'package:elearning/src/presentation/views/course_screen/course_screen_widget/find_account_widget.dart';
 import 'package:elearning/src/presentation/views/search_filter/widgets/btn_toggle_search_widget.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class DetailFilterView extends StatelessWidget {
@@ -73,4 +72,3 @@ class DetailFilterView extends StatelessWidget {
     );
   }
 }
-
