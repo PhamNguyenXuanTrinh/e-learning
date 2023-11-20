@@ -1,5 +1,5 @@
 //mock_data.dart
-import '../../domain/models/course_screen_models/course_screen_models.dart';
+import '../../domain/models/course_model.dart';
 
 List<CourseModel> introductionCourse = [
   CourseModel(

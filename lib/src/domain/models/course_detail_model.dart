@@ -1,6 +1,6 @@
 //course_screen_models.dart
 
-class DetailModel {
+class CourseDetailModel {
   final int id;
   final String titleDetail;
   final String contentDetail;
@@ -13,7 +13,7 @@ class DetailModel {
   final String buttonDetail;
   final String video;
 
-  DetailModel({
+  CourseDetailModel({
     required this.id,
     required this.titleDetail,
     required this.contentDetail,
