@@ -48,6 +48,9 @@ dependencies:
   flutter_svg: ^2.0.9
   font_awesome_flutter: ^10.6.0
   meta: ^1.9.1
+  video_player: ^2.8.1
+  chewie: ^1.7.1
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +81,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/img/
+    - assets/videos/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
