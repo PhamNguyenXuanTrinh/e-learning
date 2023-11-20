@@ -1,6 +1,6 @@
 // content_from.dart
 import 'package:flutter/material.dart';
-import 'package:elearning/src/domain/models/course_screen_models/course_screen_models.dart';
+import 'package:elearning/src/domain/models/course_model.dart';
 
 import 'package:elearning/src/fake_data/mock_data/course_mock_data.dart';
 
