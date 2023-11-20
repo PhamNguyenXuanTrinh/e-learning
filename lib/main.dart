@@ -13,7 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.lightTheme(),
-      home: const SplashScreen(),
+      home: const SafeArea(
+        child: SplashScreen(),
+      ),
       debugShowCheckedModeBanner: false,
     );
   }
