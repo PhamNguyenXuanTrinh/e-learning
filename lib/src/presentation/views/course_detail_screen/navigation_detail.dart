@@ -1,7 +1,8 @@
 import 'package:elearning/src/presentation/views/course_detail_screen/course_details_widget/course_detail_widget.dart';
-import 'package:elearning/src/presentation/views/payment/payment.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/utils/constants/strings.dart';
 
 class NavigationDetail extends StatefulWidget {
   const NavigationDetail({Key? key}) : super(key: key);
@@ -38,21 +39,17 @@ class _NavigationDetailState extends State<NavigationDetail> {
               ),
             ),
           ),
-Expanded(
-  flex: 7,
-  child: Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: PrimaryBtn(
-      text: "Pay now",
-      onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const PaymentScreen(),
-        ));
-      },
-    ),
-  ),
-),
-
+          Expanded(
+            flex: 7,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: PrimaryBtn(
+                text: AppStrings.payNow,
+                onTap: () {
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );
