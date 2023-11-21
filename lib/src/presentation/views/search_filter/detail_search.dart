@@ -70,7 +70,7 @@ class DetailFilterView extends StatelessWidget {
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.5,
-              child: buildTabContentFromApi1(),
+              //child: buildTabContentFromApi(state.course, context),
             ),
           ],
         ),
