@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:elearning/src/domain/models/home_screen/home_model.dart';
 
-
 class LearningPlanWidget extends StatefulWidget {
   final HomeModel homeModel;
 
@@ -44,11 +43,11 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                 ? 240
                 : 120, // Điều chỉnh chiều cao dựa trên trạng thái
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(10.0),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
+                  color: Theme.of(context).shadowColor.withOpacity(0.2),
                   spreadRadius: 2,
                   blurRadius: 5,
                   offset: const Offset(0, 2),
@@ -105,14 +104,13 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                                   widget.homeModel.learn40,
                                   style: const TextStyle(
                                     fontSize: 16,
-                                    color: Colors.black,
                                   ),
                                 ),
                                 Text(
                                   widget.homeModel.learn48,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 16,
-                                    color: Colors.grey,
+                                    color: Theme.of(context).cardColor,
                                   ),
                                 ),
                               ],
@@ -124,14 +122,13 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                                   widget.homeModel.learn6,
                                   style: const TextStyle(
                                     fontSize: 16,
-                                    color: Colors.black,
                                   ),
                                 ),
                                 Text(
                                   widget.homeModel.learn24,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 16,
-                                    color: Colors.grey,
+                                    color: Theme.of(context).cardColor,
                                   ),
                                 ),
                               ],
@@ -152,7 +149,7 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                             });
                           },
                           child: Text(
-                            isMoRong ? "Thu gọn" : "Xem thêm",
+                            isMoRong ? "Less" : "More",
                           ),
                         ),
                       ),
