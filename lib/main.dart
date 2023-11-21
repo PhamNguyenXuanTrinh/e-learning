@@ -1,5 +1,5 @@
 import 'package:elearning/src/config/themes/app_theme.dart';
-import 'package:elearning/src/presentation/views/splash_screen/splash_screen_page.dart';
+import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'src/injector/injector.dart';
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.lightTheme(),
       home: const SafeArea(
-        child: SplashScreen(),
+        child: NavView(),
       ),
       debugShowCheckedModeBanner: false,
     );
