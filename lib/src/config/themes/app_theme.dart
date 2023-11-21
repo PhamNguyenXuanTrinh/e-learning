@@ -19,8 +19,6 @@ class AppTheme {
       disabledColor: const Color(0xFF440687),
       focusColor: const Color(0xFFEFE0FF), // màu tím nhạt
       splashColor: const Color.fromRGBO(255, 81, 6, 1),
-      highlightColor:
-          const Color.fromRGBO(255, 255, 255, 0), // trắng trong suốt
       secondaryHeaderColor: const Color.fromARGB(21, 121, 113, 113),
 
       indicatorColor: Colors.orange,
