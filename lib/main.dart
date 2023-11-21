@@ -1,7 +1,8 @@
-// import 'package:elearning/src/presentation/views/login/signup_screen.dart';
 import 'package:elearning/src/presentation/views/home/home_screen.dart';
 
 import 'package:flutter/material.dart';
+
+import 'src/config/themes/app_theme.dart';
 import 'src/injector/injector.dart';
 
 void main() {
@@ -14,9 +15,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      // theme: AppTheme.lightTheme(),
-      home: SafeArea(
+    return MaterialApp(
+      theme: AppTheme.lightTheme(),
+      home: const SafeArea(
         child: HomeScreen(),
       ),
       debugShowCheckedModeBanner: false,

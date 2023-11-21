@@ -7,7 +7,7 @@ import '../../../bloc/course_bloc/course_bloc.dart';
 import '../../../widgets/content_from.dart';
 
 class ChoiceYourAccountScreen extends StatelessWidget {
-  const ChoiceYourAccountScreen({Key? key}) : super(key: key);
+  const ChoiceYourAccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

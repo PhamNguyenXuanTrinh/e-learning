@@ -33,7 +33,6 @@ class ImgListWidget extends StatelessWidget {
                           Text(
                             AppStrings.textlist,
                             style: TextStyle(
-                              color: Colors.black,
                               fontSize: 15.0,
                               fontWeight: FontWeight.bold,
                             ),
