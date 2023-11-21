@@ -1,28 +1,31 @@
 import 'package:elearning/src/core/utils/constants/strings.dart';
+import 'package:elearning/src/presentation/validate/validate.dart';
 import 'package:flutter/material.dart';
 
 class FieldPassword extends StatefulWidget {
-  const FieldPassword({super.key});
+  final TextEditingController controller;
+
+  const FieldPassword({Key? key, required this.controller}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _FieldPasswordState createState() => _FieldPasswordState();
 }
 
 class _FieldPasswordState extends State<FieldPassword> {
   bool _obscureText = true;
-  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: _passwordController,
+    return TextFormField(
+      validator: Validator.validatePassword,
+      controller: widget.controller, // Use the provided controller
       obscureText: _obscureText,
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        labelText: AppStrings.yourPassword,
+        hintText: AppStrings.yourPassword,
+        hintStyle: TextStyle(color: Theme.of(context).canvasColor),
         suffixIcon: IconButton(
           icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
           onPressed: () {
@@ -35,9 +38,4 @@ class _FieldPasswordState extends State<FieldPassword> {
     );
   }
 
-  @override
-  void dispose() {
-    _passwordController.dispose();
-    super.dispose();
-  }
 }

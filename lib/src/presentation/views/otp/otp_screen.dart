@@ -1,12 +1,15 @@
-import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 import 'package:elearning/src/core/utils/constants/strings.dart';
+import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 
 class OtpView extends StatelessWidget {
-  const OtpView({super.key});
+  final String phoneNumber;
 
+  //      final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  const OtpView({Key? key, required this.phoneNumber}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,9 +43,9 @@ class OtpView extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            const Text(
-              AppStrings.codePhone,
-              style: TextStyle(fontSize: 14),
+            Text(
+              AppStrings.codePhone + phoneNumber,
+              style: const TextStyle(fontSize: 14),
             )
           ],
         ),
@@ -76,19 +79,20 @@ class OtpView extends StatelessWidget {
               ),
               const SizedBox(
                 height: 40,
-              ),
+              ),      
               PrimaryBtn(
                 text: AppStrings.btnVerify,
-                width: 200,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const NavView()),
-                  );
-                },
+                width :200,
+                 onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NavView()),
+                    );
+                  },
               )
             ],
-          )),
+          )
+        ),
     );
   }
 }

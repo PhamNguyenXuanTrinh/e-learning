@@ -1,18 +1,29 @@
+import 'package:elearning/src/presentation/validate/validate.dart';
 import 'package:elearning/src/presentation/views/otp/otp_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/core/utils/constants/imgs.dart';
 import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
-class EnterOtpView extends StatelessWidget {
+class EnterOtpView extends StatefulWidget {
   const EnterOtpView({super.key});
+
+  
+
+  @override
+  _EnterOtpViewState createState() => _EnterOtpViewState();
+}
+
+class _EnterOtpViewState extends State<EnterOtpView> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: const Color.fromARGB(255, 209, 214, 218),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         toolbarHeight: 220,
         title: Column(
           children: <Widget>[
@@ -39,7 +50,9 @@ class EnterOtpView extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
+      body: Form(
+        key: _formKey,
+        child: Container(
           padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,32 +65,46 @@ class EnterOtpView extends StatelessWidget {
                 height: 30,
               ),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Flexible(
-                    child: TextField(
-                      obscureText: true,
+                    child: TextFormField(
+                      controller: _phoneController, 
+                      keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        labelText: AppStrings.enterYourPhone,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        hintText: AppStrings.enterYourPhone,
+                        hintStyle:
+                            TextStyle(color: Theme.of(context).canvasColor),
                       ),
+                      validator: Validator.validatePhone,
                     ),
                   ),
                   PrimaryBtn(
                     text: AppStrings.btnCtn,
                     width: 160,
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const OtpView()),
-                      );
+                      if (_formKey.currentState!.validate()) {
+                        String phoneNumber = _phoneController.text;
+
+                        // Perform your navigation logic here
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => OtpView(phoneNumber: phoneNumber),
+                          ),
+                        );
+                      }
                     },
                   ),
                 ],
               ),
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
