@@ -38,9 +38,4 @@ class _FieldPasswordState extends State<FieldPassword> {
     );
   }
 
-  // @override
-  // void dispose() {
-  //   _passwordController.dispose();
-  //   super.dispose();
-  // }
 }
