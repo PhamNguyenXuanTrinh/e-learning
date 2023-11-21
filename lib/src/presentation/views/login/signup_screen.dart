@@ -18,7 +18,7 @@ class SignUpView extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-        toolbarHeight: 150,
+        toolbarHeight: 120,
         title: const LoginTitle(
           title: AppStrings.signup,
         ),
@@ -49,16 +49,13 @@ class _SignUpFormState extends State<SignUpForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            const SizedBox(
-              height: 20,
-            ),
             const TextUsername(),
             const SizedBox(
               height: 10,
             ),
             FieldUsername(controller: _usernameController),
             const SizedBox(
-              height: 30,
+              height: 10,
             ),
             const TextPassword(),
             const SizedBox(
@@ -66,7 +63,7 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             FieldPassword(controller: _passwordController),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             PrimaryBtn(
               text: AppStrings.signup,
@@ -76,7 +73,8 @@ class _SignUpFormState extends State<SignUpForm> {
                   // String username = _usernameController.text;
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const EnterOtpView()),
+                    MaterialPageRoute(
+                        builder: (context) => const EnterOtpView()),
                   );
                 }
               },

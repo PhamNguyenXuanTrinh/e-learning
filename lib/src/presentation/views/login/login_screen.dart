@@ -20,7 +20,7 @@ class LoginView extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-        toolbarHeight: 150,
+        toolbarHeight: 120,
         title: const LoginTitle(title: AppStrings.login, showDetails: false),
       ),
       body: const LoginForm(),
@@ -54,7 +54,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
               FieldUsername(controller: _usernameController),
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
               const TextPassword(),
               const SizedBox(
@@ -62,7 +62,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
               FieldPassword(controller: _passwordController),
               const SizedBox(
-                height: 30,
+                height: 20      ,
               ),
               PrimaryBtn(
                 text: AppStrings.login,

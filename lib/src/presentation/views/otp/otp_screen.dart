@@ -79,7 +79,7 @@ class OtpView extends StatelessWidget {
               ),
               const SizedBox(
                 height: 40,
-              ),
+              ),      
               PrimaryBtn(
                 text: AppStrings.btnVerify,
                 width :200,
