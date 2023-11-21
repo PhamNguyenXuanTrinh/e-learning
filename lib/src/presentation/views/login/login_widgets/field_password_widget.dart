@@ -1,4 +1,3 @@
-import 'package:elearning/src/presentation/validate/validate.dart';
 import 'package:elearning/src/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -36,5 +35,11 @@ class _FieldPasswordState extends State<FieldPassword> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _passwordController.dispose();
+    super.dispose();
   }
 }

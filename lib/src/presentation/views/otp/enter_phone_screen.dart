@@ -1,8 +1,8 @@
 import 'package:elearning/src/presentation/validate/validate.dart';
 import 'package:elearning/src/presentation/views/otp/otp_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
-import 'package:elearning/src/utils/constants/imgs.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/imgs.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class EnterOtpView extends StatefulWidget {

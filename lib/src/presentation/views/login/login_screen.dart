@@ -6,8 +6,8 @@ import 'package:elearning/src/presentation/views/login/login_widgets/field_passw
 import 'package:elearning/src/presentation/views/login/login_widgets/login_title_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/text_password_widget.dart';
 import 'package:elearning/src/presentation/views/login/login_widgets/text_username_widget.dart';
-import 'package:elearning/src/utils/constants/imgs.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/imgs.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -43,13 +43,65 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(30),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            const SizedBox(
-              height: 20,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          const SizedBox(
+            height: 20,
+          ),
+          const TextUsername(),
+          const FieldUsername(),
+          const SizedBox(
+            height: 30,
+          ),
+          const TextPassword(),
+          const FieldPassword(),
+          const SizedBox(
+            height: 30,
+          ),
+          PrimaryBtn(
+            text: AppStrings.login,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NavView()),
+              );
+            },
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Center(
+            child: Align(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(AppStrings.textAccount),
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SignUpView(),
+                      ));
+                    },
+                    child: Text(
+                      AppStrings.signup,
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    ))
+              ],
+            )),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              AppStrings.orLogin,
+              style: TextStyle(color: Theme.of(context).primaryColor),
             ),
             const TextUsername(),
             const SizedBox(

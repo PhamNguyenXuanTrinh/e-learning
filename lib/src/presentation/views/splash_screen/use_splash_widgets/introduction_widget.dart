@@ -1,5 +1,5 @@
 // introduction.dart
-import 'package:elearning/src/utils/constants/imgs.dart';
+import 'package:elearning/src/core/utils/constants/imgs.dart';
 import 'package:flutter/material.dart';
 import 'package:elearning/src/presentation/views/splash_screen/splash_widget/img_splash.dart';
 

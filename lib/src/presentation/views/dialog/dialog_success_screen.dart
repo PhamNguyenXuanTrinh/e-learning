@@ -1,6 +1,6 @@
 import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class DialogSuccessView extends StatelessWidget {

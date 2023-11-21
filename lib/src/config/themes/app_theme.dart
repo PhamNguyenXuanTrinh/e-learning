@@ -15,8 +15,10 @@ class AppTheme {
       dividerColor: Colors.red, 
       cardColor: Colors.grey,
       primaryColorDark: Colors.black,
-      canvasColor: const Color(0xFF1F1F39)
+      canvasColor: const Color(0xFF1F1F39),
 
+      indicatorColor: Colors.orange,
+      hoverColor: const Color.fromARGB(255, 255, 175, 175),
     );
   }
 

@@ -1,4 +1,4 @@
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class LoginTitle extends StatefulWidget {

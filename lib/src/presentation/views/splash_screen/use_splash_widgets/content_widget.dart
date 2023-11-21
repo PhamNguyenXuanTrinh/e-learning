@@ -1,6 +1,6 @@
 // content_widget.dart
 import 'package:elearning/src/presentation/views/splash_screen/splash_widget/content_splash.dart';
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class ContentWidget extends StatelessWidget {

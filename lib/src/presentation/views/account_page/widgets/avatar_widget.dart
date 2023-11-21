@@ -1,4 +1,4 @@
-import 'package:elearning/src/utils/constants/imgs.dart';
+import 'package:elearning/src/core/utils/constants/imgs.dart';
 import 'package:flutter/material.dart';
 
 class AvatarWidget extends StatelessWidget {
