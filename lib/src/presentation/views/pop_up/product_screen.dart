@@ -1,5 +1,5 @@
+import 'package:elearning/src/core/utils/constants/imgs.dart';
 import 'package:elearning/src/presentation/views/pop_up/widgets/pop_up_widgets.dart';
-import 'package:elearning/src/utils/constants/imgs.dart';
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatelessWidget {

@@ -20,11 +20,13 @@ class LearnedWidget extends StatelessWidget {
       width: screenWidth,
       height: 100,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(1.0), // Màu trắng với độ mờ 1.0
+        color: Theme.of(context)
+            .scaffoldBackgroundColor
+            .withOpacity(1.0), // Màu trắng với độ mờ 1.0
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
+            color: Theme.of(context).shadowColor.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 2),
@@ -41,17 +43,17 @@ class LearnedWidget extends StatelessWidget {
               children: [
                 Text(
                   homeModel.learnText,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
-                    color: Colors.grey,
+                    color: Theme.of(context).cardColor,
                   ),
                 ),
                 const Spacer(),
                 Text(
                   homeModel.myCourseText,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
-                    color: Colors.blue,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ],
@@ -64,23 +66,34 @@ class LearnedWidget extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
                   ),
                 ),
                 Text(
                   homeModel.time60Text,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
-                    color: Colors.grey,
+                    color: Theme.of(context).cardColor,
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 10), // Thêm khoảng trống
             Container(
-              height: 5, // Chiều cao của hình chữ nhật
-              color: const Color(
-                  0xFFF4F3FD), // Màu của hình chữ nhật    ////thêm hình ảnh thay thế
+              height: 5,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.0),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Theme.of(context).highlightColor, // Trắng trong suốt
+                    Theme.of(context).scaffoldBackgroundColor, // Trắng
+                    Theme.of(context).splashColor, // #FF5106
+                    Theme.of(context).secondaryHeaderColor,
+                  ],
+                  stops: const [0.0, 0.1, 0.5, 0.8],
+                ),
+              ),
             ),
           ],
         ),

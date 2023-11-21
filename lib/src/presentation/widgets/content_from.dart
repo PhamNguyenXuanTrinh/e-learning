@@ -7,7 +7,7 @@ import '../views/course_detail_screen/navigation_detail.dart';
 class ShadowedTile extends StatelessWidget {
   final Widget child;
 
-  const ShadowedTile({Key? key, required this.child}) : super(key: key);
+  const ShadowedTile({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {

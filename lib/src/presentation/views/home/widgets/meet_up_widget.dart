@@ -17,34 +17,34 @@ class MeetupWidget extends StatelessWidget {
       width: meetupWidth,
       height: 120,
       decoration: BoxDecoration(
-        color: const Color(0xFFEFE0FF), // màu nền tím nhạt
+        color: Theme.of(context).focusColor, // màu nền tím nhạt
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Row(
         children: [
-          const Expanded(
+          Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 10),
                   child: Text(
                     AppStrings.meetup,
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF440687),
+                      color: Theme.of(context).disabledColor,
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10, top: 4),
+                  padding: const EdgeInsets.only(left: 10, top: 4),
                   child: Text(
                     AppStrings.textMeetup,
                     style: TextStyle(
                       fontSize: 13,
-                      color: Color(0xFF440687),
+                      color: Theme.of(context).disabledColor,
                     ),
                   ),
                 ),

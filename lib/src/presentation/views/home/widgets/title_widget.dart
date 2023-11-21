@@ -1,4 +1,4 @@
-import 'package:elearning/src/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class TitleWidget extends StatelessWidget {
@@ -8,7 +8,7 @@ class TitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
@@ -16,14 +16,14 @@ class TitleWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 24.0,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Theme.of(context).scaffoldBackgroundColor,
           ),
         ),
         Text(
           AppStrings.start,
           style: TextStyle(
             fontSize: 16.0,
-            color: Colors.white,
+            color: Theme.of(context).scaffoldBackgroundColor,
           ),
         ),
       ],

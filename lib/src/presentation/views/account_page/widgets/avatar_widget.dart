@@ -21,13 +21,13 @@ class AvatarWidget extends StatelessWidget {
             height: 100,
             fit: BoxFit.contain,
           ),
-          const Positioned(
+          Positioned(
             top: 0,
             right: 0,
             child: Icon(
               Icons.camera_alt,
               size: 24,
-              color: Colors.blue,
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ],
