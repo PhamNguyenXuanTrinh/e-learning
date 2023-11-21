@@ -78,22 +78,32 @@ class LearnedWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10), // Thêm khoảng trống
-            Container(
-              height: 5,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Theme.of(context).highlightColor, // Trắng trong suốt
-                    Theme.of(context).scaffoldBackgroundColor, // Trắng
-                    Theme.of(context).splashColor, // #FF5106
-                    Theme.of(context).secondaryHeaderColor,
-                  ],
-                  stops: const [0.0, 0.1, 0.5, 0.8],
+            Stack(
+              children: [
+                Container(
+                  height: 5,
+                  width: screenWidth - 60,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: Theme.of(context).secondaryHeaderColor),
                 ),
-              ),
+                Container(
+                  height: 5,
+                  width: 46 / 60 * (screenWidth - 60),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Theme.of(context).scaffoldBackgroundColor, // Trắng
+                        Theme.of(context).splashColor, // #FF5106
+                      ],
+                      stops: const [0.0, 1.0],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
