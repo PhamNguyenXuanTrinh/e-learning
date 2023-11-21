@@ -5,10 +5,10 @@ class ToggleButtonWidget extends StatefulWidget {
 
   const ToggleButtonWidget({super.key, required this.text});
   @override
-  State<ToggleButtonWidget> createState() => _ToggleButtonWidgetState();
+  ToggleButtonWidgetState createState() => ToggleButtonWidgetState();
 }
 
-class _ToggleButtonWidgetState extends State<ToggleButtonWidget> {
+class ToggleButtonWidgetState extends State<ToggleButtonWidget> {
   bool isSelected = false;
   @override
   Widget build(BuildContext context) {

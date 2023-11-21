@@ -4,10 +4,10 @@ class RangeSliderWidget extends StatefulWidget {
   const RangeSliderWidget({super.key});
 
   @override
-  State<RangeSliderWidget> createState() => _RangeSliderWidgetState();
+  RangeSliderWidgetState createState() => RangeSliderWidgetState();
 }
 
-class _RangeSliderWidgetState extends State<RangeSliderWidget> {
+class RangeSliderWidgetState extends State<RangeSliderWidget> {
   //iniital value for start range and end range
   double startVal = 30, endVal = 70;
 
