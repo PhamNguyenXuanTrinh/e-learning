@@ -1,9 +1,9 @@
 // ChoiceYourAccountScreen.dart
-import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:elearning/src/injector/injector.dart';
-import 'package:elearning/src/presentation/bloc/course_bloc/course_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/utils/constants/strings.dart';
+import '../../../bloc/course_bloc/course_bloc.dart';
 import '../../../widgets/content_from.dart';
 
 // ChoiceYourAccountScreen.dart
@@ -58,14 +58,11 @@ class ChoiceYourAccountScreen extends StatelessWidget {
               ),
             );
           } else if (state is CourseLoadFailure) {
-            // Xử lý khi tải dữ liệu thất bại
             return Center(
-              child: Text(
-                  'Failed to load courses. Error: ${state.apiError.message}'),
+              child: Text(AppStrings.error + ' : ${state.apiError.message}'),
             );
           } else {
-            // Hiển thị một tiến trình hoặc gì đó khi đang tải dữ liệu
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
         },
       ),

@@ -1,6 +1,7 @@
 // content_from.dart
 import 'package:flutter/material.dart';
-import 'package:elearning/src/domain/models/course_model.dart';
+import '../../core/utils/constants/strings.dart';
+import '../../domain/models/course_model.dart';
 
 class ShadowedTile extends StatelessWidget {
   final Widget child;
@@ -19,7 +20,7 @@ class ShadowedTile extends StatelessWidget {
             color: Theme.of(context).cardColor,
             spreadRadius: 2,
             blurRadius: 5,
-            offset: const Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), 
           ),
         ],
       ),
@@ -45,7 +46,7 @@ Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) 
             ),
             subtitle: RichText(
               text: TextSpan(
-                text: '${course.moneyTab.toString()}  ',
+                text: course.moneyTab.toString(),
                 style: TextStyle(
                   color: Theme.of(context).primaryColor,
                 ),
@@ -74,9 +75,8 @@ Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) 
       },
     );
   } else {
-    // Xử lý trường hợp courses là null
     return const Center(
-      child: Text('No courses available.'),
+      child: Text(AppStrings.noCourses),
     );
   }
 }
