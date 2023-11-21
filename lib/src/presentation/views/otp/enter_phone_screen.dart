@@ -1,4 +1,4 @@
-import 'package:elearning/src/presentation/validate/validate.dart';
+import 'package:elearning/src/core/utils/validate/validate.dart';
 import 'package:elearning/src/presentation/views/otp/otp_screen.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:elearning/src/core/utils/constants/imgs.dart';

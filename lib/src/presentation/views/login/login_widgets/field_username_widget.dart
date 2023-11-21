@@ -1,5 +1,5 @@
 import 'package:elearning/src/core/utils/constants/strings.dart';
-import 'package:elearning/src/presentation/validate/validate.dart';
+import 'package:elearning/src/core/utils/validate/validate.dart';
 import 'package:flutter/material.dart';
 
 class FieldUsername extends StatelessWidget {

@@ -1,38 +1,40 @@
+import 'package:elearning/src/core/utils/constants/strings.dart';
+
 class Validator {
   static String? validateUsername(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your username';
+      return AppStrings.nullUsername;
     } else if (value.length < 6 ||
         value.contains(RegExp(r'[!#$%^&*(),.?":{}|<>]'))) {
-      return 'Username must be 6 characters long';
+      return AppStrings.shortUsername;
     }
     return null;
   }
 
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your password';
+      return AppStrings.nullPassword;
     } else if (value.length < 6 ||
         value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
-      return 'Password must be 6 characters long ';
+      return AppStrings.shortPassword;
     }
     return null;
   }
 
   static String? validatePhone(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your phone number';
+      return AppStrings.nullNumberPhone;
     } else if (value.length < 10) {
-      return 'Phone number must be at least 10 digits';
+      return AppStrings.shortNumberPhone;
     }
     return null;
   }
 
   static String? validateOtp(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your phone number';
+      return AppStrings.nullOtp;
     } else if (value.length < 4) {
-      return 'Phone number must be at least 4 digits';
+      return AppStrings.shortOtp;
     }
     return null;
   }
