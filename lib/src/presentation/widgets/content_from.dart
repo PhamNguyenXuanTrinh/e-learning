@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:elearning/src/domain/models/course_model.dart';
 
-import 'package:elearning/src/fake_data/mock_data/course_mock_data.dart';
-
 class ShadowedTile extends StatelessWidget {
   final Widget child;
 
@@ -30,149 +28,55 @@ class ShadowedTile extends StatelessWidget {
   }
 }
 
-Widget buildTabContentFromApi1() {
-  return ListView.builder(
-    itemCount: introductionCourse.length,
-    itemBuilder: (context, index) {
-      CourseModel course = introductionCourse[index];
-      return ShadowedTile(
-        child: ListTile(
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(course.titleCourseTab),
-              Text(course.teachTab),
-            ],
-          ),
-          subtitle: RichText(
-            text: TextSpan(
-              text:
-                  '${course.moneyTab.toString()}  ', // Displayed in blue with 2px spacing
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                // Add other text styling as needed
-              ),
+Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) {
+  if (courses != null) {
+    return ListView.builder(
+      itemCount: courses.length,
+      itemBuilder: (context, index) {
+        CourseModel course = courses[index];
+        return ShadowedTile(
+          child: ListTile(
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextSpan(
-                  text: course.timeTab, // Displayed in red
-                  style: TextStyle(
-                    color: Theme.of(context).dividerColor,
-                    // Add other text styling as needed
-                  ),
-                ),
+                Text(course.titleCourseTab),
+                Text(course.teachTab),
               ],
             ),
-          ),
-          leading: Container(
-            width: 50,
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(course.imageUrl),
-              ),
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}
-
-Widget buildTabContentFromApi2() {
-  return ListView.builder(
-    itemCount: introductionCourse.length,
-    itemBuilder: (context, index) {
-      CourseModel course = introductionCourse[index];
-      return ShadowedTile(
-        child: ListTile(
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(course.titleCourseTab),
-              Text(course.teachTab),
-            ],
-          ),
-          subtitle: RichText(
-            text: TextSpan(
-              text:
-                  '${course.moneyTab.toString()}  ', // Displayed in blue with 2px spacing
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                // Add other text styling as needed
-              ),
-              children: [
-                TextSpan(
-                  text: course.timeTab, // Displayed in red
-                  style: TextStyle(
-                    color: Theme.of(context).dividerColor,
-                    // Add other text styling as needed
-                  ),
+            subtitle: RichText(
+              text: TextSpan(
+                text: '${course.moneyTab.toString()}  ',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
                 ),
-              ],
-            ),
-          ),
-          leading: Container(
-            width: 50,
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(course.imageUrl),
-              ),
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}
-
-Widget buildTabContentFromApi3() {
-  return ListView.builder(
-    itemCount: introductionCourse.length,
-    itemBuilder: (context, index) {
-      CourseModel course = introductionCourse[index];
-      return ShadowedTile(
-        child: ListTile(
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(course.titleCourseTab),
-              Text(course.teachTab),
-            ],
-          ),
-          subtitle: RichText(
-            text: TextSpan(
-              text:
-                  '${course.moneyTab.toString()}  ', // Displayed in blue with 2px spacing
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                // Add other text styling as needed
-              ),
-              children: [
-                TextSpan(
-                  text: course.timeTab, // Displayed in red
-                  style: TextStyle(
-                    color: Theme.of(context).dividerColor,
-                    // Add other text styling as needed
+                children: [
+                  TextSpan(
+                    text: course.timeTab,
+                    style: TextStyle(
+                      color: Theme.of(context).dividerColor,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          leading: Container(
-            width: 50,
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(course.imageUrl),
+            leading: Container(
+              width: 50,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(course.imageUrl),
+                ),
               ),
             ),
           ),
-        ),
-      );
-    },
-  );
+        );
+      },
+    );
+  } else {
+    // Xử lý trường hợp courses là null
+    return const Center(
+      child: Text('No courses available.'),
+    );
+  }
 }
