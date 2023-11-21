@@ -83,7 +83,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.65,
+        height: MediaQuery.of(context).size.height * 0.61,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           color: Color.fromARGB(255, 255, 255, 255),

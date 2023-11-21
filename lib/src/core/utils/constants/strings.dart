@@ -88,4 +88,10 @@ class AppStrings {
   static const String courseMoneyTwo = '190';
   static const String courseTimeSixteen = '16 hours';
   static const String courseTimeFourteen = '14 hours';
+
+  static const String payMent = 'Payment';
+  static const String noCourses = 'No courses available.';
+  static const String error = 'Error.';
+  static const String payNow = 'Pay now';
+
 }
