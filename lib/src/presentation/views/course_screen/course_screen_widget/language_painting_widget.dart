@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/utils/constants/imgs.dart';
 
 class LanguagePainting extends StatelessWidget {
-  const LanguagePainting({Key? key}) : super(key: key);
+  const LanguagePainting({super.key});
 
   @override
   Widget build(BuildContext context) {
