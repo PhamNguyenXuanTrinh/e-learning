@@ -1,4 +1,5 @@
 import 'package:elearning/src/core/utils/constants/imgs.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:elearning/src/domain/models/home_screen/home_model.dart';
@@ -16,7 +17,7 @@ class LearningPlanWidget extends StatefulWidget {
 }
 
 class _LearningPlanWidgetState extends State<LearningPlanWidget> {
-  bool isMoRong = false;
+  bool isShowMore = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
           ),
           Container(
             width: chieuRongManHinh - 25,
-            height: isMoRong
+            height: isShowMore
                 ? 240
                 : 120, // Điều chỉnh chiều cao dựa trên trạng thái
             decoration: BoxDecoration(
@@ -145,11 +146,11 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                         child: TextButton(
                           onPressed: () {
                             setState(() {
-                              isMoRong = !isMoRong;
+                              isShowMore = !isShowMore;
                             });
                           },
                           child: Text(
-                            isMoRong ? "Less" : "More",
+                            isShowMore ? AppStrings.less : AppStrings.more,
                           ),
                         ),
                       ),
