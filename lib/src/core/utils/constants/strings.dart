@@ -32,6 +32,8 @@ class AppStrings {
   static const String learn48 = "/48";
   static const String learn6 = "6";
   static const String learn24 = "/24";
+  static const String less = "Less";
+  static const String more = "More";
 
   /// add string
   static const String signup = "Sign Up";
