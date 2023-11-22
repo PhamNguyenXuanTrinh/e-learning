@@ -28,14 +28,12 @@ class AppStrings {
   static const String time60 = "/60min";   // cần thay đổi
   static const String packDesign = "Packaging Design";
   static const String proDesign = "Product Design";
-  static const String learn40 = "40";   // cần thay đổi
-  static const String learn48 = "/48";    // cần thay đổi
-  static const String learn6 = "6";   // cần thay đổi
-  static const String learn24 = "/24";  // cần thay đổi
+  static const String learn40 = "40";
+  static const String learn48 = "/48";
+  static const String learn6 = "6";
+  static const String learn24 = "/24";
   static const String less = "Less";
   static const String more = "More";
-  static const String minute = "min";
-  static const String slash = "/";
 
   /// add string
   static const String signup = "Sign Up";
