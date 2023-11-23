@@ -89,6 +89,21 @@ class AppStrings {
   static const String courseTimeSixteen = '16 hours';
   static const String courseTimeFourteen = '14 hours';
 
+  //validate
+  static const String nullUsername = 'Please enter your username';
+  static const String nullPassword = 'Please enter your password';
+  static const String nullNumberPhone = 'Please enter your number phone';
+  static const String nullOtp = 'Please enter your otp';
+  static const String shortUsername = 'Username must be 6 characters long';
+  static const String shortPassword = 'Password must be 6 characters long';
+  static const String shortNumberPhone =
+      'Phone number must be at least 10 digits';
+  static const String shortOtp = 'Phone number must be at least 4 digits';
+
+  ////Notifications
+  static const String notifications = 'Notifications';
+  static const String message = 'Message';
+  
   static const String payMent = 'Payment';
   static const String noCourses = 'No courses available.';
   static const String error = 'Error.';

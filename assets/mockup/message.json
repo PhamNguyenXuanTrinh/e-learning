@@ -1,0 +1,33 @@
+{
+  "status": 200,
+  "error": 1,
+  "message": "Thành công",
+  "data": [
+    {
+      "id": 1,
+      "name": "name2",
+      "time": "04:32 pm",
+      "status": "online",
+      "image_url": "assets/img/pic.png",
+      "des": "Your course has been updated, you can check the new course in your study course.",
+      "img_user": "assets/img/person.png"
+    },{
+      "id": 2,
+      "name": "name2",
+      "time": "04:32 pm",
+      "status": "online",
+      "image_url": "assets/img/pic.png",
+      "des": "Your course has been updated, you can check the new course in your study course.",
+      "img_user": "assets/img/person.png"
+    },
+    {
+      "id": 3,
+      "name": "name2",
+      "time": "04:32 pm",
+      "status": "online",
+      "image_url": "assets/img/pic.png",
+      "des": "Your course has been updated, you can check the new course in your study course.",
+      "img_user": "assets/img/person.png"
+    }
+  ]
+}
