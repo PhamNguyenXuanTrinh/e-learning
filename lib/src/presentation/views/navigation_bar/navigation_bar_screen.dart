@@ -4,6 +4,7 @@ import '../../../core/utils/constants/strings.dart';
 import '../../widgets/btn_primary_widget.dart';
 import '../account_page/account_screen.dart';
 import '../course_screen/course_screen.dart';
+import '../notification/notification_screen.dart';
 import '../search_filter/detail_search.dart';
 import '../search_filter/widgets/btn_toggle_search_widget.dart';
 import '../search_filter/widgets/range_slider.widget.dart';
@@ -20,7 +21,7 @@ class _NavState extends State<NavView> {
   final List<Widget> _pages = [
     const Text("Home Page"),
     const CourseScreen(),
-    const Text("Message Page"),
+    const NotificationScreen(),
     const AccountScreen(),
   ];
 

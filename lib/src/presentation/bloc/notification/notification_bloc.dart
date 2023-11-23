@@ -29,7 +29,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (dataState is DataSuccess) {
       emit(
         NotificationLoadSuccess(
-          Notification: dataState.data,
+          notification: dataState.data,
         ),
       );
     }

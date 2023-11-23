@@ -15,13 +15,13 @@ class NotificationInProgress extends NotificationState {}
 
 class NotificationLoadSuccess extends NotificationState {
   const NotificationLoadSuccess({
-    this.Notification,
+    this.notification,
   });
-  final List<NotificationModel>? Notification;
+  final List<NotificationModel>? notification;
 
   @override
   List<Object?> get props => [
-        Notification,
+        notification,
       ];
 }
 

@@ -28,11 +28,13 @@ import 'package:elearning/src/domain/repositories/message_repository.dart'
     as _i9;
 import 'package:elearning/src/domain/repositories/notification_repository.dart'
     as _i12;
-import 'package:elearning/src/module/register_module.dart' as _i16;
+import 'package:elearning/src/module/register_module.dart' as _i17;
 import 'package:elearning/src/presentation/bloc/course_bloc/course_bloc.dart'
     as _i14;
 import 'package:elearning/src/presentation/bloc/message/message_bloc.dart'
     as _i15;
+import 'package:elearning/src/presentation/bloc/notification/notification_bloc.dart'
+    as _i16;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -82,8 +84,10 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i14.CourseBloc(gh<_i6.CourseRepository>()));
     gh.factory<_i15.MessageBloc>(
         () => _i15.MessageBloc(gh<_i9.MessageRepository>()));
+    gh.factory<_i16.NotificationBloc>(
+        () => _i16.NotificationBloc(gh<_i12.NotificationRepository>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i16.RegisterModule {}
+class _$RegisterModule extends _i17.RegisterModule {}
