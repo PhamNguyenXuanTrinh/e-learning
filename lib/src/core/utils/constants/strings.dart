@@ -104,4 +104,9 @@ class AppStrings {
   static const String notifications = 'Notifications';
   static const String message = 'Message';
   
+  static const String payMent = 'Payment';
+  static const String noCourses = 'No courses available.';
+  static const String error = 'Error.';
+  static const String payNow = 'Pay now';
+
 }

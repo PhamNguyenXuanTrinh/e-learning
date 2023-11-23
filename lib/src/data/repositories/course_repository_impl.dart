@@ -8,6 +8,7 @@ import 'package:injectable/injectable.dart';
 
 // Project imports:
 import '../../core/error/api_error.dart';
+import '../../core/error/error_codes.dart';
 import '../../core/resources/data_state.dart';
 import '../../domain/models/course_model.dart';
 import '../../domain/repositories/course_repository.dart';
@@ -26,7 +27,10 @@ class CourseRepositoryImpl implements CourseRepository {
     try {
       final httpResponse = await _courseApiService.getCourses(isMockUp: true);
 
-      if (httpResponse.response.statusCode == HttpStatus.ok) {
+      if (httpResponse.response.statusCode != HttpStatus.ok) {
+        return DataSuccess(httpResponse.data?.data);
+      }
+      if (httpResponse.data?.error != ErrorCodes.success) {
         return DataSuccess(httpResponse.data?.data);
       }
 
