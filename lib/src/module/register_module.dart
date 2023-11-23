@@ -7,6 +7,8 @@ import 'package:injectable/injectable.dart';
 // Project imports:
 
 import '../core/network/network/network.dart';
+import '../data/datasources/remote/message_api_service.dart';
+import '../data/datasources/remote/notification_api_service.dart';
 import '../injector/injector.dart';
 
 @module
@@ -32,6 +34,25 @@ abstract class RegisterModule {
         dio,
         baseUrl: url,
       );
+  @lazySingleton
+  MessageApiService messageApiService(
+    @Named(AppConfig.apiDio) final Dio dio,
+    @Named(AppConfig.apiBaseUrl) final String url,
+  ) =>
+      MessageApiService(
+        dio,
+        baseUrl: url,
+      );
 
+
+  @lazySingleton
+  NotificationApiService notificationApiService(
+    @Named(AppConfig.apiDio) final Dio dio,
+    @Named(AppConfig.apiBaseUrl) final String url,
+  ) =>
+      NotificationApiService(
+        dio,
+        baseUrl: url,
+      );
   //RegisterNewModule
 }

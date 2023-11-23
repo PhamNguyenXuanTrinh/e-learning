@@ -1,8 +1,9 @@
-import 'package:elearning/src/presentation/views/account_page/account_screen.dart';
-import 'package:elearning/src/presentation/views/course_screen/course_screen.dart';
-import 'package:elearning/src/core/utils/constants/strings.dart';
+
 import 'package:flutter/material.dart';
+import '../../../core/utils/constants/strings.dart';
 import '../../widgets/btn_primary_widget.dart';
+import '../account_page/account_screen.dart';
+import '../course_screen/course_screen.dart';
 import '../search_filter/detail_search.dart';
 import '../search_filter/widgets/btn_toggle_search_widget.dart';
 import '../search_filter/widgets/range_slider.widget.dart';
@@ -229,7 +230,7 @@ class _NavState extends State<NavView> {
             buildNavbarItem(Icons.home, AppStrings.iconHome, 0),
             buildNavbarItem(Icons.collections, AppStrings.iconCourse, 1),
             Container(
-              padding: EdgeInsets.fromLTRB(17, 23, 0, 0),
+              padding: const EdgeInsets.fromLTRB(17, 23, 0, 0),
               child: Text(
                 AppStrings.iconSearch,
                 style: TextStyle(color: Theme.of(context).highlightColor),

@@ -1,8 +1,10 @@
 import 'package:elearning/src/config/themes/app_theme.dart';
-import 'package:elearning/src/presentation/views/splash_screen/splash_screen_page.dart';
+
+
 import 'package:flutter/material.dart';
 
 import 'src/injector/injector.dart';
+import 'src/presentation/views/notification/notification.dart';
 
 void main() {
   configureDependencies();
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.lightTheme(),
       home: const SafeArea(
-        child: SplashScreen(),
+        child: NotificationScreen(),
       ),
       debugShowCheckedModeBanner: false,
     );
