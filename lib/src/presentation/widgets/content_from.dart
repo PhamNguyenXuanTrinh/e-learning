@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import '../../core/utils/constants/strings.dart';
 import '../../domain/models/course_model.dart';
+import '../views/course_detail_screen/navigation_detail.dart';
 
 class ShadowedTile extends StatelessWidget {
   final Widget child;
@@ -70,6 +71,14 @@ Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) 
                 ),
               ),
             ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>const NavigationDetail(),
+                ),
+              );
+            },
           ),
         );
       },
@@ -80,3 +89,4 @@ Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) 
     );
   }
 }
+
