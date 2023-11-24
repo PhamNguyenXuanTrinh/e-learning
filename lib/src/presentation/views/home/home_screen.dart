@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,43 +19,52 @@ class HomeScreen extends StatelessWidget {
       create: (context) => getIt<HomeBloc>()..add(HomeStarted()),
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
-          return Scaffold(
-            body: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Stack(
-                    children: [
-                      Container(
-                        height: 180,
-                        margin: const EdgeInsets.only(bottom: 70),
-                        color: Theme.of(context).primaryColor,
-                        padding: const EdgeInsets.all(20.0),
-                        child: const Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            TitleWidget(),
-                            Spacer(),
-                            AvatarWidget(),
-                          ],
+          if (state is HomeLoadSuccess) {
+            final homeData = state.homeData;
+
+            return Scaffold(
+              body: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          height: 180,
+                          margin: const EdgeInsets.only(bottom: 70),
+                          color: Theme.of(context).primaryColor,
+                          padding: const EdgeInsets.all(20.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TitleWidget(homeData: homeData),
+                              Spacer(),
+                              AvatarWidget(homeData: homeData),
+                            ],
+                          ),
                         ),
-                      ),
-                      const Positioned(
-                        bottom: 20,
-                        left: 10,
-                        right: 10,
-                        child: LearnedWidget(),
-                      ),
-                    ],
-                  ),
-                  ImgListWidget(
-                    onPressed: () {},
-                  ),
-                  const LearningPlanWidget(),
-                  const MeetupWidget(),
-                ],
+                        Positioned(
+                          bottom: 20,
+                          left: 10,
+                          right: 10,
+                          child: LearnedWidget(homeData: homeData),
+                        ),
+                      ],
+                    ),
+                    ImgListWidget(
+                      onPressed: () {},
+                      homeData:homeData
+                    ),
+                    LearningPlanWidget(
+                      homeData: homeData,
+                    ),
+                    const MeetupWidget(),
+                  ],
+                ),
               ),
-            ),
-          );
+            );
+          } else {
+            return CircularProgressIndicator();
+          }
         },
       ),
     );
