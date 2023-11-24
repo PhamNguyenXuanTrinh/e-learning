@@ -12,7 +12,7 @@ class NavigationDetail extends StatefulWidget {
 }
 
 class _NavigationDetailState extends State<NavigationDetail> {
-  bool isStarPressed = false; // Add this variable
+  bool isStarPressed = false; 
 
   @override
   Widget build(BuildContext context) {
@@ -23,20 +23,22 @@ class _NavigationDetailState extends State<NavigationDetail> {
           Expanded(
             flex: 3,
             child: Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 2.0, top: 8.0, bottom: 8.0),
+              padding: const EdgeInsets.only(
+                  left: 8.0, right: 2.0, top: 8.0, bottom: 8.0),
               child: SizedBox(
-               height: 55,
+                height: 55,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Toggle the state when the button is pressed
                     setState(() {
                       isStarPressed = !isStarPressed;
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 255, 238, 213), // Set the button's background color here
+                    backgroundColor: const Color.fromARGB(255, 255, 238,
+                        213), 
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0), // Set the border radius here
+                      borderRadius: BorderRadius.circular(
+                          8.0), 
                     ),
                   ),
                   child: Icon(
@@ -55,7 +57,6 @@ class _NavigationDetailState extends State<NavigationDetail> {
               child: PrimaryBtn(
                 text: AppStrings.payNow,
                 onTap: () {
-                  // Add your onTap logic here
                 },
               ),
             ),

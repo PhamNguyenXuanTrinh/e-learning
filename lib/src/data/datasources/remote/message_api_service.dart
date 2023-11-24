@@ -4,8 +4,6 @@ import 'package:retrofit/retrofit.dart';
 import '../../../core/network/end_points.dart';
 import '../../../domain/models/message_model.dart';
 
-
-
 part 'message_api_service.g.dart';
 
 @RestApi()

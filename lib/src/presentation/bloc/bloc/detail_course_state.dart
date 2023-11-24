@@ -18,7 +18,6 @@ class DetailCourseLoadSuccess extends DetailCourseState {
     this.detailCourse,
   });
   final DetailModel? detailCourse;
-  
 
   @override
   List<Object?> get props => [

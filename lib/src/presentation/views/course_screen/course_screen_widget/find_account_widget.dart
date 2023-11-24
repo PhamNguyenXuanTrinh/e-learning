@@ -19,8 +19,8 @@ class FindAccountWidget extends StatelessWidget {
                 onTap: () {
                   searchBottomSheet(context);
                 },
-                hoverColor: Colors.transparent, // Set hoverColor to transparent
-                borderRadius: BorderRadius.circular(12.0), // Apply BorderRadius
+                hoverColor: Colors.transparent,
+                borderRadius: BorderRadius.circular(12.0),
                 child: Ink(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.0),

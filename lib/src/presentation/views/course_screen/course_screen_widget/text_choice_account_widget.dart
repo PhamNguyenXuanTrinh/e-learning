@@ -16,7 +16,7 @@ class TextChoiceYourAccountWidget extends StatelessWidget {
       child: const Text(
         AppStrings.choiceYourAccount,
         style: TextStyle(
-          fontWeight: FontWeight.bold, // Đặt chữ in đậm
+          fontWeight: FontWeight.bold, 
           fontSize: 20,
         ),
         textAlign: TextAlign.left, 

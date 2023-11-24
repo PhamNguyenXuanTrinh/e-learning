@@ -10,7 +10,6 @@ final Map<String, String> mapMockApiForGetRequest = <String, String>{
   EndPoints.notification: 'notification',
 };
 
-
 final Map<String, String> mapMockApiForPostRequest = <String, String>{};
 
 String? getJsonNameForGetRequest(

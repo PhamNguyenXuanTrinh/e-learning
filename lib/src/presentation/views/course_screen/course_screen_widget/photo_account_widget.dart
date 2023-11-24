@@ -10,8 +10,7 @@ class PhotoAccountWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: 14.0),
+          padding: const EdgeInsets.symmetric(horizontal: 14.0),
           child: Image.asset(
             AppImages.imgAccountCourse,
             fit: BoxFit.cover,

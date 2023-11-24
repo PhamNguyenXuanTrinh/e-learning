@@ -16,6 +16,6 @@ abstract class DetailCourseApiService {
   @GET(EndPoints.detail)
   Future<HttpResponse<CourseDetailResponseModel?>> getDetailCourses({
     @Header('isMockUp') final bool? isMockUp,
-    //@Path('id')  final String id, 
+    //@Path('id')  final String id,
   });
 }

@@ -21,7 +21,7 @@ class ShadowedTile extends StatelessWidget {
             color: Theme.of(context).cardColor,
             spreadRadius: 2,
             blurRadius: 5,
-            offset: const Offset(0, 3), 
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -30,7 +30,8 @@ class ShadowedTile extends StatelessWidget {
   }
 }
 
-Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) {
+Widget buildTabContentFromApi(
+    List<CourseModel>? courses, BuildContext context) {
   if (courses != null) {
     return ListView.builder(
       itemCount: courses.length,
@@ -75,7 +76,7 @@ Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) 
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>const NavigationDetail(),
+                  builder: (context) => const NavigationDetail(),
                 ),
               );
             },
@@ -89,4 +90,3 @@ Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) 
     );
   }
 }
-

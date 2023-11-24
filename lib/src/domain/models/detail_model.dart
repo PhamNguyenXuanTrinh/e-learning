@@ -33,7 +33,7 @@ class DetailModel {
   final String? titleDesc;
   final String? desc;
   final String? buttonBuy;
-  
+
   final String? likes;
   final String? videos;
   final List<LessonModel>? lessons;
@@ -80,7 +80,6 @@ class LessonModel {
   final bool isLocked;
   final String? videoCourse;
   final String? number;
-  
 
   LessonModel({
     required this.id,

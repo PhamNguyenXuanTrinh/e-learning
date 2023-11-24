@@ -7,7 +7,7 @@ class LanguagePainting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return SizedBox(
+    return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
