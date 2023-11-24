@@ -1,4 +1,5 @@
 import 'package:elearning/src/domain/models/home_model.dart';
+import 'package:elearning/src/domain/repositories/home_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,7 +7,6 @@ import 'package:injectable/injectable.dart';
 
 import '../../../core/error/api_error.dart';
 import '../../../core/resources/data_state.dart';
-import '../../../domain/repositories/home_repository.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
