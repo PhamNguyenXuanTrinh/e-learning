@@ -35,6 +35,21 @@ import 'package:elearning/src/presentation/bloc/message/message_bloc.dart'
     as _i15;
 import 'package:elearning/src/presentation/bloc/notification/notification_bloc.dart'
     as _i16;
+import 'package:elearning/src/data/datasources/remote/detail_course_api_service.dart'
+    as _i8;
+import 'package:elearning/src/data/repositories/course_repository_impl.dart'
+    as _i7;
+import 'package:elearning/src/data/repositories/detail_repository_impl.dart'
+    as _i10;
+import 'package:elearning/src/domain/repositories/course_repository.dart'
+    as _i6;
+import 'package:elearning/src/domain/repositories/detail_repository.dart'
+    as _i9;
+import 'package:elearning/src/module/register_module.dart' as _i13;
+import 'package:elearning/src/presentation/bloc/bloc/detail_course_bloc.dart'
+    as _i12;
+import 'package:elearning/src/presentation/bloc/course_bloc/course_bloc.dart'
+    as _i11;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -86,8 +101,20 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i15.MessageBloc(gh<_i9.MessageRepository>()));
     gh.factory<_i16.NotificationBloc>(
         () => _i16.NotificationBloc(gh<_i12.NotificationRepository>()));
+    gh.lazySingleton<_i8.DetailCourseApiService>(
+        () => registerModule.detailCourseApiService(
+              gh<_i3.Dio>(instanceName: 'apiDio'),
+              gh<String>(instanceName: 'apiBaseUrl'),
+            ));
+    gh.lazySingleton<_i9.DetailCourseRepository>(() =>
+        _i10.DetailCourseRepositoryImpl(gh<_i8.DetailCourseApiService>()));
+    gh.factory<_i11.CourseBloc>(
+        () => _i11.CourseBloc(gh<_i6.CourseRepository>()));
+    gh.factory<_i12.DetailCourseBloc>(
+        () => _i12.DetailCourseBloc(gh<_i9.DetailCourseRepository>()));
     return this;
   }
 }
 
 class _$RegisterModule extends _i17.RegisterModule {}
+// class _$RegisterModule extends _i13.RegisterModule {}

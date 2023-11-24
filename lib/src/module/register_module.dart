@@ -2,6 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:elearning/src/core/utils/constants/app_config.dart';
 import 'package:elearning/src/data/datasources/remote/course_api_service.dart';
+import 'package:elearning/src/data/datasources/remote/detail_course_api_service.dart';
 import 'package:injectable/injectable.dart';
 
 // Project imports:
@@ -44,13 +45,21 @@ abstract class RegisterModule {
         baseUrl: url,
       );
 
-
   @lazySingleton
   NotificationApiService notificationApiService(
     @Named(AppConfig.apiDio) final Dio dio,
     @Named(AppConfig.apiBaseUrl) final String url,
   ) =>
       NotificationApiService(
+        dio,
+        baseUrl: url,
+      );
+  @lazySingleton
+  DetailCourseApiService detailCourseApiService(
+    @Named(AppConfig.apiDio) final Dio dio,
+    @Named(AppConfig.apiBaseUrl) final String url,
+  ) =>
+      DetailCourseApiService(
         dio,
         baseUrl: url,
       );
