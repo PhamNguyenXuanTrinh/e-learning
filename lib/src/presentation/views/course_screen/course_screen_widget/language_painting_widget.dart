@@ -1,6 +1,5 @@
 // photo_account_widget.dart
 import 'package:flutter/material.dart';
-
 import '../../../../core/utils/constants/imgs.dart';
 
 class LanguagePainting extends StatelessWidget {

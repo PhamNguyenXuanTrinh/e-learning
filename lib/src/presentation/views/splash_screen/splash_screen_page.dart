@@ -40,9 +40,6 @@ class _SplashScreenState extends State<SplashScreen> {
               children: List.generate(3, (index) => _buildTabContent(index)),
             ),
           ),
-          // Add buildBottomNavigationBar outside the Expanded
-          // buildBottomNavigationBar(_selectedIndex, _pageController),
-          // const SizedBox(height: 40),
         ],
       ),
     );

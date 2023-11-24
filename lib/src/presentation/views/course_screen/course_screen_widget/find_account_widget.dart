@@ -17,7 +17,6 @@ class FindAccountWidget extends StatelessWidget {
               color: Colors.transparent,
               child: InkWell(
                 onTap: () {
-                  // Call the searchBottomSheet function from the other file
                   searchBottomSheet(context);
                 },
                 hoverColor: Colors.transparent, // Set hoverColor to transparent

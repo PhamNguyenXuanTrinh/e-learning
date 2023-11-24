@@ -6,8 +6,6 @@ import '../../../../core/utils/constants/strings.dart';
 import '../../../bloc/course_bloc/course_bloc.dart';
 import '../../../widgets/content_from.dart';
 
-// ChoiceYourAccountScreen.dart
-
 class ChoiceYourAccountScreen extends StatelessWidget {
   const ChoiceYourAccountScreen({Key? key}) : super(key: key);
 

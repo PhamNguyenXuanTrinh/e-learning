@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/utils/constants/imgs.dart';
 
 class PhotoAccountWidget extends StatelessWidget {
