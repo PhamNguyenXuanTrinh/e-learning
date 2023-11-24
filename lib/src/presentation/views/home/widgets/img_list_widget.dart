@@ -2,10 +2,14 @@ import 'package:elearning/src/core/utils/constants/imgs.dart';
 import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../domain/models/home_model.dart';
+
 class ImgListWidget extends StatelessWidget {
+  final HomeModel? homeData;
   const ImgListWidget({
     super.key,
     required Null Function() onPressed,
+    this.homeData,
   });
 
   @override
@@ -17,13 +21,13 @@ class ImgListWidget extends StatelessWidget {
             left: 15, right: 15), // Khoảng trống với màn hình
         child: Row(
           children: List.generate(
-            10,
+            homeData?.banners.length ?? 0,
             (index) {
               if (index == 0) {
                 // Nếu là hình đầu tiên, thêm nút "Get Started" và dòng văn bản
                 return Stack(
                   children: [
-                    Image.asset(AppImages.imggethome),
+                    Image.asset(homeData?.banners[index].thumbnail ?? ''),
                     const Positioned(
                       top: 12,
                       left: 10,

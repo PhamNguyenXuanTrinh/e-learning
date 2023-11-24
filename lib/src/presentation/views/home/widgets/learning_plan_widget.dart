@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:elearning/src/core/utils/constants/imgs.dart';
 import 'package:elearning/src/core/utils/constants/strings.dart';
+import '../../../../domain/models/home_model.dart';
 
 class LearningPlanWidget extends StatefulWidget {
-  const LearningPlanWidget({super.key});
+  final HomeModel? homeData;
+
+  const LearningPlanWidget({super.key, required this.homeData});
 
   @override
   _LearningPlanWidgetState createState() => _LearningPlanWidgetState();
@@ -58,49 +59,89 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                       children: [
                         Column(
                           children: [
-                            SvgPicture.asset(
-                              AppImages.imglearn2,
+                            SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: CircularProgressIndicator(
+                                value: (widget.homeData?.learningPlan[0]
+                                            .studiedLessons ??
+                                        0) /
+                                    (widget.homeData?.learningPlan[0]
+                                                .totalLessons ??
+                                            1)
+                                        .toDouble(),
+                                backgroundColor:
+                                    Theme.of(context).secondaryHeaderColor,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  Theme.of(context).cardColor,
+                                ),
+                              ),
                             ),
                             const SizedBox(height: 15),
-                            SvgPicture.asset(
-                              AppImages.imglearn1,
+                            SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: CircularProgressIndicator(
+                                value: (widget.homeData?.learningPlan[1]
+                                            .studiedLessons ??
+                                        0) /
+                                    (widget.homeData?.learningPlan[1]
+                                                .totalLessons ??
+                                            1)
+                                        .toDouble(),
+                                backgroundColor:
+                                    Theme.of(context).secondaryHeaderColor,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  Theme.of(context).cardColor,
+                                ),
+                              ),
                             ),
                           ],
                         ),
                         const SizedBox(width: 8.0),
-                        const Expanded(
+                        Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                AppStrings.packDesign,
-                                style: TextStyle(
+                                widget.homeData?.learningPlan[0].courseName ??
+                                    '',
+                                style: const TextStyle(
                                   fontSize: 16,
                                 ),
                               ),
-                              SizedBox(height: 15),
+                              const SizedBox(height: 15),
                               Text(
-                                AppStrings.proDesign,
-                                style: TextStyle(
+                                widget.homeData?.learningPlan[1].courseName ??
+                                    '',
+                                style: const TextStyle(
                                   fontSize: 16,
                                 ),
                               ),
                             ],
                           ),
                         ),
+                        const SizedBox(width: 8.0),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Row(
                               children: [
-                                const Text(
-                                  AppStrings.learn40,
-                                  style: TextStyle(
+                                Text(
+                                  '${widget.homeData?.learningPlan[0].studiedLessons ?? 0}',
+                                  style: const TextStyle(
                                     fontSize: 16,
                                   ),
                                 ),
                                 Text(
-                                  AppStrings.learn48,
+                                  AppStrings.slash,
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Theme.of(context).cardColor,
+                                  ),
+                                ),
+                                Text(
+                                  '${widget.homeData?.learningPlan[0].totalLessons ?? 0}',
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: Theme.of(context).cardColor,
@@ -111,14 +152,21 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                             const SizedBox(height: 15),
                             Row(
                               children: [
-                                const Text(
-                                  AppStrings.learn6,
-                                  style: TextStyle(
+                                Text(
+                                  '${widget.homeData?.learningPlan[1].studiedLessons ?? 0}',
+                                  style: const TextStyle(
                                     fontSize: 16,
                                   ),
                                 ),
                                 Text(
-                                  AppStrings.learn24,
+                                  AppStrings.slash,
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Theme.of(context).cardColor,
+                                  ),
+                                ),
+                                Text(
+                                  '${widget.homeData?.learningPlan[1].totalLessons ?? 0}',
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: Theme.of(context).cardColor,
