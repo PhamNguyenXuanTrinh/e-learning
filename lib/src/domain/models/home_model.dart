@@ -1,4 +1,3 @@
-//home_model.dart
 class HomeResponseModel {
   const HomeResponseModel(
     this.status,
@@ -17,7 +16,7 @@ class HomeResponseModel {
       json['status'] as int,
       json['error'] as int,
       json['message'] as String,
-      HomeModel.fromJson(json['data'] as Map<String, dynamic>),
+      HomeModel.fromJson(json['data'] as Map<String, dynamic>?),
     );
   }
 }
@@ -35,16 +34,19 @@ class HomeModel {
   final List<HomeBannerModel> banners;
   final List<HomeLearningPlanModel> learningPlan;
 
-  factory HomeModel.fromJson(Map<String, dynamic> json) {
+  factory HomeModel.fromJson(Map<String, dynamic>? json) {
     return HomeModel(
-      HomeInfoModel.fromJson(json['info'] as Map<String, dynamic>),
-      HomeLearnedModel.fromJson(json['learned'] as Map<String, dynamic>),
-      (json['banners'] as List<dynamic>)
-          .map((e) => HomeBannerModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      (json['learning_plan'] as List<dynamic>)
-          .map((e) => HomeLearningPlanModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      HomeInfoModel.fromJson(json?['info'] as Map<String, dynamic>?),
+      HomeLearnedModel.fromJson(json?['learned'] as Map<String, dynamic>?),
+      (json?['banners'] as List<dynamic>?)
+              ?.map((e) => HomeBannerModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      (json?['learning_plan'] as List<dynamic>?)
+              ?.map((e) =>
+                  HomeLearningPlanModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
     );
   }
 
@@ -62,11 +64,11 @@ class HomeInfoModel {
   final String welcomeMessage;
   final String avatar;
 
-  factory HomeInfoModel.fromJson(Map<String, dynamic> json) {
+  factory HomeInfoModel.fromJson(Map<String, dynamic>? json) {
     return HomeInfoModel(
-      json['name'] as String,
-      json['welcome_message'] as String,
-      json['avatar'] as String,
+      json?['name'] as String? ?? '',
+      json?['welcome_message'] as String? ?? '',
+      json?['avatar'] as String? ?? '',
     );
   }
 }
@@ -84,12 +86,12 @@ class HomeLearnedModel {
   final int timeStudiedToday;
   final int timeGoal;
 
-  factory HomeLearnedModel.fromJson(Map<String, dynamic> json) {
+  factory HomeLearnedModel.fromJson(Map<String, dynamic>? json) {
     return HomeLearnedModel(
-      json['learned_text'] as String,
-      json['my_courses_text'] as String,
-      json['time_studied_today'] as int,
-      json['time_goal'] as int,
+      json?['learned_text'] as String? ?? '',
+      json?['my_courses_text'] as String? ?? '',
+      json?['time_studied_today'] as int? ?? 0,
+      json?['time_goal'] as int? ?? 0,
     );
   }
 }
@@ -103,10 +105,10 @@ class HomeBannerModel {
   final String title;
   final String thumbnail;
 
-  factory HomeBannerModel.fromJson(Map<String, dynamic> json) {
+  factory HomeBannerModel.fromJson(Map<String, dynamic>? json) {
     return HomeBannerModel(
-      json['title'] as String,
-      json['thumbnail'] as String,
+      json?['title'] as String? ?? '',
+      json?['thumbnail'] as String? ?? '',
     );
   }
 }
