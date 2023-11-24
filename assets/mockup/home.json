@@ -1,0 +1,36 @@
+{
+    "status": 200,
+    "error": 1,
+    "message": "Thành công",
+    "data": {
+        "info": {
+            "name": "Hi, Kristin",
+            "welcome_message": "Let's start learning",
+            "avatar": "assets/img/Avatar.png"
+        },
+        "learned": {
+            "learned_text": "Learned today",
+            "my_courses_text": "My courses",
+            "time_studied_today": 46,
+            "time_goal": 60
+        },
+        "banners": [
+            {
+                "title": "What do you want to learn today ?",
+                "thumbnail": "assets/img/getstart_home.png"
+            }
+        ],
+        "learning_plan": [
+            {
+                "course_name": "Packaging Design",
+                "studied_lessons": 40,
+                "total_lessons": 48
+            },
+            {
+                "course_name": "Product Design",
+                "studied_lessons": 6,
+                "total_lessons": 24
+            }
+        ]
+    }
+}
