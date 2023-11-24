@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../widgets/sreach_bottom_sheet.dart';
+
 class FindAccountWidget extends StatelessWidget {
   const FindAccountWidget({super.key});
 
@@ -15,10 +17,10 @@ class FindAccountWidget extends StatelessWidget {
               color: Colors.transparent,
               child: InkWell(
                 onTap: () {
-                  // Handle tap event
+                  searchBottomSheet(context);
                 },
-                hoverColor: Colors.transparent, // Set hoverColor to transparent
-                borderRadius: BorderRadius.circular(12.0), // Apply BorderRadius
+                hoverColor: Colors.transparent,
+                borderRadius: BorderRadius.circular(12.0),
                 child: Ink(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.0),

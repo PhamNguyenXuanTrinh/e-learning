@@ -12,29 +12,40 @@ class NavigationDetail extends StatefulWidget {
 }
 
 class _NavigationDetailState extends State<NavigationDetail> {
+  bool isStarPressed = false; 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const CourseDetailScreen(),
+      body: const CourseDetailPage(),
       bottomNavigationBar: Row(
         children: [
           Expanded(
             flex: 3,
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context)
-                      .hoverColor, // Use hoverColor from the theme
-                  padding: const EdgeInsets.fromLTRB(28, 14, 28, 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  left: 8.0, right: 2.0, top: 8.0, bottom: 8.0),
+              child: SizedBox(
+                height: 55,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      isStarPressed = !isStarPressed;
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 255, 238,
+                        213), 
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          8.0), 
+                    ),
                   ),
-                ),
-                onPressed: () {},
-                child: const Icon(
-                  Icons.star,
-                  color: Colors.orange,
+                  child: Icon(
+                    Icons.star,
+                    size: 24,
+                    color: isStarPressed ? Colors.red : Colors.white,
+                  ),
                 ),
               ),
             ),

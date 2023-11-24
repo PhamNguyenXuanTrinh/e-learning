@@ -1,4 +1,5 @@
 // choice_your_account.dart
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class TextChoiceYourAccountWidget extends StatelessWidget {
@@ -13,9 +14,9 @@ class TextChoiceYourAccountWidget extends StatelessWidget {
           right: 10.0,
           bottom: 6.0), 
       child: const Text(
-        'Choice Your Account',
+        AppStrings.choiceYourAccount,
         style: TextStyle(
-          fontWeight: FontWeight.bold, // Đặt chữ in đậm
+          fontWeight: FontWeight.bold, 
           fontSize: 20,
         ),
         textAlign: TextAlign.left, 

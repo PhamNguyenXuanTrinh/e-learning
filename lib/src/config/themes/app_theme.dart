@@ -12,7 +12,7 @@ class AppTheme {
       scaffoldBackgroundColor: Colors.white, // background scaffold
       hintColor: const Color(0xFFF4F3FD),
       shadowColor: const Color.fromARGB(255, 229, 229, 229),
-      dividerColor: Colors.red, 
+      dividerColor: Colors.red,
       cardColor: Colors.grey,
       primaryColorDark: Colors.black,
       canvasColor: const Color(0xFF1F1F39),

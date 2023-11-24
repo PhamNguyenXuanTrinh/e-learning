@@ -1,0 +1,36 @@
+    {
+        "status": 200,
+        "error": 1,
+        "message": "Thành công",
+        "data": {
+            "id": 1,
+            "thumbnail": "Product Design v1.0",
+            "course_title": "Product Design v1.0",
+            "course_total_time": "6h 14min .",
+            "total_lesson": 24,
+            "price": 74,
+            "title_desc": "About this course",
+            "desc": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan doloremque laudantium",
+            "buttonBuy" : "Buy now",
+            "likes" : "",
+            "videos" : "",
+            "lessons": [
+                {
+                    "id": 1,
+                    "lesson_name": "Welcome to the course",
+                    "lesson_duration": "6:11 min",
+                    "isLocked":  true,
+                    "videoCourse":"assets/videos/introducing_widget_week.mp4",
+                    "number":"01"
+                },
+                {
+                    "id": 2,
+                    "lesson_name": "Project overview",
+                    "lesson_duration": "7:20 min",
+                    "isLocked":  true,
+                    "videoCourse":"assets/videos/introducing_widget_week.mp4",
+                    "number":"02"
+                }
+            ]
+        }
+    }

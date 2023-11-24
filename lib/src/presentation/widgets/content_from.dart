@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import '../../core/utils/constants/strings.dart';
 import '../../domain/models/course_model.dart';
+import '../views/course_detail_screen/navigation_detail.dart';
 
 class ShadowedTile extends StatelessWidget {
   final Widget child;
@@ -20,7 +21,7 @@ class ShadowedTile extends StatelessWidget {
             color: Theme.of(context).cardColor,
             spreadRadius: 2,
             blurRadius: 5,
-            offset: const Offset(0, 3), 
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -29,7 +30,8 @@ class ShadowedTile extends StatelessWidget {
   }
 }
 
-Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) {
+Widget buildTabContentFromApi(
+    List<CourseModel>? courses, BuildContext context) {
   if (courses != null) {
     return ListView.builder(
       itemCount: courses.length,
@@ -70,6 +72,14 @@ Widget buildTabContentFromApi(List<CourseModel>? courses, BuildContext context) 
                 ),
               ),
             ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NavigationDetail(),
+                ),
+              );
+            },
           ),
         );
       },

@@ -1,29 +1,57 @@
 import 'package:chewie/chewie.dart';
-import 'package:elearning/src/fake_data/mock_data/detail_mock_data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:video_player/video_player.dart';
 
-class CourseDetailScreen extends StatefulWidget {
-  const CourseDetailScreen({Key? key}) : super(key: key);
+import '../../../../core/error/api_error.dart';
+import '../../../../domain/models/detail_model.dart';
+import '../../../../injector/injector.dart';
+import '../../../bloc/bloc/detail_course_bloc.dart';
+
+class CourseDetailPage extends StatelessWidget {
+  const CourseDetailPage({super.key});
 
   @override
-  State<CourseDetailScreen> createState() => _CourseDetailScreenState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) =>
+          getIt<DetailCourseBloc>()..add(DetailCourseStarted()),
+      child: const CourseDetailView(),
+    );
+  }
 }
 
-class _CourseDetailScreenState extends State<CourseDetailScreen> {
+class CourseDetailView extends StatefulWidget {
+  const CourseDetailView({Key? key}) : super(key: key);
+
+  @override
+  State<CourseDetailView> createState() => _CourseDetailViewState();
+}
+
+class _CourseDetailViewState extends State<CourseDetailView> {
   late List<VideoPlayerController> _videoControllers;
   late List<ChewieController> _chewieControllers;
   late int _currentSelectedIndex;
+  List<DetailModel>? detail;
 
   @override
   void initState() {
     super.initState();
 
     _currentSelectedIndex = 0;
+  }
 
-    _videoControllers = detailIntroductionCourse
-        .map((detail) => VideoPlayerController.asset(detail.video))
-        .toList();
+  void _initializeControllers(
+      DetailModel? details, List<LessonModel>? lessons) {
+    if (details != null) {
+      _videoControllers = lessons
+              ?.map((lesson) =>
+                  VideoPlayerController.asset(lesson.videoCourse ?? ''))
+              .toList() ??
+          [];
+    } else {
+      _videoControllers = [VideoPlayerController.asset('')];
+    }
 
     _chewieControllers = _videoControllers
         .map(
@@ -50,17 +78,38 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Scaffold(
-      body: _buildUI(context),
+      body: BlocListener<DetailCourseBloc, DetailCourseState>(
+        listener: (context, state) {
+          if (state is DetailCourseLoadSuccess) {
+            _initializeControllers(
+                state.detailCourse, state.detailCourse?.lessons);
+          }
+        },
+        child: BlocBuilder<DetailCourseBloc, DetailCourseState>(
+          builder: (context, state) {
+            // print('state: $state');
+            if (state is DetailCourseLoadSuccess) {
+              return _buildUIWithData(context, state.detailCourse!);
+            } else if (state is DetailCourseLoadFailure) {
+              return _buildErrorUI(context, state.apiError);
+            } else {
+              return _buildLoadingUI(context);
+            }
+          },
+        ),
+      ),
     );
   }
 
-  Widget _buildUI(BuildContext context) {
+  Widget _buildUIWithData(BuildContext context, DetailModel detailCourse) {
     return Stack(
       children: [
         _backgroundVideo(context),
-        _locationList(context),
+        _locationList(context, detailCourse),
       ],
     );
   }
@@ -79,7 +128,19 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
     );
   }
 
-  Widget _locationList(BuildContext context) {
+  Widget _buildLoadingUI(BuildContext context) {
+    return const Center(
+      child: CircularProgressIndicator(),
+    );
+  }
+
+  Widget _buildErrorUI(BuildContext context, ApiError apiError) {
+    return Center(
+      child: Text('Error: ${apiError.message}'),
+    );
+  }
+
+  Widget _locationList(BuildContext context, DetailModel detailCourse) {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
@@ -98,65 +159,67 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
               height: 14,
             ),
             Padding(
-              padding: const EdgeInsets.all(2.0),
+              padding: const EdgeInsets.all(8.0),
               child: ListTile(
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      detailIntroductionCourse.first.titleDetail,
+                      detailCourse.thumbnail ?? '',
                       style: const TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
-                        // You can add other styling properties here if needed
                       ),
                     ),
                   ],
                 ),
                 subtitle: Text(
-                  detailIntroductionCourse.first.textDetail,
+                  detailCourse.courseTotalTime ?? '',
                 ),
                 trailing: Text(
-                  "\$${detailIntroductionCourse.first.moneyDetail}",
+                  "\$${detailCourse.price}",
                   style: TextStyle(
                     fontSize: 20.0,
                     color: Theme.of(context).primaryColor,
-                    // You can add other styling properties here if needed
                   ),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(2.0),
+              padding: const EdgeInsets.all(8.0),
               child: ListTile(
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      detailIntroductionCourse.first.contentDetail,
+                      detailCourse.titleDesc ?? '',
                       style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
-                        // You can add other styling properties here if needed
                       ),
                     ),
                   ],
                 ),
-                subtitle:
-                    Text(detailIntroductionCourse.first.contentIntroduction),
+                subtitle: Text(detailCourse.desc ?? ''),
               ),
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: detailIntroductionCourse.length,
+                itemCount: detailCourse.lessons?.length ?? 0,
                 itemBuilder: (context, index) {
-                  var detail = detailIntroductionCourse[index];
+                  var lesson = detailCourse.lessons?[index];
                   return Column(
                     children: [
                       ListTile(
-                        title: Text(detail.nameCourse),
-                        subtitle: Text(detail.endDay),
-                        leading: Text(detail.numericalOrder),
+                        title: Text(lesson?.lessonName ?? ''),
+                        subtitle: Text(lesson?.lessonDuration ?? ''),
+                        leading: Text(
+                          lesson?.number ?? '',
+                          style: const TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                         trailing: TextButton(
                           onPressed: () {
                             _handleButtonPressed(index);

@@ -103,10 +103,15 @@ class AppStrings {
   ////Notifications
   static const String notifications = 'Notifications';
   static const String message = 'Message';
-  
+
   static const String payMent = 'Payment';
   static const String noCourses = 'No courses available.';
   static const String error = 'Error.';
   static const String payNow = 'Pay now';
 
+  //find_widget
+  static const String choiceYourAccount = 'Choice Your Account';
+  static const String course = 'Course';
+  static const String found = 'No courses found';
+  static const String turnOff = 'Turn off';
 }
