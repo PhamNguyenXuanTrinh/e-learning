@@ -22,6 +22,8 @@ class AppStrings {
   static const String btnCtn = "Continue";
   static const String enterNumber = "Enter a number";
   static const String verifyPhone = "Verify Phone";
+  static const String specialChars = "password contains special chars";
+  static const String invalidEmail = "Invalid email";
   static const String codeEntered = "Code entered is";
   static const String codePhone = "Code is sent to ";
   static const String btnVerify = "Verify and Create Account";
