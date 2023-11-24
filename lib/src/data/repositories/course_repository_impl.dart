@@ -3,6 +3,7 @@ import 'dart:io';
 
 // Package imports:
 import 'package:dio/dio.dart';
+import 'package:elearning/src/core/error/error_codes.dart';
 import 'package:elearning/src/core/extensions/dio_http_response.dart';
 import 'package:injectable/injectable.dart';
 
@@ -26,9 +27,8 @@ class CourseRepositoryImpl implements CourseRepository {
   Future<DataState<List<CourseModel>?>> getCourses() async {
     try {
       final httpResponse = await _courseApiService.getCourses(isMockUp: true);
-
       if (httpResponse.response.statusCode != HttpStatus.ok) {
-        return DataSuccess(httpResponse.data?.data);
+        return DataFailure(httpResponse.apiError);
       }
       if (httpResponse.data?.error == ErrorCodes.success) {
         return DataSuccess(httpResponse.data?.data);
