@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 
+import '../../../core/utils/validate/validate.dart';
 import '../dialog/dialog_success_screen.dart';
 
 class OtpView extends StatelessWidget {
   final String phoneNumber;
 
-  //      final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  const OtpView({Key? key, required this.phoneNumber}) : super(key: key);
+  OtpView({Key? key, required this.phoneNumber}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,50 +52,41 @@ class OtpView extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              OtpTextField(
-                numberOfFields: 4,
-                borderColor: Theme.of(context).primaryColor,
-                //set to true to show as box or false to show as dash
-                showFieldAsBox: true,
-                //runs when a code is typed in
-                onCodeChanged: (String code) {
-                  //handle validation or checks here
-                  code.length == 4;
-                },
-                //runs when every textfield is filled
-                onSubmit: (String verificationCode) {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: Text(verificationCode),
-                          content:
-                              Text(AppStrings.codeEntered + verificationCode),
-                        );
-                      });
-                }, // end onSubmit
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              PrimaryBtn(
-                text: AppStrings.btnVerify,
-                width: 200,
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DialogSuccessView()),
-                  );
-                },
-              )
-            ],
-          )),
+      body: Form(
+        key: _formKey,
+        child: Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                OtpTextField(
+                  numberOfFields: 4,
+                  borderColor: Theme.of(context).primaryColor,
+                  //set to true to show as box or false to show as dash
+                  showFieldAsBox: true,
+                  //runs when a code is typed in
+                  onCodeChanged: Validator.validateOtp,
+                  //runs when every textfield is filled
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                PrimaryBtn(
+                  text: AppStrings.btnVerify,
+                  width: 200,
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DialogSuccessView()),
+                      );
+                    }
+                  },
+                )
+              ],
+            )),
+      ),
     );
   }
 }

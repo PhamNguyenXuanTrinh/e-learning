@@ -4,9 +4,10 @@ class Validator {
   static String? validateUsername(String? value) {
     if (value == null || value.isEmpty) {
       return AppStrings.nullUsername;
-    } else if (value.length < 6 ||
-        value.contains(RegExp(r'[!#$%^&*(),.?":{}|<>]'))) {
-      return AppStrings.shortUsername;
+    } else if (!RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$')
+        .hasMatch(value)) {
+      // Kiểm tra xem giá trị có đúng là một địa chỉ email hay không
+      return AppStrings.invalidEmail;
     }
     return null;
   }
@@ -14,9 +15,10 @@ class Validator {
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       return AppStrings.nullPassword;
-    } else if (value.length < 6 ||
-        value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+    } else if (value.length < 6) {
       return AppStrings.shortPassword;
+    } else if (RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value)) {
+      return AppStrings.specialChars;
     }
     return null;
   }
@@ -30,13 +32,12 @@ class Validator {
     return null;
   }
 
-  static String? validateOtp(String? value) {
+  static void validateOtp(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.nullOtp;
+      print(AppStrings.nullOtp);
     } else if (value.length < 4) {
-      return AppStrings.shortOtp;
+      print(AppStrings.shortOtp);
     }
-    return null;
   }
   // static bool isLoginValid(String username, String password) {
   //   // Example: Validate against hardcoded credentials
