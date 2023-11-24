@@ -16,4 +16,7 @@ class AppImages{
   static const String imgMessage = "assets/img/message.svg";
   static const String imgAccount = "assets/img/account.svg";
   static const String imgCourseOne='assets/img/course_image_one.png';
+   static const String imgLanguage='assets/img/Language_left.png';
+   static const String imgPainting='assets/img/painting_right.png';
+   static const String imgAccountCourse='assets/img/photo_account.png';
 }

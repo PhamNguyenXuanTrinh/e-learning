@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/constants/imgs.dart';
+
 class PhotoAccountWidget extends StatelessWidget {
   const PhotoAccountWidget({super.key});
 
@@ -12,7 +14,7 @@ class PhotoAccountWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
               horizontal: 14.0),
           child: Image.asset(
-            'assets/img/photo_account.png',
+            AppImages.imgAccountCourse,
             fit: BoxFit.cover,
           ),
         ),

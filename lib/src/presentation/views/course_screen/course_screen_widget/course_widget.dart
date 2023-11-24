@@ -1,4 +1,5 @@
 // CourseWidget
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class CourseWidget extends StatelessWidget {
@@ -10,7 +11,7 @@ class CourseWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       decoration: const BoxDecoration(),
       child: const Text(
-        'Course',
+        AppStrings.account,
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 20.0,

@@ -109,4 +109,9 @@ class AppStrings {
   static const String error = 'Error.';
   static const String payNow = 'Pay now';
 
+  //find_widget
+  static const String choiceYourAccount = 'Choice Your Account';
+  static const String course = 'Course';
+   static const String found = 'No courses found';
+   static const String turnOff = 'Turn off';
 }
