@@ -1,10 +1,15 @@
-import 'package:elearning/src/core/utils/constants/strings.dart';
+
 import 'package:flutter/material.dart';
+import 'package:elearning/src/domain/models/home_model.dart';
+
 
 class TitleWidget extends StatelessWidget {
+  final HomeModel? homeData;
+
   const TitleWidget({
-    super.key,
-  });
+    Key? key,
+    required this.homeData,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,7 @@ class TitleWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          AppStrings.hi,
+          homeData?.info.name ?? "",
           style: TextStyle(
             fontSize: 24.0,
             fontWeight: FontWeight.bold,
@@ -20,7 +25,7 @@ class TitleWidget extends StatelessWidget {
           ),
         ),
         Text(
-          AppStrings.start,
+          homeData?.info.welcomeMessage ?? "",
           style: TextStyle(
             fontSize: 16.0,
             color: Theme.of(context).scaffoldBackgroundColor,

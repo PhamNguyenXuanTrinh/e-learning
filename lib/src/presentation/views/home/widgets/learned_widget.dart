@@ -1,15 +1,30 @@
-import 'package:elearning/src/core/utils/constants/strings.dart';
+import 'package:elearning/src/domain/models/home_model.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/constants/strings.dart';
+
 class LearnedWidget extends StatelessWidget {
-  const LearnedWidget({super.key});
+  final HomeModel? homeData;
+
+  const LearnedWidget({
+    super.key,
+    required this.homeData,
+  });
 
   @override
   Widget build(BuildContext context) {
-    // Lấy thông tin kích thước màn hình
+    if (homeData == null || homeData?.learned == null) {
+      // Xử lý trường hợp homeData hoặc learned là null
+      return Container();
+    }
+
     double screenWidth = MediaQuery.of(context).size.width;
 
-    // Xác định giá trị top và width dựa trên kích thước màn hình
+    int timeStudiedToday = homeData!.learned.timeStudiedToday;
+    int timeGoal = homeData!.learned.timeGoal;
+
+    double progress = timeStudiedToday / timeGoal;
+
     return Container(
       width: screenWidth,
       height: 100,
@@ -34,7 +49,7 @@ class LearnedWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppStrings.learn,
+                  homeData?.learned.learnedText ?? "",
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
@@ -42,7 +57,7 @@ class LearnedWidget extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  AppStrings.mycourse,
+                  homeData?.learned.myCoursesText ?? "",
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).primaryColor,
@@ -53,15 +68,33 @@ class LearnedWidget extends StatelessWidget {
             const SizedBox(height: 5),
             Row(
               children: [
-                const Text(
-                  AppStrings.time46,
-                  style: TextStyle(
+                Text(
+                  '$timeStudiedToday',
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                const Text(
+                  AppStrings.minute,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
                 Text(
-                  AppStrings.time60,
+                  AppStrings.slash,
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Theme.of(context).cardColor,
+                  ),
+                ),
+                Text(
+                  '$timeGoal',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Theme.of(context).cardColor,
+                  ),
+                ),
+                Text(
+                  AppStrings.minute,
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
@@ -82,7 +115,7 @@ class LearnedWidget extends StatelessWidget {
                 ),
                 Container(
                   height: 5,
-                  width: 46 / 60 * (screenWidth - 60),
+                  width: progress * (screenWidth - 60),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     gradient: LinearGradient(
