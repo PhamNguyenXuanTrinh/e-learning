@@ -73,7 +73,7 @@ class ItemsNotificationWidgetState extends State<ItemsNotificationWidget> {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
       ],

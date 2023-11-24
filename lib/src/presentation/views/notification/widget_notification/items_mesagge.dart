@@ -4,17 +4,17 @@ class ItemsMessageWidget extends StatefulWidget {
   final String name;
   final String time;
   final String status;
-  final String img_url;
+  final String imgUrl;
   final String des;
-  final String img_user;
+  final String imgUser;
   const ItemsMessageWidget({
     super.key,
     required this.name,
     required this.time,
     required this.status,
-    required this.img_url,
+    required this.imgUrl,
     required this.des,
-    required this.img_user,
+    required this.imgUser,
   });
 
   @override
@@ -49,7 +49,7 @@ class ItemsMessageWidgetState extends State<ItemsMessageWidget> {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Image.asset(widget.img_user),
+                  Image.asset(widget.imgUser),
                   const SizedBox(
                     width: 20,
                   ),
@@ -98,7 +98,7 @@ class ItemsMessageWidgetState extends State<ItemsMessageWidget> {
                 height: 10,
               ),
               Image.asset(
-                widget.img_url,
+                widget.imgUrl,
               ),
             ],
           ),

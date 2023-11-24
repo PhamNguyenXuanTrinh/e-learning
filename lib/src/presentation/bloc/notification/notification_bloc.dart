@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
+import 'package:bloc/bloc.dart';
 
 import '../../../core/error/api_error.dart';
 import '../../../core/resources/data_state.dart';

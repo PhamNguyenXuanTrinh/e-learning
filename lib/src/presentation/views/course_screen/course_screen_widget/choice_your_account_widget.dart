@@ -57,7 +57,7 @@ class ChoiceYourAccountScreen extends StatelessWidget {
             );
           } else if (state is CourseLoadFailure) {
             return Center(
-              child: Text(AppStrings.error + ' : ${state.apiError.message}'),
+              child: Text('${AppStrings.error} : ${state.apiError.message}'),
             );
           } else {
             return const CircularProgressIndicator();

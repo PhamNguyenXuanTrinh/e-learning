@@ -41,7 +41,7 @@ class NotificationModel {
       id: json['id'] as int,
       content: json['content'] as String,
       time: json['time'] as String,
-      imageUrl: json['image_url'] as String,
+      imageUrl: json['imgUrl'] as String,
     );
   }
 }

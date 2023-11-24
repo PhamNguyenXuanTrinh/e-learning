@@ -27,18 +27,18 @@ class MessageModel {
   final String? name;
   final String? time;
   final String? status;
-  final String? img_url;
+  final String? imgUrl;
   final String? des;
-  final String? img_user;
+  final String? imgUser;
 
   MessageModel(
       {required this.id,
       required this.name,
       required this.time,
       required this.status,
-      required this.img_url,
+      required this.imgUrl,
       required this.des,
-      required this.img_user});
+      required this.imgUser});
 
   factory MessageModel.fromJson(Map<String, dynamic> json) {
     return MessageModel(
@@ -46,9 +46,9 @@ class MessageModel {
       name: json["name"] as String?,
       time: json["time"] as String?,
       status: json["status"] as String?,
-      img_url: json["image_url"] as String?,
+      imgUrl: json["imgUrl"] as String?,
       des: json["des"] as String?,
-      img_user: json["img_user"] as String?,
+      imgUser: json["imgUser"] as String?,
     );
   }
 }

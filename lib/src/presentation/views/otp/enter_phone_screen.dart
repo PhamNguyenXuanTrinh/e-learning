@@ -11,10 +11,10 @@ class EnterOtpView extends StatefulWidget {
   
 
   @override
-  _EnterOtpViewState createState() => _EnterOtpViewState();
+  EnterOtpViewState createState() => EnterOtpViewState();
 }
 
-class _EnterOtpViewState extends State<EnterOtpView> {
+class EnterOtpViewState extends State<EnterOtpView> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _phoneController = TextEditingController();
 

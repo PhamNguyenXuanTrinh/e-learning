@@ -47,7 +47,7 @@ class CourseModel {
       teachTab: json['teach_tab'] as String,
       moneyTab: json['money_tab'] as int,
       timeTab: json['time_tab'] as String,
-      imageUrl: json['image_url'] as String,
+      imageUrl: json['imgUrl'] as String,
     );
   }
 }

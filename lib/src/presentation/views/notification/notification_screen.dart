@@ -96,7 +96,7 @@ Widget _buildNotifications(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       itemBuilder: (context, index) {
         NotificationModel? notification = notifications?[index];
-        return Container(
+        return SizedBox(
           child: ItemsNotificationWidget(
             content: notification?.content ?? '',
             imageUrl: notification?.imageUrl ?? '',
@@ -116,9 +116,9 @@ Widget _buildItemsMess(BuildContext context, List<MessageModel>? messages) {
           name: message?.name ?? '',
           time: message?.time ?? '',
           status: message?.status ?? '',
-          img_url: message?.img_url ?? '',
+          imgUrl: message?.imgUrl ?? '',
           des: message?.des ?? '',
-          img_user: message?.img_user ?? '');
+          imgUser: message?.imgUser ?? '');
     },
   );
 }
