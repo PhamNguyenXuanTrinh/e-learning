@@ -1,13 +1,8 @@
-import 'package:elearning/src/domain/models/home_screen/home_model.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 class LearnedWidget extends StatelessWidget {
-  final HomeModel homeModel;
-
-  const LearnedWidget({
-    super.key,
-    required this.homeModel,
-  });
+  const LearnedWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +10,11 @@ class LearnedWidget extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     // Xác định giá trị top và width dựa trên kích thước màn hình
-
     return Container(
       width: screenWidth,
       height: 100,
       decoration: BoxDecoration(
-        color: Theme.of(context)
-            .scaffoldBackgroundColor
-            .withOpacity(1.0), // Màu trắng với độ mờ 1.0
+        color: Theme.of(context).scaffoldBackgroundColor.withOpacity(1.0),
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
@@ -42,7 +34,7 @@ class LearnedWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  homeModel.learnText,
+                  AppStrings.learn,
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
@@ -50,7 +42,7 @@ class LearnedWidget extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  homeModel.myCourseText,
+                  AppStrings.mycourse,
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).primaryColor,
@@ -61,15 +53,15 @@ class LearnedWidget extends StatelessWidget {
             const SizedBox(height: 5),
             Row(
               children: [
-                Text(
-                  homeModel.time46Text,
-                  style: const TextStyle(
+                const Text(
+                  AppStrings.time46,
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  homeModel.time60Text,
+                  AppStrings.time60,
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
@@ -77,15 +69,16 @@ class LearnedWidget extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 10), // Thêm khoảng trống
+            const SizedBox(height: 10),
             Stack(
               children: [
                 Container(
                   height: 5,
                   width: screenWidth - 60,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Theme.of(context).secondaryHeaderColor),
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).secondaryHeaderColor,
+                  ),
                 ),
                 Container(
                   height: 5,
@@ -96,8 +89,8 @@ class LearnedWidget extends StatelessWidget {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                        Theme.of(context).scaffoldBackgroundColor, // Trắng
-                        Theme.of(context).splashColor, // #FF5106
+                        Theme.of(context).scaffoldBackgroundColor,
+                        Theme.of(context).splashColor,
                       ],
                       stops: const [0.0, 1.0],
                     ),
