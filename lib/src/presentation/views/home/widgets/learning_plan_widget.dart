@@ -1,16 +1,10 @@
-import 'package:elearning/src/core/utils/constants/imgs.dart';
-import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:elearning/src/domain/models/home_screen/home_model.dart';
+import 'package:elearning/src/core/utils/constants/imgs.dart';
+import 'package:elearning/src/core/utils/constants/strings.dart';
 
 class LearningPlanWidget extends StatefulWidget {
-  final HomeModel homeModel;
-
-  const LearningPlanWidget({
-    super.key,
-    required this.homeModel,
-  });
+  const LearningPlanWidget({super.key});
 
   @override
   _LearningPlanWidgetState createState() => _LearningPlanWidgetState();
@@ -28,9 +22,9 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            widget.homeModel.learning,
-            style: const TextStyle(
+          const Text(
+            AppStrings.learning,
+            style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
@@ -40,9 +34,7 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
           ),
           Container(
             width: chieuRongManHinh - 25,
-            height: isShowMore
-                ? 240
-                : 120, // Điều chỉnh chiều cao dựa trên trạng thái
+            height: isShowMore ? 240 : 120,
             decoration: BoxDecoration(
               color: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(10.0),
@@ -76,20 +68,20 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                           ],
                         ),
                         const SizedBox(width: 8.0),
-                        Expanded(
+                        const Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                widget.homeModel.packDesign,
-                                style: const TextStyle(
+                                AppStrings.packDesign,
+                                style: TextStyle(
                                   fontSize: 16,
                                 ),
                               ),
-                              const SizedBox(height: 15),
+                              SizedBox(height: 15),
                               Text(
-                                widget.homeModel.proDesign,
-                                style: const TextStyle(
+                                AppStrings.proDesign,
+                                style: TextStyle(
                                   fontSize: 16,
                                 ),
                               ),
@@ -101,14 +93,14 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                           children: [
                             Row(
                               children: [
-                                Text(
-                                  widget.homeModel.learn40,
-                                  style: const TextStyle(
+                                const Text(
+                                  AppStrings.learn40,
+                                  style: TextStyle(
                                     fontSize: 16,
                                   ),
                                 ),
                                 Text(
-                                  widget.homeModel.learn48,
+                                  AppStrings.learn48,
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: Theme.of(context).cardColor,
@@ -119,14 +111,14 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                             const SizedBox(height: 15),
                             Row(
                               children: [
-                                Text(
-                                  widget.homeModel.learn6,
-                                  style: const TextStyle(
+                                const Text(
+                                  AppStrings.learn6,
+                                  style: TextStyle(
                                     fontSize: 16,
                                   ),
                                 ),
                                 Text(
-                                  widget.homeModel.learn24,
+                                  AppStrings.learn24,
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: Theme.of(context).cardColor,
@@ -139,7 +131,6 @@ class _LearningPlanWidgetState extends State<LearningPlanWidget> {
                       ],
                     ),
                     const SizedBox(height: 8.0),
-                    // Đặt nút "Xem thêm" ở giữa
                     Expanded(
                       child: Align(
                         alignment: Alignment.bottomCenter,
