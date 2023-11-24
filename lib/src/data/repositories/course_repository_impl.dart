@@ -30,7 +30,7 @@ class CourseRepositoryImpl implements CourseRepository {
       if (httpResponse.response.statusCode != HttpStatus.ok) {
         return DataSuccess(httpResponse.data?.data);
       }
-      if (httpResponse.data?.error != ErrorCodes.success) {
+      if (httpResponse.data?.error == ErrorCodes.success) {
         return DataSuccess(httpResponse.data?.data);
       }
 
