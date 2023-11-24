@@ -67,6 +67,7 @@ packages:
     version: "2.1.1"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9b9f734 (chore: update pubpec.yaml)
   build:
@@ -138,6 +139,8 @@ packages:
 >>>>>>> 2088062 ( feat: update homescreen and eidt appthem)
 =======
 >>>>>>> 9b9f734 (chore: update pubpec.yaml)
+=======
+>>>>>>> 93420de (chore: update home_model)
   characters:
     dependency: transitive
     description:
@@ -639,6 +642,7 @@ packages:
     version: "2.1.7"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9b9f734 (chore: update pubpec.yaml)
   pool:
@@ -662,6 +666,8 @@ packages:
 >>>>>>> 41e3329 (feat: create home screen)
 =======
 >>>>>>> 9b9f734 (chore: update pubpec.yaml)
+=======
+>>>>>>> 93420de (chore: update home_model)
   provider:
     dependency: transitive
     description:
@@ -704,6 +710,7 @@ packages:
     version: "4.0.3"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 9b9f734 (chore: update pubpec.yaml)
   retrofit_generator:
@@ -742,6 +749,8 @@ packages:
 >>>>>>> 41e3329 (feat: create home screen)
 =======
 >>>>>>> 9b9f734 (chore: update pubpec.yaml)
+=======
+>>>>>>> 93420de (chore: update home_model)
   sky_engine:
     dependency: transitive
     description: flutter
