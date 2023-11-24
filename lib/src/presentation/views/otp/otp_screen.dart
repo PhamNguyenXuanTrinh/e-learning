@@ -1,8 +1,9 @@
 import 'package:elearning/src/core/utils/constants/strings.dart';
-import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
+
+import '../dialog/dialog_success_screen.dart';
 
 class OtpView extends StatelessWidget {
   final String phoneNumber;
@@ -56,13 +57,14 @@ class OtpView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               OtpTextField(
-                numberOfFields: 5,
+                numberOfFields: 4,
                 borderColor: Theme.of(context).primaryColor,
                 //set to true to show as box or false to show as dash
                 showFieldAsBox: true,
                 //runs when a code is typed in
                 onCodeChanged: (String code) {
                   //handle validation or checks here
+                  code.length == 4;
                 },
                 //runs when every textfield is filled
                 onSubmit: (String verificationCode) {
@@ -79,20 +81,20 @@ class OtpView extends StatelessWidget {
               ),
               const SizedBox(
                 height: 40,
-              ),      
+              ),
               PrimaryBtn(
                 text: AppStrings.btnVerify,
-                width :200,
-                 onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const NavView()),
-                    );
-                  },
+                width: 200,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DialogSuccessView()),
+                  );
+                },
               )
             ],
-          )
-        ),
+          )),
     );
   }
 }

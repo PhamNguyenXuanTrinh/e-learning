@@ -72,9 +72,10 @@ class DialogSuccessView extends StatelessWidget {
                 PrimaryBtn(
                   text: AppStrings.doneBtn,
                   onTap: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(builder: (context) => const NavView()),
+                      (route) => false,
                     );
                   },
                 ),

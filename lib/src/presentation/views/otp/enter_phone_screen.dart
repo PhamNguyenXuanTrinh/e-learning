@@ -8,8 +8,6 @@ import 'package:flutter/material.dart';
 class EnterOtpView extends StatefulWidget {
   const EnterOtpView({super.key});
 
-  
-
   @override
   EnterOtpViewState createState() => EnterOtpViewState();
 }
@@ -66,12 +64,15 @@ class EnterOtpViewState extends State<EnterOtpView> {
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Flexible(
                     child: TextFormField(
-                      controller: _phoneController, 
+                      controller: _phoneController,
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 16.0, horizontal: 5),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -93,7 +94,8 @@ class EnterOtpViewState extends State<EnterOtpView> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => OtpView(phoneNumber: phoneNumber),
+                            builder: (context) =>
+                                OtpView(phoneNumber: phoneNumber),
                           ),
                         );
                       }

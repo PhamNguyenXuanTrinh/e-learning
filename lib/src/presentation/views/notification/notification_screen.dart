@@ -33,6 +33,7 @@ class NotificationScreen extends StatelessWidget {
           child: Scaffold(
             appBar: AppBar(
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              automaticallyImplyLeading: false,
               title: const Text(
                 AppStrings.notifications,
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -60,7 +61,7 @@ class NotificationScreen extends StatelessWidget {
                       );
                     } else if (state is MessageLoadFailure) {
                       return const Center(
-                        child: Text('Error:'),
+                        child: Text(AppStrings.error),
                       );
                     }
                     return const SizedBox();
@@ -76,7 +77,7 @@ class NotificationScreen extends StatelessWidget {
                       );
                     } else if (state is NotificationLoadFailure) {
                       return const Center(
-                        child: Text('Error:'),
+                        child: Text(AppStrings.error),
                       );
                     }
                     return const SizedBox();
