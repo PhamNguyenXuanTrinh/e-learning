@@ -1,5 +1,4 @@
 import 'package:elearning/src/domain/models/home_model.dart';
-import 'package:elearning/src/domain/repositories/home_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
