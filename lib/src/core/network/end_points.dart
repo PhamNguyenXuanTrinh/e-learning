@@ -6,6 +6,8 @@ class EndPoints {
   static const String message = '/message';
   static const String notification = '/notification';
   static const String detail = '/detail_course';
+  static const String home = '/home';
+
 
   //NewEndPoint
 }

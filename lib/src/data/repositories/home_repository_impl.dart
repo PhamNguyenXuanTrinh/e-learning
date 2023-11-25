@@ -9,24 +9,23 @@ import 'package:injectable/injectable.dart';
 
 // Project imports:
 import '../../core/error/api_error.dart';
-import '../../core/error/error_codes.dart';
 import '../../core/resources/data_state.dart';
-import '../../domain/models/course_model.dart';
-import '../../domain/repositories/course_repository.dart';
-import '../datasources/remote/course_api_service.dart';
+import '../../domain/models/home_model.dart';
+import '../../domain/repositories/home_repository.dart';
+import '../datasources/remote/home_api_service.dart';
 
-@LazySingleton(as: CourseRepository)
-class CourseRepositoryImpl implements CourseRepository {
-  CourseRepositoryImpl(
-    this._courseApiService,
+@LazySingleton(as: HomeRepository)
+class HomeRepositoryImpl implements HomeRepository {
+  HomeRepositoryImpl(
+    this._homeApiService,
   );
 
-  final CourseApiService _courseApiService;
+  final HomeApiService _homeApiService;
 
   @override
-  Future<DataState<List<CourseModel>?>> getCourses() async {
+  Future<DataState<HomeModel?>> getHomeScreen() async {
     try {
-      final httpResponse = await _courseApiService.getCourses(isMockUp: true);
+      final httpResponse = await _homeApiService.getHomeScreen(isMockUp: true);
       if (httpResponse.response.statusCode != HttpStatus.ok) {
         return DataFailure(httpResponse.apiError);
       }

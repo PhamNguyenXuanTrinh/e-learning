@@ -16,6 +16,10 @@ class AppTheme {
       cardColor: Colors.grey,
       primaryColorDark: Colors.black,
       canvasColor: const Color(0xFF1F1F39),
+      disabledColor: const Color(0xFF440687),
+      focusColor: const Color(0xFFEFE0FF), // màu tím nhạt
+      splashColor: const Color.fromRGBO(255, 81, 6, 1),
+      secondaryHeaderColor: const Color.fromARGB(21, 121, 113, 113),
 
       indicatorColor: Colors.orange,
       hoverColor: const Color.fromARGB(255, 255, 175, 175),

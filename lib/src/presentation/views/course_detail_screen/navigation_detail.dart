@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../core/utils/constants/strings.dart';
 
 class NavigationDetail extends StatefulWidget {
-  const NavigationDetail({Key? key}) : super(key: key);
+  const NavigationDetail({super.key});
 
   @override
   State<NavigationDetail> createState() => _NavigationDetailState();

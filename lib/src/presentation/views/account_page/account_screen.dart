@@ -11,35 +11,25 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        title: const Text(
+          AppStrings.account,
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.all(8.0),
-            child: AppBar(
-              automaticallyImplyLeading: false,
-              elevation: 0,
-              title: const Text(
-                AppStrings.account,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
+          AvatarWidget(
+            onAvatarTap: () {},
           ),
-          Container(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                AvatarWidget(
-                  onAvatarTap: () {},
-                ),
-                const SizedBox(height: 20),
-                AccountButtonsWidget(
-                  onFavoriteTap: () {},
-                  onEditAccountTap: () {},
-                  onSettingsTap: () {},
-                  onHelpTap: () {},
-                ),
-              ],
-            ),
+          const SizedBox(height: 20),
+          ListtileWidget(
+            onFavoriteTap: () {},
+            onEditAccountTap: () {},
+            onSettingsTap: () {},
+            onHelpTap: () {},
           ),
         ],
       ),
