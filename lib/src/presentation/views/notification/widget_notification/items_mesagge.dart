@@ -31,13 +31,14 @@ class ItemsMessageWidgetState extends State<ItemsMessageWidget> {
         ),
         Container(
           padding: const EdgeInsets.all(20),
-          height: 300,
+          height: MediaQuery.of(context).size.height * 0.48,
+          width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
-            color: Colors.white,
+            color: Theme.of(context).scaffoldBackgroundColor,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
+                color: Theme.of(context).cardColor.withOpacity(0.5),
                 spreadRadius: 10,
                 blurRadius: 10,
                 offset: const Offset(0, 3),
@@ -49,7 +50,9 @@ class ItemsMessageWidgetState extends State<ItemsMessageWidget> {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Image.asset(widget.imgUser),
+                  Image.asset(
+                    widget.imgUser,
+                  ),
                   const SizedBox(
                     width: 20,
                   ),
@@ -65,9 +68,9 @@ class ItemsMessageWidgetState extends State<ItemsMessageWidget> {
                         ),
                         Text(
                           widget.status,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.grey,
+                            color: Theme.of(context).cardColor,
                           ),
                         ),
                       ],
@@ -78,10 +81,12 @@ class ItemsMessageWidgetState extends State<ItemsMessageWidget> {
                   ),
                   Expanded(
                     child: Text(
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       widget.time,
                       textAlign: TextAlign.end,
-                      style: const TextStyle(
-                        color: Colors.grey,
+                      style: TextStyle(
+                        color: Theme.of(context).cardColor,
                       ),
                     ),
                   ),

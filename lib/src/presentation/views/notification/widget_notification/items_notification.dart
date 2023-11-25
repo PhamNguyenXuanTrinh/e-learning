@@ -26,13 +26,14 @@ class ItemsNotificationWidgetState extends State<ItemsNotificationWidget> {
         ),
         Container(
           padding: const EdgeInsets.all(6),
+          width: double.infinity,
           height: 110,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
-            color: Colors.white,
+            color: Theme.of(context).scaffoldBackgroundColor,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
+                color: Theme.of(context).cardColor.withOpacity(0.5),
                 spreadRadius: 10,
                 blurRadius: 10,
                 offset: const Offset(0, 3),
@@ -51,19 +52,19 @@ class ItemsNotificationWidgetState extends State<ItemsNotificationWidget> {
                   ),
                   subtitle: Row(
                     children: <Widget>[
-                      const Icon(
+                      Icon(
                         Icons.access_time,
                         size: 12,
-                        color: Colors.grey,
+                        color: Theme.of(context).cardColor,
                       ),
                       const SizedBox(width: 4),
                       Text(
                         widget.time,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
-                          color: Colors.grey,
+                          color: Theme.of(context).cardColor,
                         ),
                       ),
                     ],
