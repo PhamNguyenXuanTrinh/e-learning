@@ -6,7 +6,6 @@ class Validator {
       return AppStrings.nullUsername;
     } else if (!RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$')
         .hasMatch(value)) {
-      // Kiểm tra xem giá trị có đúng là một địa chỉ email hay không
       return AppStrings.invalidEmail;
     }
     return null;
@@ -30,6 +29,10 @@ class Validator {
       return AppStrings.shortNumberPhone;
     }
     return null;
+  }
+
+  static bool validateOtp(String value) {
+    return value.length == 4;
   }
   // static bool isLoginValid(String username, String password) {
   //   // Example: Validate against hardcoded credentials

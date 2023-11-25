@@ -1,4 +1,5 @@
 import 'package:elearning/src/core/utils/constants/strings.dart';
+import 'package:elearning/src/core/utils/validate/validate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
@@ -61,7 +62,7 @@ class OtpView extends StatelessWidget {
                   showFieldAsBox: true,
                   //runs when a code is typed in
                   onSubmit: (String verificationCode) {
-                    if (verificationCode.length == 4) {
+                    if (Validator.validateOtp(verificationCode)) {
                       isButtonSelected = true;
                     }
                     return;
