@@ -1,17 +1,17 @@
 import 'package:elearning/src/core/utils/constants/strings.dart';
-import 'package:elearning/src/presentation/views/navigation_bar/navigation_bar_screen.dart';
+import 'package:elearning/src/core/utils/validate/validate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
+import '../dialog/dialog_success_screen.dart';
 
 class OtpView extends StatelessWidget {
   final String phoneNumber;
 
-  //      final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   const OtpView({Key? key, required this.phoneNumber}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    bool isButtonSelected = false;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -56,43 +56,57 @@ class OtpView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               OtpTextField(
-                numberOfFields: 5,
-                borderColor: Theme.of(context).primaryColor,
-                //set to true to show as box or false to show as dash
-                showFieldAsBox: true,
-                //runs when a code is typed in
-                onCodeChanged: (String code) {
-                  //handle validation or checks here
-                },
-                //runs when every textfield is filled
-                onSubmit: (String verificationCode) {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: Text(verificationCode),
-                          content:
-                              Text(AppStrings.codeEntered + verificationCode),
-                        );
-                      });
-                }, // end onSubmit
-              ),
+                  numberOfFields: 4,
+                  borderColor: Theme.of(context).primaryColor,
+                  //set to true to show as box or false to show as dash
+                  showFieldAsBox: true,
+                  //runs when a code is typed in
+                  onSubmit: (String verificationCode) {
+                    if (Validator.validateOtp(verificationCode)) {
+                      isButtonSelected = true;
+                    }
+                    return;
+                  }),
               const SizedBox(
                 height: 40,
-              ),      
+              ),
               PrimaryBtn(
                 text: AppStrings.btnVerify,
-                width :200,
-                 onTap: () {
+                width: 200,
+                onTap: () {
+                  if (isButtonSelected == true) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const NavView()),
+                      MaterialPageRoute(
+                          builder: (context) => const DialogSuccessView()),
                     );
-                  },
+                  } else {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text(AppStrings.otpNotCorrect),
+                            actions: [
+                              ButtonBar(
+                                alignment: MainAxisAlignment
+                                    .center, 
+                                children: [
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: const Text(AppStrings.back),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          );
+                        });
+                  }
+                },
               )
             ],
-          )
-        ),
+          )),
     );
   }
 }

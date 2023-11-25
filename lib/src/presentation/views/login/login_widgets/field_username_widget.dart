@@ -12,7 +12,6 @@ class FieldUsername extends StatelessWidget {
     return TextFormField(
       validator: Validator.validateUsername,
       controller: controller,
-      obscureText: true,
       decoration: InputDecoration(
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       hintText: AppStrings.yourEmail,

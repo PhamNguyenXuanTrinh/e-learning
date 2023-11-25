@@ -16,6 +16,7 @@ class AccountScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8.0),
             child: AppBar(
+              automaticallyImplyLeading: false,
               elevation: 0,
               title: const Text(
                 AppStrings.account,

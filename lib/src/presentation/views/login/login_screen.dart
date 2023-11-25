@@ -37,8 +37,9 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -62,7 +63,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
               FieldPassword(controller: _passwordController),
               const SizedBox(
-                height: 20      ,
+                height: 20,
               ),
               PrimaryBtn(
                 text: AppStrings.login,
@@ -70,9 +71,10 @@ class _LoginFormState extends State<LoginForm> {
                   // Validate the form
                   if (_formKey.currentState!.validate()) {
                     // String username = _usernameController.text;
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(builder: (context) => const NavView()),
+                      (route) => false,
                     );
                   }
                 },

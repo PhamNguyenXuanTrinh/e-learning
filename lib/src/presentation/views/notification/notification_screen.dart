@@ -33,6 +33,7 @@ class NotificationScreen extends StatelessWidget {
           child: Scaffold(
             appBar: AppBar(
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              automaticallyImplyLeading: false,
               title: const Text(
                 AppStrings.notifications,
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -60,7 +61,7 @@ class NotificationScreen extends StatelessWidget {
                       );
                     } else if (state is MessageLoadFailure) {
                       return const Center(
-                        child: Text('Error:'),
+                        child: Text(AppStrings.error),
                       );
                     }
                     return const SizedBox();
@@ -76,7 +77,7 @@ class NotificationScreen extends StatelessWidget {
                       );
                     } else if (state is NotificationLoadFailure) {
                       return const Center(
-                        child: Text('Error:'),
+                        child: Text(AppStrings.error),
                       );
                     }
                     return const SizedBox();
@@ -96,7 +97,7 @@ Widget _buildNotifications(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       itemBuilder: (context, index) {
         NotificationModel? notification = notifications?[index];
-        return Container(
+        return SizedBox(
           child: ItemsNotificationWidget(
             content: notification?.content ?? '',
             imageUrl: notification?.imageUrl ?? '',
@@ -116,9 +117,9 @@ Widget _buildItemsMess(BuildContext context, List<MessageModel>? messages) {
           name: message?.name ?? '',
           time: message?.time ?? '',
           status: message?.status ?? '',
-          img_url: message?.img_url ?? '',
+          imgUrl: message?.imgUrl ?? '',
           des: message?.des ?? '',
-          img_user: message?.img_user ?? '');
+          imgUser: message?.imgUser ?? '');
     },
   );
 }

@@ -3,7 +3,6 @@ import 'package:elearning/src/presentation/views/splash_screen/splash_screen_pag
 import 'package:flutter/material.dart';
 import 'src/injector/injector.dart';
 
-
 void main() {
   configureDependencies();
   runApp(const MyApp());

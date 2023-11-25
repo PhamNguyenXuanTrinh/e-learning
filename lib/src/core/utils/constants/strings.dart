@@ -22,6 +22,8 @@ class AppStrings {
   static const String btnCtn = "Continue";
   static const String enterNumber = "Enter a number";
   static const String verifyPhone = "Verify Phone";
+  static const String specialChars = "password contains special chars";
+  static const String invalidEmail = "Invalid email";
   static const String codeEntered = "Code entered is";
   static const String codePhone = "Code is sent to ";
   static const String btnVerify = "Verify and Create Account";
@@ -94,6 +96,8 @@ class AppStrings {
   static const String nullPassword = 'Please enter your password';
   static const String nullNumberPhone = 'Please enter your number phone';
   static const String nullOtp = 'Please enter your otp';
+  static const String otpNotCorrect = "otp is not correct";
+  static const String back = "Back";
   static const String shortUsername = 'Username must be 6 characters long';
   static const String shortPassword = 'Password must be 6 characters long';
   static const String shortNumberPhone =

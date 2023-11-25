@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/utils/constants/strings.dart';
+import '../../../injector/injector.dart';
+import '../../bloc/course_bloc/course_bloc.dart';
 import '../../widgets/content_from.dart';
 import '../course_screen/course_screen_widget/find_account_widget.dart';
 import 'widgets/btn_toggle_search_widget.dart';
@@ -68,10 +71,24 @@ class DetailFilterView extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.5,
-              //child: buildTabContentFromApi(state.course, context),
-            ),
+            BlocProvider(
+                create: (context) => getIt<CourseBloc>()..add(CourseStarted()),
+                child: BlocBuilder<CourseBloc, CourseState>(
+                    builder: (context, state) {
+                  if (state is CourseLoadSuccess) {
+                    return SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.5,
+                      child: buildTabContentFromApi(state.course, context),
+                    );
+                  } else if (state is CourseLoadFailure) {
+                    return Center(
+                      child: Text(
+                          '${AppStrings.error} : ${state.apiError.message}'),
+                    );
+                  } else {
+                    return const CircularProgressIndicator();
+                  }
+                })),
           ],
         ),
       ),

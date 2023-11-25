@@ -8,10 +8,10 @@ class FieldPassword extends StatefulWidget {
   const FieldPassword({Key? key, required this.controller}) : super(key: key);
 
   @override
-  _FieldPasswordState createState() => _FieldPasswordState();
+  FieldPasswordState createState() => FieldPasswordState();
 }
 
-class _FieldPasswordState extends State<FieldPassword> {
+class FieldPasswordState extends State<FieldPassword> {
   bool _obscureText = true;
 
   @override
