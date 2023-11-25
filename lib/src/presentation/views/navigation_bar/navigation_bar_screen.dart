@@ -1,3 +1,4 @@
+import 'package:elearning/src/presentation/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../core/utils/constants/strings.dart';
 import '../../widgets/sreach_bottom_sheet.dart';
@@ -15,7 +16,7 @@ class NavView extends StatefulWidget {
 class NavState extends State<NavView> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
-    const Text("Home Page"),
+    const HomeScreen(),
     const CourseScreen(),
     const NotificationScreen(),
     const AccountScreen(),
