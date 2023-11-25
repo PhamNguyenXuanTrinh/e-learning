@@ -88,7 +88,7 @@ class OtpView extends StatelessWidget {
                             actions: [
                               ButtonBar(
                                 alignment: MainAxisAlignment
-                                    .center, // Cấu hình để đặt nút ở giữa
+                                    .center, 
                                 children: [
                                   ElevatedButton(
                                     onPressed: () {

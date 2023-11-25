@@ -16,16 +16,16 @@ import '../datasources/remote/notification_api_service.dart';
 @LazySingleton(as: NotificationRepository)
 class NotificationRepositoryImpl implements NotificationRepository {
   NotificationRepositoryImpl(
-    this._NotificationApiService,
+    this._notificationApiService,
   );
 
-  final NotificationApiService _NotificationApiService;
+  final NotificationApiService _notificationApiService;
 
   @override
   Future<DataState<List<NotificationModel>?>> getNotifications() async {
     try {
       final httpResponse =
-          await _NotificationApiService.getNotifications(isMockUp: true);
+          await _notificationApiService.getNotifications(isMockUp: true);
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         return DataSuccess(httpResponse.data?.data);
