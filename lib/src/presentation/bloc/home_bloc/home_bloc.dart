@@ -6,6 +6,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../core/error/api_error.dart';
 import '../../../core/resources/data_state.dart';
+import '../../../domain/repositories/home_repository.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
