@@ -31,14 +31,6 @@ class Validator {
     }
     return null;
   }
-
-  static void validateOtp(String? value) {
-    if (value == null || value.isEmpty) {
-      print(AppStrings.nullOtp);
-    } else if (value.length < 4) {
-      print(AppStrings.shortOtp);
-    }
-  }
   // static bool isLoginValid(String username, String password) {
   //   // Example: Validate against hardcoded credentials
   //   return username == 'admin' && password == '12345656';

@@ -96,6 +96,8 @@ class AppStrings {
   static const String nullPassword = 'Please enter your password';
   static const String nullNumberPhone = 'Please enter your number phone';
   static const String nullOtp = 'Please enter your otp';
+  static const String otpNotCorrect = "otp is not correct";
+  static const String back = "Back";
   static const String shortUsername = 'Username must be 6 characters long';
   static const String shortPassword = 'Password must be 6 characters long';
   static const String shortNumberPhone =

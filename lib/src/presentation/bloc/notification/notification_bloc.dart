@@ -14,18 +14,18 @@ part 'notification_state.dart';
 @injectable
 class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   NotificationBloc(
-    this._NotificationRepository,
+    this._notificationRepository,
   ) : super(NotificationInitial()) {
     on<NotificationStarted>(_onNotificationStartedHandler);
   }
-  final NotificationRepository _NotificationRepository;
+  final NotificationRepository _notificationRepository;
 
   Future<void> _onNotificationStartedHandler(
     final NotificationStarted event,
     final Emitter<NotificationState> emit,
   ) async {
     emit(NotificationInProgress());
-    final dataState = await _NotificationRepository.getNotifications();
+    final dataState = await _notificationRepository.getNotifications();
     if (dataState is DataSuccess) {
       emit(
         NotificationLoadSuccess(
