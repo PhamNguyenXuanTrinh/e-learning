@@ -1,6 +1,7 @@
 // Package imports:
 import 'package:dio/dio.dart';
 import 'package:elearning/src/core/utils/constants/app_config.dart';
+import 'package:elearning/src/data/datasources/remote/clock_api_service.dart';
 import 'package:elearning/src/data/datasources/remote/course_api_service.dart';
 import 'package:elearning/src/data/datasources/remote/detail_course_api_service.dart';
 import 'package:elearning/src/data/datasources/remote/home_api_service.dart';
@@ -72,6 +73,16 @@ abstract class RegisterModule {
         dio,
         baseUrl: url,
       );
+  @lazySingleton
+  ClockApiService clockApiService(
+    @Named(AppConfig.apiDio) final Dio dio,
+    @Named(AppConfig.apiBaseUrl) final String url,
+  ) =>
+      ClockApiService(
+        dio,
+        baseUrl: url,
+      );
+
 
   //RegisterNewModule
 }

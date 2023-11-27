@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "error": 1,
+  "message": "Thành công",
+  "data": {
+    "id": 1,
+    "learned": 46,
+    "totalHours": 468,
+    "totalDay": 554,
+    "week": 3
+  }
+}
