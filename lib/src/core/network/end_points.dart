@@ -9,5 +9,7 @@ class EndPoints {
   static const String home = '/home';
   static const String clock = '/clock';
 
+  static const String payment = '/payment';
+
   //NewEndPoint
 }

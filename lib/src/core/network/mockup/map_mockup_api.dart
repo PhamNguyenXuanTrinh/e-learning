@@ -10,7 +10,8 @@ final Map<String, String> mapMockApiForGetRequest = <String, String>{
   EndPoints.message: 'message',
   EndPoints.notification: 'notification',
   EndPoints.home: 'home',
-  EndPoints.clock: 'clock'
+  EndPoints.clock: 'clock',
+  EndPoints.payment: 'payment',
 };
 
 final Map<String, String> mapMockApiForPostRequest = <String, String>{};

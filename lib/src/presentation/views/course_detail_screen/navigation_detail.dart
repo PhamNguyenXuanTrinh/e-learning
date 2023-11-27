@@ -1,4 +1,5 @@
 import 'package:elearning/src/presentation/views/course_detail_screen/course_details_widget/course_detail_widget.dart';
+import 'package:elearning/src/presentation/views/payment/payment_course.dart';
 import 'package:elearning/src/presentation/widgets/btn_primary_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class NavigationDetail extends StatefulWidget {
 }
 
 class _NavigationDetailState extends State<NavigationDetail> {
-  bool isStarPressed = false; 
+  bool isStarPressed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +35,9 @@ class _NavigationDetailState extends State<NavigationDetail> {
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 255, 238,
-                        213), 
+                    backgroundColor: const Color.fromARGB(255, 255, 238, 213),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                          8.0), 
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                   child: Icon(
@@ -57,6 +56,9 @@ class _NavigationDetailState extends State<NavigationDetail> {
               child: PrimaryBtn(
                 text: AppStrings.payNow,
                 onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const PaymentPage(),
+                  ));
                 },
               ),
             ),

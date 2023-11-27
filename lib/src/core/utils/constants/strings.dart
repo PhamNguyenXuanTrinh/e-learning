@@ -29,10 +29,10 @@ class AppStrings {
   static const String time60 = "/60min"; // cần thay đổi
   static const String packDesign = "Packaging Design";
   static const String proDesign = "Product Design";
-  static const String learn40 = "40"; // cần thay đổi
-  static const String learn48 = "/48"; // cần thay đổi
-  static const String learn6 = "6"; // cần thay đổi
-  static const String learn24 = "/24"; // cần thay đổi
+  static const String learn40 = "40";   // cần thay đổi
+  static const String learn48 = "/48";    // cần thay đổi
+  static const String learn6 = "6";   // cần thay đổi
+  static const String learn24 = "/24";  
   static const String less = "Less";
   static const String more = "More";
   static const String minute = "min";
@@ -164,4 +164,11 @@ class AppStrings {
   
   static const String record = 'Record of this week';
   static const String share = 'Share';
+  static const String paymentMethod = 'Payment Method';
+  static const String paymentPassword = 'Payment Password';
+  static const String enterPayment = 'Pls enter the payment password';
+  static const String wrong = 'Wrong password';
+   static const String reenter = 'Please re-enter your password';
+   static const String successful = 'Successful purchase';
+   static const String startLearning = 'Start Learning';
 }
