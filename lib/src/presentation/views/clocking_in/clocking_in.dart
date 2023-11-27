@@ -7,32 +7,27 @@ import '../../../core/utils/constants/strings.dart';
 import '../../../injector/injector.dart';
 import '../../bloc/clock/clock_bloc.dart';
 
-class ClockingInScreen extends StatelessWidget {
-  const ClockingInScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (context) => getIt<ClockBloc>()..add(ClockStarted()),
-        child: BlocBuilder<ClockBloc, ClockState>(builder: (context, state) {
-          if (state is ClockLoadSuccess) {
-            return Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  showClockingInDialog(context, state.clock);
-                },
-                child: const Text('Clock In'),
-              ),
-            );
-          } else if (state is ClockLoadFailure) {
-            return Center(
-              child: Text('${AppStrings.error} : ${state.apiError.message}'),
-            );
-          } else {
-            return const CircularProgressIndicator();
-          }
-        }));
-  }
+Widget buildBtn(BuildContext context) {
+  return BlocProvider(
+      create: (context) => getIt<ClockBloc>()..add(ClockStarted()),
+      child: BlocBuilder<ClockBloc, ClockState>(builder: (context, state) {
+        if (state is ClockLoadSuccess) {
+          return Center(
+            child: PrimaryBtn(
+              text: AppStrings.startLearning,
+              onTap: () {
+                showClockingInDialog(context, state.clock);
+              },
+            ),
+          );
+        } else if (state is ClockLoadFailure) {
+          return Center(
+            child: Text('${AppStrings.error} : ${state.apiError.message}'),
+          );
+        } else {
+          return const CircularProgressIndicator();
+        }
+      }));
 }
 
 void showClockingInDialog(BuildContext context, ClockModel? clock) {
@@ -41,155 +36,180 @@ void showClockingInDialog(BuildContext context, ClockModel? clock) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return SimpleDialog(
-        contentPadding: const EdgeInsets.all(20.0),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(AppStrings.clocking),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              AppStrings.goodJob,
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 14,
-              ),
-            ),
-            const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          SimpleDialog(
+            contentPadding: const EdgeInsets.all(20.0),
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      AppStrings.learned,
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Text((clock?.learned ?? '').toString()),
-                        const SizedBox(
-                          width: 3,
-                        ),
-                        const Text(
-                          AppStrings.min,
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 14,
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      AppStrings.totallyHours,
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Text((clock?.totalHours ?? '').toString()),
-                        const SizedBox(
-                          width: 3,
-                        ),
-                        const Text(
-                          AppStrings.hsr,
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 14,
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(height: 40),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text((clock?.totalDay ?? '').toString()),
+                const Text(AppStrings.clocking),
                 const SizedBox(
-                  width: 3,
+                  height: 10,
                 ),
                 const Text(
-                  AppStrings.day,
+                  AppStrings.goodJob,
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 14,
                   ),
                 ),
+                const SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          AppStrings.learned,
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text((clock?.learned ?? '').toString()),
+                            const SizedBox(
+                              width: 3,
+                            ),
+                            const Text(
+                              AppStrings.min,
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 14,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          AppStrings.totallyHours,
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text((clock?.totalHours ?? '').toString()),
+                            const SizedBox(
+                              width: 3,
+                            ),
+                            const Text(
+                              AppStrings.hsr,
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 14,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 40),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text((clock?.totalDay ?? '').toString()),
+                    const SizedBox(
+                      width: 3,
+                    ),
+                    const Text(
+                      AppStrings.day,
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
-          ],
-        ),
-        children: [
-          const SizedBox(
-            height: 20,
-          ),
-          Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: List.generate(
-                buttonLabels.length,
-                (index) => InkWell(
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.08,
-                    height: MediaQuery.of(context).size.width * 0.08,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: index < selectedCount
-                          ? Theme.of(context).primaryColor
-                          : Theme.of(context).cardColor,
-                    ),
-                    child: Center(
-                      child: Text(
-                        buttonLabels[index],
-                        style: TextStyle(
-                          color: Theme.of(context).scaffoldBackgroundColor,
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: List.generate(
+                    buttonLabels.length,
+                    (index) => InkWell(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.08,
+                        height: MediaQuery.of(context).size.width * 0.08,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: index < selectedCount
+                              ? Theme.of(context).primaryColor
+                              : Theme.of(context).cardColor,
+                        ),
+                        child: Center(
+                          child: Text(
+                            buttonLabels[index],
+                            style: TextStyle(
+                              color: Theme.of(context).scaffoldBackgroundColor,
+                            ),
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Center(
+                child: Text(AppStrings.record),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              PrimaryBtn(
+                  text: AppStrings.share,
+                  onTap: () {
+                    Navigator.pop(context);
+                  }),
+            ],
           ),
           const SizedBox(
             height: 20,
           ),
-          const Center(
-            child: Text(AppStrings.record),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          PrimaryBtn(
-              text: AppStrings.share,
+          Center(
+            child: GestureDetector(
               onTap: () {
                 Navigator.pop(context);
-              }),
+              },
+              child: Container(
+                width: 50.0,
+                height: 50.0,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Theme.of(context).cardColor,
+                ),
+                child: Icon(Icons.close,
+                    color: Theme.of(context).scaffoldBackgroundColor),
+              ),
+            ),
+          ),
         ],
       );
     },
