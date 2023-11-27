@@ -8,6 +8,7 @@ class EndPoints {
   static const String detail = '/detail_course';
   static const String home = '/home';
 
+  static const String payment = '/payment';
 
   //NewEndPoint
 }

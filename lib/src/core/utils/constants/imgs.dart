@@ -37,4 +37,7 @@ class AppImages {
   static const String imgLanguage = 'assets/img/Language_left.png';
   static const String imgPainting = 'assets/img/painting_right.png';
   static const String imgAccountCourse = 'assets/img/photo_account.png';
+
+  static const String imgCreditCard = 'assets/img/credit_card.png';
+  static const String imgSuccessful = 'assets/img/successful.png';
 }

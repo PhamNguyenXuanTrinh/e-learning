@@ -31,7 +31,7 @@ class AppStrings {
   static const String learn40 = "40";   // cần thay đổi
   static const String learn48 = "/48";    // cần thay đổi
   static const String learn6 = "6";   // cần thay đổi
-  static const String learn24 = "/24";  // cần thay đổi
+  static const String learn24 = "/24";  
   static const String less = "Less";
   static const String more = "More";
   static const String minute = "min";
@@ -150,4 +150,12 @@ class AppStrings {
   static const String course = 'Course';
   static const String found = 'No courses found';
   static const String turnOff = 'Turn off';
+
+  static const String paymentMethod = 'Payment Method';
+  static const String paymentPassword = 'Payment Password';
+  static const String enterPayment = 'Pls enter the payment password';
+  static const String wrong = 'Wrong password';
+   static const String reenter = 'Please re-enter your password';
+   static const String successful = 'Successful purchase';
+   static const String startLearning = 'Start Learning';
 }

@@ -11,6 +11,7 @@ import 'package:injectable/injectable.dart';
 import '../core/network/network/network.dart';
 import '../data/datasources/remote/message_api_service.dart';
 import '../data/datasources/remote/notification_api_service.dart';
+import '../data/datasources/remote/payment_api_service.dart';
 import '../injector/injector.dart';
 
 @module
@@ -73,5 +74,14 @@ abstract class RegisterModule {
         baseUrl: url,
       );
 
+  @lazySingleton
+  PaymentApiService paymentApiService(
+    @Named(AppConfig.apiDio) final Dio dio,
+    @Named(AppConfig.apiBaseUrl) final String url,
+  ) =>
+      PaymentApiService(
+        dio,
+        baseUrl: url,
+      );
   //RegisterNewModule
 }
