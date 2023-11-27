@@ -22,7 +22,7 @@ class CourseDetailPage extends StatelessWidget {
 }
 
 class CourseDetailView extends StatefulWidget {
-  const CourseDetailView({Key? key}) : super(key: key);
+  const CourseDetailView({super.key});
 
   @override
   State<CourseDetailView> createState() => _CourseDetailViewState();

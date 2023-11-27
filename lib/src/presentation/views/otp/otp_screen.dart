@@ -8,7 +8,7 @@ import '../dialog/dialog_success_screen.dart';
 class OtpView extends StatelessWidget {
   final String phoneNumber;
 
-  const OtpView({Key? key, required this.phoneNumber}) : super(key: key);
+  const OtpView({super.key, required this.phoneNumber});
   @override
   Widget build(BuildContext context) {
     bool isButtonSelected = false;

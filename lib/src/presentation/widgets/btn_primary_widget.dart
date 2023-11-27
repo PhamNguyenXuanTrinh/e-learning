@@ -6,12 +6,11 @@ class PrimaryBtn extends StatelessWidget {
   final VoidCallback? onTap;
   final TextEditingController? controller;
   const PrimaryBtn(
-      {Key? key,
+      {super.key,
       required this.text,
       this.width,
       required this.onTap,
-      this.controller})
-      : super(key: key);
+      this.controller});
 
   @override
   Widget build(BuildContext context) {
