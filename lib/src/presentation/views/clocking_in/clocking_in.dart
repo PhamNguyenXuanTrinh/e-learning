@@ -32,6 +32,7 @@ Widget buildBtn(BuildContext context) {
 
 void showClockingInDialog(BuildContext context, ClockModel? clock) {
   int selectedCount = clock?.week ?? 0;
+  Color colorGrey = Theme.of(context).cardColor;
   List<String> buttonLabels = ["1", "2", "3", "4", "5", "6", "7"];
   showDialog(
     context: context,
@@ -48,10 +49,10 @@ void showClockingInDialog(BuildContext context, ClockModel? clock) {
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
+                Text(
                   AppStrings.goodJob,
                   style: TextStyle(
-                    color: Colors.grey,
+                    color: colorGrey,
                     fontSize: 14,
                   ),
                 ),
@@ -62,10 +63,10 @@ void showClockingInDialog(BuildContext context, ClockModel? clock) {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           AppStrings.learned,
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: colorGrey,
                             fontSize: 14,
                           ),
                         ),
@@ -79,10 +80,10 @@ void showClockingInDialog(BuildContext context, ClockModel? clock) {
                             const SizedBox(
                               width: 3,
                             ),
-                            const Text(
+                            Text(
                               AppStrings.min,
                               style: TextStyle(
-                                color: Colors.grey,
+                                color: colorGrey,
                                 fontSize: 14,
                               ),
                             )
@@ -93,10 +94,10 @@ void showClockingInDialog(BuildContext context, ClockModel? clock) {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           AppStrings.totallyHours,
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: colorGrey,
                             fontSize: 14,
                           ),
                         ),
@@ -110,10 +111,10 @@ void showClockingInDialog(BuildContext context, ClockModel? clock) {
                             const SizedBox(
                               width: 3,
                             ),
-                            const Text(
+                            Text(
                               AppStrings.hsr,
                               style: TextStyle(
-                                color: Colors.grey,
+                                color: colorGrey,
                                 fontSize: 14,
                               ),
                             )
@@ -131,10 +132,10 @@ void showClockingInDialog(BuildContext context, ClockModel? clock) {
                     const SizedBox(
                       width: 3,
                     ),
-                    const Text(
+                    Text(
                       AppStrings.day,
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: colorGrey,
                         fontSize: 14,
                       ),
                     ),
@@ -203,7 +204,7 @@ void showClockingInDialog(BuildContext context, ClockModel? clock) {
                 height: 50.0,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Theme.of(context).cardColor,
+                  color: colorGrey,
                 ),
                 child: Icon(Icons.close,
                     color: Theme.of(context).scaffoldBackgroundColor),
