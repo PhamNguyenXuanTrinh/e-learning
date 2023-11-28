@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:elearning/src/domain/models/home_model.dart';
 
@@ -7,9 +6,9 @@ class TitleWidget extends StatelessWidget {
   final HomeModel? homeData;
 
   const TitleWidget({
-    Key? key,
+    super.key,
     required this.homeData,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

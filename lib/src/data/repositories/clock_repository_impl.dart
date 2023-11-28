@@ -7,25 +7,25 @@ import 'package:elearning/src/core/error/error_codes.dart';
 import 'package:elearning/src/core/extensions/dio_http_response.dart';
 import 'package:injectable/injectable.dart';
 
-// Project imports:
 import '../../core/error/api_error.dart';
 import '../../core/resources/data_state.dart';
-import '../../domain/models/course_model.dart';
-import '../../domain/repositories/course_repository.dart';
-import '../datasources/remote/course_api_service.dart';
+import '../../domain/models/clock_model.dart';
+import '../../domain/repositories/clock_repository.dart';
+import '../datasources/remote/clock_api_service.dart';
 
-@LazySingleton(as: CourseRepository)
-class CourseRepositoryImpl implements CourseRepository {
-  CourseRepositoryImpl(
-    this._courseApiService,
+
+@LazySingleton(as: ClockRepository)
+class ClockRepositoryImpl implements ClockRepository {
+  ClockRepositoryImpl(
+    this._clockApiService,
   );
 
-  final CourseApiService _courseApiService;
+  final ClockApiService _clockApiService;
 
   @override
-  Future<DataState<List<CourseModel>?>> getCourses() async {
+  Future<DataState<ClockModel>?> getClocks() async {
     try {
-      final httpResponse = await _courseApiService.getCourses(isMockUp: true);
+      final httpResponse = await _clockApiService.getClocks(isMockUp: true);
       if (httpResponse.response.statusCode != HttpStatus.ok) {
         return DataFailure(httpResponse.apiError);
       }

@@ -6,11 +6,12 @@ import '../end_points.dart';
 
 final Map<String, String> mapMockApiForGetRequest = <String, String>{
   EndPoints.course: 'course',
+  EndPoints.detail: 'detail_course',
   EndPoints.message: 'message',
   EndPoints.notification: 'notification',
-  EndPoints.payment: 'payment',
-  EndPoints.detail: 'detail_course',
   EndPoints.home: 'home',
+  EndPoints.clock: 'clock',
+  EndPoints.payment: 'payment',
 };
 
 final Map<String, String> mapMockApiForPostRequest = <String, String>{};

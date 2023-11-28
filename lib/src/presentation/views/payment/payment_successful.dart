@@ -3,6 +3,7 @@ import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/btn_primary_widget.dart';
+import '../clocking_in/clocking_in.dart';
 
 class PaymentSuccess extends StatelessWidget {
   const PaymentSuccess({Key? key}) : super(key: key);
@@ -26,10 +27,7 @@ class PaymentSuccess extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(32.0),
-              child: PrimaryBtn(
-                text: AppStrings.startLearning,
-                onTap: () {},
-              ),
+              child: buildBtn(context),
             ),
           ],
         ),

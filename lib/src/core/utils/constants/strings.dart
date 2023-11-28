@@ -1,6 +1,7 @@
 class AppStrings {
   /// add string
   static const String dot = '.';
+
   /// acount_screen
   static const String account = "Account";
   static const String favourite = "Favourite";
@@ -24,8 +25,8 @@ class AppStrings {
   static const String textbutton = "Get Started";
   static const String meetup = "Meetup";
   static const String textMeetup = "Off-line exchange of learning experience";
-  static const String time46 = "46min";   // cần thay đổi
-  static const String time60 = "/60min";   // cần thay đổi
+  static const String time46 = "46min"; // cần thay đổi
+  static const String time60 = "/60min"; // cần thay đổi
   static const String packDesign = "Packaging Design";
   static const String proDesign = "Product Design";
   static const String learn40 = "40";   // cần thay đổi
@@ -151,6 +152,18 @@ class AppStrings {
   static const String found = 'No courses found';
   static const String turnOff = 'Turn off';
 
+  // Clocking in
+  static const String clocking = 'Clocking in';
+  static const String goodJob = 'GOOD JOB!';
+  static const String learned = 'Learned today';
+  static const String totallyHours = 'Totally hours';
+  static const String min = 'min';
+  static const String hsr = 'hsr';
+  static const String totallyDays = 'Totally days';
+   static const String day = 'days';
+  
+  static const String record = 'Record of this week';
+  static const String share = 'Share';
   static const String paymentMethod = 'Payment Method';
   static const String paymentPassword = 'Payment Password';
   static const String enterPayment = 'Pls enter the payment password';
