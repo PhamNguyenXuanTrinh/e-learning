@@ -29,10 +29,10 @@ class AppStrings {
   static const String time60 = "/60min"; // cần thay đổi
   static const String packDesign = "Packaging Design";
   static const String proDesign = "Product Design";
-  static const String learn40 = "40";   // cần thay đổi
-  static const String learn48 = "/48";    // cần thay đổi
-  static const String learn6 = "6";   // cần thay đổi
-  static const String learn24 = "/24";  
+  static const String learn40 = "40"; // cần thay đổi
+  static const String learn48 = "/48"; // cần thay đổi
+  static const String learn6 = "6"; // cần thay đổi
+  static const String learn24 = "/24";
   static const String less = "Less";
   static const String more = "More";
   static const String minute = "min";
@@ -168,7 +168,22 @@ class AppStrings {
   static const String paymentPassword = 'Payment Password';
   static const String enterPayment = 'Pls enter the payment password';
   static const String wrong = 'Wrong password';
-   static const String reenter = 'Please re-enter your password';
-   static const String successful = 'Successful purchase';
-   static const String startLearning = 'Start Learning';
+  static const String reenter = 'Please re-enter your password';
+  static const String successful = 'Successful purchase';
+  static const String startLearning = 'Start Learning';
+
+  //pop_up
+  static const String noNotification = 'No Notification yet!';
+  static const String subNoNotification =
+      'We will notify you once we have something for you';
+  static const String noNetWord = 'No NetWord';
+  static const String subNoNetWord =
+      'Please check your internet connection and try again';
+  static const String noVideos = 'No videos!';
+  static const String subNoVideos = 'Here is no video you want at the moment';
+
+  static const String noProduct = 'No Product';
+  static const String subNoProduct = 'You do not have any product yet!';
+  static const String tryAgain = 'Try Again';
+  static const String searchMore = 'Search more';
 }
