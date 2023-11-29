@@ -17,7 +17,7 @@ class CustomPage extends StatelessWidget {
       case 4:
         return AppImages.imgProduct;
       default:
-        return AppImages.imgNotification; // Hình mặc định nếu pageNumber không phù hợp
+        return AppImages.imgNotification; 
     }
   }
 
