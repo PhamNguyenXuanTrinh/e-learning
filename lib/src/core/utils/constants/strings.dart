@@ -32,7 +32,7 @@ class AppStrings {
   static const String learn40 = "40"; // cần thay đổi
   static const String learn48 = "/48"; // cần thay đổi
   static const String learn6 = "6"; // cần thay đổi
-  static const String learn24 = "/24";
+  static const String learn24 = "/24"; // cần thay đổi
   static const String less = "Less";
   static const String more = "More";
   static const String minute = "min";
@@ -107,7 +107,7 @@ class AppStrings {
   ///   static const String firstIntroductionContent='Free courses for you to find your way to learning';
   static const String choiceYourAccountCourse = 'Course';
   static const String choiceYourAccountFindCourse = 'Course';
-  static const String choiceYourAccountText = 'Choice Your Account';
+  static const String choiceYourAccountText = 'Choice Your Course';
   static const String choiceYourAccountAll = 'All';
   static const String choiceYourAccountPopular = 'Popular';
   static const String choiceYourAccountNew = 'New';
@@ -160,8 +160,8 @@ class AppStrings {
   static const String min = 'min';
   static const String hsr = 'hsr';
   static const String totallyDays = 'Totally days';
-   static const String day = 'days';
-  
+  static const String day = 'days';
+
   static const String record = 'Record of this week';
   static const String share = 'Share';
   static const String paymentMethod = 'Payment Method';
