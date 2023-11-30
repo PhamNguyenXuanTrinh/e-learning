@@ -1,20 +1,18 @@
 import 'package:elearning/src/domain/models/home_model.dart';
+import 'package:elearning/src/presentation/views/my_course_screen/my_course_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/utils/constants/strings.dart';
 
 class LearnedWidget extends StatelessWidget {
   final HomeModel? homeData;
 
   const LearnedWidget({
-    super.key,
+    Key? key,
     required this.homeData,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (homeData == null || homeData?.learned == null) {
-      // Xử lý trường hợp homeData hoặc learned là null
+    if (homeData == null || homeData!.learned == null) {
       return Container();
     }
 
@@ -56,11 +54,20 @@ class LearnedWidget extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                Text(
-                  homeData?.learned.myCoursesText ?? "",
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Theme.of(context).primaryColor,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MyCourseScreen()),
+                    );
+                  },
+                  child: Text(
+                    homeData?.learned.myCoursesText ?? "",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 ),
               ],
@@ -76,11 +83,11 @@ class LearnedWidget extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  AppStrings.minute,
+                  'minute',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  AppStrings.slash,
+                  '/',
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
@@ -94,7 +101,7 @@ class LearnedWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  AppStrings.minute,
+                  'minute',
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
