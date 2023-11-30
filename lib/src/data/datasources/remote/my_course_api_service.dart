@@ -12,7 +12,7 @@ abstract class MyCourseApiService {
   factory MyCourseApiService(final Dio dio, {final String baseUrl}) =
     _MyCourseApiService;
 
-  @GET(EndPoints.mycourse)
+  @GET(EndPoints.myCourse)
   Future<HttpResponse<MyCourseResponseModel?>> getMyCourseScreen({
     @Header('isMockUp') final bool? isMockUp,
   });

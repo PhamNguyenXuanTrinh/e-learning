@@ -3,7 +3,7 @@
     "error": 1,
     "message": "Thành công",
     "data": {
-        "learnedtoday": {
+        "learnedToday": {
             "learned_today_text": "Learned today",
             "time_studied": 46,
             "time_goals": 60

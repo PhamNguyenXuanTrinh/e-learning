@@ -14,7 +14,7 @@ class LearnedTodayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    MyCourseLearnedModel learnedToday = mycourseData.learnedtoday;
+    MyCourseLearnedModel learnedToday = mycourseData.learnedToday;
 
     return Container(
       width: screenWidth,

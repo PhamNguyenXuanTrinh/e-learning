@@ -22,17 +22,17 @@ class MyCourseResponseModel {
 }
 
 class MyCourseModel {
-  final MyCourseLearnedModel learnedtoday;
+  final MyCourseLearnedModel learnedToday;
   final List<MyCourseLearningModel> learning;
 
   MyCourseModel({
-    required this.learnedtoday,
+    required this.learnedToday,
     required this.learning,
   });
 
   factory MyCourseModel.fromJson(Map<String, dynamic> json) {
     return MyCourseModel(
-      learnedtoday: MyCourseLearnedModel.fromJson(json['learnedtoday'] ?? {}),
+      learnedToday: MyCourseLearnedModel.fromJson(json['learnedtoday'] ?? {}),
       learning: (json['learning'] as List<dynamic>?)
               ?.map((e) => MyCourseLearningModel.fromJson(e))
               .toList() ??
