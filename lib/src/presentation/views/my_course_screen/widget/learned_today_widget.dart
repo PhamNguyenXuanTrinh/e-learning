@@ -1,28 +1,22 @@
 import 'package:elearning/src/core/utils/constants/strings.dart';
-import 'package:elearning/src/domain/models/home_model.dart';
-import 'package:elearning/src/presentation/views/my_course_screen/my_course_screen.dart';
 import 'package:flutter/material.dart';
 
-class LearnedWidget extends StatelessWidget {
-  final HomeModel? homeData;
+import '../../../../domain/models/my_course_model.dart';
 
-  const LearnedWidget({
+class LearnedTodayWidget extends StatelessWidget {
+  final MyCourseModel mycourseData;
+
+  const LearnedTodayWidget({
     super.key,
-    required this.homeData,
+    required this.mycourseData,
   });
 
   @override
   Widget build(BuildContext context) {
-    if (homeData == null || homeData!.learned == null) {
-      return Container();
-    }
-
     double screenWidth = MediaQuery.of(context).size.width;
 
-    int timeStudiedToday = homeData!.learned.timeStudiedToday;
-    int timeGoal = homeData!.learned.timeGoal;
-
-    double progress = timeStudiedToday / timeGoal;
+    int timeStudied = mycourseData.learnedToday.timeStudied;
+    int timeGoals = mycourseData.learnedToday.timeGoals;
 
     return Container(
       width: screenWidth,
@@ -48,36 +42,20 @@ class LearnedWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  homeData?.learned.learnedText ?? "",
+                  mycourseData.learnedToday.learnedTodayText,
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
                   ),
                 ),
                 const Spacer(),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MyCourseScreen() ),
-                    );
-                  },
-                  child: Text(
-                    homeData?.learned.myCoursesText ?? "",
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ),
               ],
             ),
             const SizedBox(height: 5),
             Row(
               children: [
                 Text(
-                  '$timeStudiedToday',
+                  timeStudied.toString(),
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -95,7 +73,7 @@ class LearnedWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '$timeGoal',
+                  timeGoals.toString(),
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
@@ -123,7 +101,7 @@ class LearnedWidget extends StatelessWidget {
                 ),
                 Container(
                   height: 5,
-                  width: progress * (screenWidth - 60),
+                  width: (timeStudied / timeGoals) * (screenWidth - 60),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     gradient: LinearGradient(

@@ -11,7 +11,7 @@ class CourseWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       decoration: const BoxDecoration(),
       child: const Text(
-        AppStrings.account,
+        AppStrings.course,
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 20.0,

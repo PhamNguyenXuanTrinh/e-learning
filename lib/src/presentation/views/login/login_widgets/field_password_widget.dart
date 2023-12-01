@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class FieldPassword extends StatefulWidget {
   final TextEditingController controller;
 
-  const FieldPassword({Key? key, required this.controller}) : super(key: key);
+  const FieldPassword({super.key, required this.controller});
 
   @override
   FieldPasswordState createState() => FieldPasswordState();

@@ -22,10 +22,10 @@ class PaymentRepositoryImpl implements PaymentRepository {
       final httpResponse = await _paymentApiService.getPayments(isMockUp: true);
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
-        return DataSuccess(httpResponse.data?.data as PaymentModel?);
+        return DataSuccess(httpResponse.data?.data);
       }
       if (httpResponse.data?.error == ErrorCodes.success) {
-        return DataSuccess(httpResponse.data?.data as PaymentModel?);
+        return DataSuccess(httpResponse.data?.data);
       }
 
       return DataFailure(httpResponse.apiError);

@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key});
+  const HomeScreen({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TitleWidget(homeData: homeData),
-                              Spacer(),
+                              const Spacer(),
                               AvatarWidget(homeData: homeData),
                             ],
                           ),
@@ -63,7 +63,7 @@ class HomeScreen extends StatelessWidget {
               ),
             );
           } else {
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
         },
       ),

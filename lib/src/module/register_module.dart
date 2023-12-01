@@ -5,6 +5,7 @@ import 'package:elearning/src/data/datasources/remote/clock_api_service.dart';
 import 'package:elearning/src/data/datasources/remote/course_api_service.dart';
 import 'package:elearning/src/data/datasources/remote/detail_course_api_service.dart';
 import 'package:elearning/src/data/datasources/remote/home_api_service.dart';
+import 'package:elearning/src/data/datasources/remote/my_course_api_service.dart';
 import 'package:injectable/injectable.dart';
 
 // Project imports:
@@ -66,6 +67,7 @@ abstract class RegisterModule {
         dio,
         baseUrl: url,
       );
+  @lazySingleton
   HomeApiService homeApiService(
     @Named(AppConfig.apiDio) final Dio dio,
     @Named(AppConfig.apiBaseUrl) final String url,
@@ -84,13 +86,21 @@ abstract class RegisterModule {
         baseUrl: url,
       );
 
-
   @lazySingleton
   PaymentApiService paymentApiService(
     @Named(AppConfig.apiDio) final Dio dio,
     @Named(AppConfig.apiBaseUrl) final String url,
   ) =>
       PaymentApiService(
+        dio,
+        baseUrl: url,
+      );
+  @lazySingleton
+  MyCourseApiService myCourseApiService(
+    @Named(AppConfig.apiDio) final Dio dio,
+    @Named(AppConfig.apiBaseUrl) final String url,
+  ) =>
+      MyCourseApiService(
         dio,
         baseUrl: url,
       );

@@ -36,7 +36,7 @@ class PaymentPageState extends State<PaymentPage> {
 }
 
 class BodyTab extends StatelessWidget {
-  const BodyTab({Key? key});
+  const BodyTab({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -161,7 +161,7 @@ class BodyTab extends StatelessWidget {
 class CreditCardWidget extends StatelessWidget {
   final String amount;
 
-  const CreditCardWidget({Key? key, required this.amount}) : super(key: key);
+  const CreditCardWidget({super.key, required this.amount});
 
   @override
   Widget build(BuildContext context) {
