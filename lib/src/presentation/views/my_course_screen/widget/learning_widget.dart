@@ -24,7 +24,7 @@ class LearningWidget extends StatelessWidget {
             color: Theme.of(context).shadowColor.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: const Offset(0, 2),
+            offset: const Offset(0, 3),
           ),
         ],
       ),

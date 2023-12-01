@@ -2,11 +2,10 @@ import 'package:elearning/src/core/utils/constants/imgs.dart';
 import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/btn_primary_widget.dart';
 import '../clocking_in/clocking_in.dart';
 
 class PaymentSuccess extends StatelessWidget {
-  const PaymentSuccess({Key? key}) : super(key: key);
+  const PaymentSuccess({super.key});
 
   @override
   Widget build(BuildContext context) {

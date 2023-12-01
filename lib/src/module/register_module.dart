@@ -82,11 +82,9 @@ abstract class RegisterModule {
     @Named(AppConfig.apiBaseUrl) final String url,
   ) =>
       ClockApiService(
-           dio,
+        dio,
         baseUrl: url,
       );
-
-
 
   @lazySingleton
   PaymentApiService paymentApiService(
@@ -97,8 +95,8 @@ abstract class RegisterModule {
         dio,
         baseUrl: url,
       );
-
-      MyCourseApiService myCourseApiService(
+  @lazySingleton
+  MyCourseApiService myCourseApiService(
     @Named(AppConfig.apiDio) final Dio dio,
     @Named(AppConfig.apiBaseUrl) final String url,
   ) =>

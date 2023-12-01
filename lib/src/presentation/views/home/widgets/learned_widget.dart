@@ -1,3 +1,4 @@
+import 'package:elearning/src/core/utils/constants/strings.dart';
 import 'package:elearning/src/domain/models/home_model.dart';
 import 'package:elearning/src/presentation/views/my_course_screen/my_course_screen.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +7,9 @@ class LearnedWidget extends StatelessWidget {
   final HomeModel? homeData;
 
   const LearnedWidget({
-    Key? key,
+    super.key,
     required this.homeData,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,7 @@ class LearnedWidget extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MyCourseScreen()),
+                          builder: (context) => const MyCourseScreen() ),
                     );
                   },
                   child: Text(
@@ -83,11 +84,11 @@ class LearnedWidget extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  'minute',
+                  AppStrings.minute,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  '/',
+                  AppStrings.slash,
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
@@ -101,7 +102,7 @@ class LearnedWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'minute',
+                  AppStrings.minute,
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,

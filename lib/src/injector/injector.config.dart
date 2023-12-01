@@ -129,10 +129,11 @@ extension GetItInjectableX on _i1.GetIt {
             ));
     gh.lazySingleton<_i18.MessageRepository>(
         () => _i19.MessageRepositoryImpl(gh<_i17.MessageApiService>()));
-    gh.factory<_i20.MyCourseApiService>(() => registerModule.myCourseApiService(
-          gh<_i3.Dio>(instanceName: 'apiDio'),
-          gh<String>(instanceName: 'apiBaseUrl'),
-        ));
+    gh.lazySingleton<_i20.MyCourseApiService>(
+        () => registerModule.myCourseApiService(
+              gh<_i3.Dio>(instanceName: 'apiDio'),
+              gh<String>(instanceName: 'apiBaseUrl'),
+            ));
     gh.lazySingleton<_i21.MyCourseRepository>(
         () => _i22.MyCourseRepositoryImpl(gh<_i20.MyCourseApiService>()));
     gh.lazySingleton<_i23.NotificationApiService>(

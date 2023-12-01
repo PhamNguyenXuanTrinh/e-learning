@@ -32,15 +32,13 @@ class MyCourseModel {
 
   factory MyCourseModel.fromJson(Map<String, dynamic> json) {
     return MyCourseModel(
-      learnedToday: MyCourseLearnedModel.fromJson(json['learnedtoday'] ?? {}),
+      learnedToday: MyCourseLearnedModel.fromJson(json['learnedToday'] ?? {}),
       learning: (json['learning'] as List<dynamic>?)
               ?.map((e) => MyCourseLearningModel.fromJson(e))
               .toList() ??
           [],
     );
   }
-
-  get gradientColor1Start => null;
 }
 
 class MyCourseLearnedModel {

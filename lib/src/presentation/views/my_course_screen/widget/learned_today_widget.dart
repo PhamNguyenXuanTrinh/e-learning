@@ -1,6 +1,7 @@
 import 'package:elearning/src/core/utils/constants/strings.dart';
-import 'package:elearning/src/domain/models/my_course_model.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../domain/models/my_course_model.dart';
 
 class LearnedTodayWidget extends StatelessWidget {
   final MyCourseModel mycourseData;
@@ -14,7 +15,8 @@ class LearnedTodayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    MyCourseLearnedModel learnedToday = mycourseData.learnedToday;
+    int timeStudied = mycourseData.learnedToday.timeStudied;
+    int timeGoals = mycourseData.learnedToday.timeGoals;
 
     return Container(
       width: screenWidth,
@@ -40,7 +42,7 @@ class LearnedTodayWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  learnedToday.learnedTodayText,
+                  mycourseData.learnedToday.learnedTodayText,
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
@@ -53,7 +55,7 @@ class LearnedTodayWidget extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  learnedToday.timeStudied.toString(),
+                  timeStudied.toString(),
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -71,7 +73,7 @@ class LearnedTodayWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  learnedToday.timeGoals.toString(),
+                  timeGoals.toString(),
                   style: TextStyle(
                     fontSize: 13,
                     color: Theme.of(context).cardColor,
@@ -99,8 +101,7 @@ class LearnedTodayWidget extends StatelessWidget {
                 ),
                 Container(
                   height: 5,
-                  width: (learnedToday.timeStudied / learnedToday.timeGoals) *
-                      (screenWidth - 60),
+                  width: (timeStudied / timeGoals) * (screenWidth - 60),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     gradient: LinearGradient(
